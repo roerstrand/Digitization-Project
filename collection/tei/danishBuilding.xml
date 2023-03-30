@@ -31,7 +31,7 @@
             <figDesc>
                A photograph of the Danish building and descriptive text
             </figDesc>
-            <graphic xml:id="image1.3" url=""/>
+            <graphic xml:id="image1.3" url="img/danskaByggnaden/1.3(page6).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -40,7 +40,7 @@
             <figDesc>
                A photograph of the Danish buiding.
             </figDesc>
-            <graphic xml:id="image2.4" url=""/>
+            <graphic xml:id="image2.4" url="img/danskaByggnaden/2.4(page6).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -49,7 +49,7 @@
             <figDesc>
                A photograph of the interior garden at the Danish building.
             </figDesc>
-            <graphic xml:id="image2.5" url=""/>
+            <graphic xml:id="image2.5" url="img/danskaByggnaden/2.5(page7).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -58,7 +58,7 @@
             <figDesc>
                A photograph of the view from the Danish building. 
             </figDesc>
-            <graphic xml:id="image4.10" url=""/>
+            <graphic xml:id="image4.10" url="img/danskaByggnaden/4.10.jpg"/>
          </figure>
       </surface>
       <surface>
@@ -67,7 +67,7 @@
             <figDesc>
                A photograph of the Danish Building.
             </figDesc>
-            <graphic xml:id="image4.12" url=""/>
+            <graphic xml:id="image4.12" url="img/danskaByggnaden/4.12.jpg"/>
          </figure>
       </surface>
       <surface>
@@ -76,7 +76,7 @@
             <figDesc>
                A photograph of the Danish building
             </figDesc>
-            <graphic xml:id="image4.13" url=""/>
+            <graphic xml:id="image4.13" url="img/danskaByggnaden/4.13.jpg"/>
          </figure>
       </surface>
       <surface>
@@ -85,7 +85,7 @@
             <figDesc>
                A photograph of the interior exhibit in the Danish building.
             </figDesc>
-            <graphic xml:id="image4.14" url=""/>
+            <graphic xml:id="image4.14" url="img/danskaByggnaden/4.14.jpg"/>
          </figure>
       </surface>
       <surface>
@@ -94,7 +94,7 @@
             <figDesc>
                A photograph of the interir garden at the Danish building.
             </figDesc>
-            <graphic xml:id="image4.15" url=""/>
+            <graphic xml:id="image4.15" url="img/danskaByggnaden/4.15.jpg"/>
          </figure>
       </surface>
       <surface>
@@ -103,7 +103,7 @@
             <figDesc>
                Discription of Danish commissariat.
             </figDesc>
-            <graphic xml:id="image5.2" url=""/>
+            <graphic xml:id="image5.2" url="img/danskaByggnaden/5.2(page134-135).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -112,7 +112,7 @@
             <figDesc>
                Blueprint of the Danisish building and siscriptive text.
             </figDesc>
-            <graphic xml:id="image5.3" url=""/>
+            <graphic xml:id="image5.3" url="img/danskaByggnaden/5.3(page134-135).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -121,7 +121,7 @@
             <figDesc>
                A photograph of the Danish building.
             </figDesc>
-            <graphic xml:id="image6.1" url=""/>
+            <graphic xml:id="image6.1" url="img/danskaByggnaden/6.1(page4).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -130,7 +130,7 @@
             <figDesc>
                A photograph of Danish building ans descriptive text.
             </figDesc>
-            <graphic xml:id="image6.2" url=""/>
+            <graphic xml:id="image6.2" url="img/danskaByggnaden/6.2(page75).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -139,7 +139,7 @@
             <figDesc>
                Blueprint of the Danish building and descriptive text. 
             </figDesc>
-            <graphic xml:id="image6.3" url=""/>
+            <graphic xml:id="image6.3" url="img/danskaByggnaden/6.3(page77).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -148,7 +148,7 @@
             <figDesc>
                A photograph of the Danish building.
             </figDesc>
-            <graphic xml:id="image7.4" url=""/>
+            <graphic xml:id="image7.4" url="img/danskaByggnaden/7.4.jpg"/>
          </figure>
       </surface>
       <surface>
@@ -157,13 +157,13 @@
             <figDesc>
                Blueprint of the Danish building.
             </figDesc>
-            <graphic xml:id="image1.05049" url=""/>
+            <graphic xml:id="image1.05049" url="img/danskaByggnaden/Danmark.1_05053.HEIC"/>
          </figure>
       </surface>
    </facsimile>
    <text>
       <body>
-
+         <p></p>
       </body>
    </text>
 </TEI>

@@ -31,7 +31,7 @@
             <figDesc>
                A photograph of the great tower.
             </figDesc>
-            <graphic xml:id="image1.1" url=""/>
+            <graphic xml:id="image1.1" url="img/storaTornet/1.1(page1).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -40,7 +40,7 @@
             <figDesc>
                A photograph of the great tower.
             </figDesc>
-            <graphic xml:id="image1.5" url=""/>
+            <graphic xml:id="image1.5" url="img/storaTornet/1.5(page8).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -49,7 +49,7 @@
             <figDesc>
                A photograph of the great tower.
             </figDesc>
-            <graphic xml:id="image2.1" url=""/>
+            <graphic xml:id="image2.1" url="img/storaTornet/2.1(page3).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -58,7 +58,7 @@
             <figDesc>
                A photograph of the great tower.
             </figDesc>
-            <graphic xml:id="image2.10" url=""/>
+            <graphic xml:id="image2.10" url="img/storaTornet/2.10(page13).jpg"/>
          </figure>
       </surface>
       <surface>
@@ -67,7 +67,7 @@
             <figDesc>
                A photograph of the great tower.
             </figDesc>
-            <graphic xml:id="image2.12" url=""/>
+            <graphic xml:id="image2.12" url="img/storaTornet/2.12(page20).jpg"/>
          </figure>
       </surface>
    <surface>
@@ -76,7 +76,7 @@
          <figDesc>
             The view from the great tower.
          </figDesc>
-         <graphic xml:id="image2.13" url=""/>
+         <graphic xml:id="image2.13" url="img/storaTornet/2.13(page23).jpg"/>
       </figure>
    </surface>
    <surface>
@@ -85,7 +85,7 @@
          <figDesc>
             the view from the great tower. 
          </figDesc>
-         <graphic xml:id="image2.14" url=""/>
+         <graphic xml:id="image2.14" url="img/storaTornet/2.14(page24).jpg"/>
       </figure>
    </surface>
    <surface>
@@ -94,7 +94,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.1" url=""/>
+         <graphic xml:id="image4.1" url="img/storaTornet/4.1.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -103,7 +103,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.2" url=""/>
+         <graphic xml:id="image4.2" url="img/storaTornet/4.2.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -112,7 +112,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.3" url=""/>
+         <graphic xml:id="image4.3" url="img/storaTornet/4.3.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -121,7 +121,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.4" url=""/>
+         <graphic xml:id="image4.4" url="img/storaTornet/4.4.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -130,7 +130,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.5" url=""/>
+         <graphic xml:id="image4.5" url="img/storaTornet/4.5.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -139,7 +139,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.6" url=""/>
+         <graphic xml:id="image4.6" url="img/storaTornet/4.6.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -148,16 +148,7 @@
          <figDesc>
             A photograph of the great tower.
          </figDesc>
-         <graphic xml:id="image4.7" url=""/>
-      </figure>
-   </surface>
-   <surface>
-      <figure>
-         <label>Image 4:10</label>
-         <figDesc>
-            A photograph of the great tower.
-         </figDesc>
-         <graphic xml:id="image4.10" url=""/>
+         <graphic xml:id="image4.7" url="img/storaTornet/4.7.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -166,7 +157,7 @@
          <figDesc>
             Discription of commissariat groups of the Baltic fair.
          </figDesc>
-         <graphic xml:id="image5.1" url=""/>
+         <graphic xml:id="image5.1" url="img/storaTornet/5.1(pageIX).jpg"/>
       </figure>
    </surface>
    <surface>
@@ -175,7 +166,7 @@
          <figDesc>
             A photograph of men at the building site.
          </figDesc>
-         <graphic xml:id="image7.1" url=""/>
+         <graphic xml:id="image7.1" url="img/storaTornet/7.1.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -184,7 +175,7 @@
          <figDesc>
             A photograph of men at the building site
          </figDesc>
-         <graphic xml:id="image7.2" url=""/>
+         <graphic xml:id="image7.2" url="img/storaTornet/7.2.jpg"/>
       </figure>
    </surface>
    <surface>
@@ -193,22 +184,22 @@
          <figDesc>
             A photograph of men at the building site
          </figDesc>
-         <graphic xml:id="image7.3" url=""/>
+         <graphic xml:id="image7.3" url="img/storaTornet/7.3.jpg"/>
       </figure>
    </surface>
    <surface>
       <figure>
-         <label>1/04951</label>
+         <label>1/05053</label>
          <figDesc>
             A blueprint of the great tower.
          </figDesc>
-         <graphic xml:id="image1.04951" url=""/>
+         <graphic xml:id="image1.05053" url="img/storaTornet/Stora_tornet1_05053.HEIC"/>
       </figure>
    </surface>
    </facsimile>
    <text>
       <body>
-
+         <p></p>
       </body>
    </text>
 </TEI>
