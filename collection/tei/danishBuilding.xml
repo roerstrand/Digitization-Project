@@ -6,7 +6,7 @@
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Danmarks byggnad(Danish exhibit building)</title>
+            <title>Danish exhibition building</title>
             <author>Henning Hanssen</author>
             <principal>My Lundborg, Robin Strandberg</principal>
          </titleStmt>
@@ -92,7 +92,7 @@
          <figure>
             <label>Image 4:15</label>
             <figDesc>
-               A photograph of the interir garden at the Danish building.
+               A photograph of the interior garden at the Danish building.
             </figDesc>
             <graphic xml:id="image4.15" url="img/danskaByggnaden/4.15.jpg"/>
          </figure>
@@ -110,7 +110,7 @@
          <figure>
             <label>Image 5:3</label>
             <figDesc>
-               Blueprint of the Danisish building and siscriptive text.
+               Blueprint of the Danish building and descriptive text.
             </figDesc>
             <graphic xml:id="image5.3" url="img/danskaByggnaden/5.3(page134-135).jpg"/>
          </figure>
