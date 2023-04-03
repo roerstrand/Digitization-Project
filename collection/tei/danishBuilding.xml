@@ -160,6 +160,24 @@
             <graphic xml:id="image1.05049" url="img/danskaByggnaden/Danmark.1_05053.HEIC"/>
          </figure>
       </surface>
+      <surface>
+         <figure>
+            <label>page51</label>
+            <figDesc>
+               News paper article on the construction of the danish building 
+            </figDesc>
+            <graphic xml:id="page51" url="img/danskaByggnaden/Page51.JPG"/>
+         </figure>
+      </surface>
+      <surface>
+         <figure>
+            <label>Page55</label>
+            <figDesc>
+               News paper article on the payments of workers at the construction of the Danish building. 
+            </figDesc>
+            <graphic xml:id="page55" url="img/danskaByggnaden/Page55.JPG"/>
+         </figure>
+      </surface>
    </facsimile>
    <text>
       <body>
