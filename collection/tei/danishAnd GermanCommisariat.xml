@@ -43,26 +43,80 @@
 
          <div xml:id="danishCommissariat">
             <p>
-               <title>Danmark</title><lb/> President: Departamentschef H. Wedel<lb/> Vicepresident:
-               Departamentschef G. Busck-Nielsen<lb/> Ingeniör Alex. Foss.<lb/> Genrelakommisarie:
-               Fred. Riise.<lb/> Arklitekt K Arne Petersen.<lb/> Direktör Harald Bing.<lb/>
-               Kunstmaler H. Brasen.<lb/> Generalkonsul G. S. Bönnelyche.<lb/> Direktör B.
-               Dessau.<lb/> Hof-juvelerer Alfr. Dragsted.<lb/> Borgemester, Etastraad Th.
-               Dybdal.<lb/> Direktör Emil Hannover.<lb/> Landstingsmand Niels Jensen-Toustrup.<lb/>
-               Grosserer H. Klitgaard.<lb/> Fabrikant Axel Meyer.<lb/> Fiskeriinsektör F. V.
-               Mortensen.<lb/> Prof. Jul. Schultz.<lb/> Kunsmaler Sigurd Wandel.<lb/> Kommisariets
-               juridiske Konsulent: Overretssagförer C. Gudmon.<lb/> Kommisariets Arkitekt: Henning
-               Hansen.<lb/> Sekreterare: Cand. Phil. Frk. E. Rostrup.<lb/>
+               <title>Danmark</title><lb/>
+               <list>
+                  <item>President: Departamentschef H. Wedel</item>
+                  <lb/>
+                  <item>Vicepresident:<list>
+                        <item>Departamentschef G. Busck-Nielsen</item>
+                        <lb/>
+                        <item>Ingeniör Alex. Foss.<lb/>
+                        </item>
+                     </list>
+                  </item>
+                  <item>Genrelakommisarie:<list>
+                        <item>Fred. Riise.</item>
+                        <lb/>
+                        <item>Arklitekt K Arne Petersen.</item>
+                        <lb/>
+                        <item>Direktör Harald Bing.</item>
+                        <lb/>
+                        <item>Kunstmaler H. Brasen.</item>
+                        <lb/>
+                        <item>Generalkonsul G. S. Bönnelyche.</item>
+                        <lb/>
+                        <item>Direktör B.Dessau.</item>
+                        <lb/>
+                        <item>Hof-juvelerer Alfr. Dragsted.</item>
+                        <lb/>
+                        <item>Borgemester, Etastraad Th.Dybdal.</item>
+                        <lb/>
+                        <item>Direktör Emil Hannover.</item>
+                        <lb/>
+                        <item>Landstingsmand Niels Jensen-Toustrup.</item>
+                        <lb/>
+                        <item>Grosserer H. Klitgaard.</item>
+                        <lb/>
+                        <item>Fabrikant Axel Meyer.</item>
+                        <lb/>
+                        <item>Fiskeriinsektör F. V.Mortensen.</item>
+                        <lb/>
+                        <item>Prof. Jul. Schultz.</item>
+                        <lb/>
+                        <item>Kunsmaler Sigurd Wandel.</item>
+                        <lb/>
+                     </list></item>
+
+                  <item>Kommisariets juridiske Konsulent: Overretssagförer C. Gudmon.</item>
+                  <lb/>
+                  <item>Kommisariets Arkitekt: Henning Hansen.</item>
+                  <lb/>
+                  <item>Sekreterare: Cand. Phil. Frk. E. Rostrup.</item>
+                  <lb/>
+               </list>
             </p>
          </div>
          <div xml:id="germanCommissariat">
-            <p><title>Tyskland</title> Generalkommissarie: H. Mathies, Kgl. Geheimer<lb/> Baurat,
-               Mitglied des Preussi-<lb/> schen Abgeordnetenhauses, Vor-<lb/> standsmitglied der
-               ständigen <lb/> Ausstellungskommission für die <lb/> deutsche Industrie <lb/>
-               Generalkommissariens ställföretrrädare: <lb/> Aug. Schmitz, Kejserl. tysk konsul i
-               Malmö. <lb/> Hans Alfred Richter, Chefarkitekt. <lb/> Peter Louis Ravené, Assistent
-               hos Generalkommissarien. <lb/> Kuns Kaiserl. Marine-Stabszahlmeister a. D.,
-               Sekreterare. <lb/> Heumann, Kgl. Betriebs-Werkmeister, ingeniör. </p>
+            <p><title>Tyskland</title>
+               <list>
+                  <item> Generalkommissarie: H. Mathies, Kgl. Geheimer<lb/> Baurat, Mitglied des
+                     Preussi-<lb/> schen Abgeordnetenhauses, Vor-<lb/> standsmitglied der ständigen
+                     <lb/> Ausstellungskommission für die <lb/> deutsche Industrie <lb/>
+                  </item>
+                  <item> Generalkommissariens ställföretrrädare:<list>
+                        <lb/>
+                        <item> Aug. Schmitz, Kejserl. tysk konsul i Malmö. </item>
+                        <lb/>
+                        <item>Hans Alfred Richter, Chefarkitekt. </item>
+                        <lb/>
+                        <item> Peter Louis Ravené, Assistent hos Generalkommissarien. </item>
+                        <lb/>
+                        <item> Kuns Kaiserl. Marine-Stabszahlmeister a. D., Sekreterare.</item>
+                        <lb/>
+                        <item>Heumann, Kgl. Betriebs-Werkmeister, ingeniör.</item>
+                     </list></item>
+               </list>
+            </p>
          </div>
       </body>
    </text>

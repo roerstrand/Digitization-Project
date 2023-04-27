@@ -18,36 +18,47 @@
             </availability>
          </publicationStmt>
          <sourceDesc>
-               <p>A page ina a book descriping the construction team at the baltic exhibition in 1914.</p>
+            <p>A page ina a book descriping the construction team at the baltic exhibition in
+               1914.</p>
          </sourceDesc>
       </fileDesc>
-      <profileDesc>
-      </profileDesc>
+      <profileDesc> </profileDesc>
    </teiHeader>
    <facsimile>
       <surface>
-      <figure>
-         <label>Image 5:1</label>
-         <figDesc>
-            Discription of commissariat groups of the Baltic fair.
-         </figDesc>
-         <graphic xml:id="image5.1" url="img/baltictower/5.1(pageIX).jpg"/>
-      </figure>
-   </surface>
+         <figure>
+            <label>Image 5:1</label>
+            <figDesc> Discription of commissariat groups of the Baltic fair. </figDesc>
+            <graphic xml:id="image5.1" url="img/baltictower/5.1(pageIX).jpg"/>
+         </figure>
+      </surface>
    </facsimile>
    <text>
       <body>
          <p>
             <title>Byggnadsutskottet</title><lb/>
-           Ordförande: Grosshandlaren S. Axelson.<lb/>
-           v. Ordförande: Majoren A. Nilsson.<lb/>
-           Ledamöter: Målaremästaren A. Antonsson.<lb/>
-           Arkitekten Ferdinand Boberg.<lb/>
-           Öfverintendenten C. O. Möller.<lb/>
-           Förtroendemannen Nils Persson.<lb/>
-           Arkitekten Axel Stenberg.<lb/>
-           Byggmästaren N. J. Stenmarck.<lb/>
-           Sekreterare: Rådmannen Knut Dahlberg.
+            <list>
+               <item>Ordförande: Grosshandlaren S. Axelson.</item>
+               <lb/>
+               <item>v. Ordförande: Majoren A. Nilsson.</item>
+               <lb/>
+               <item> Ledamöter: <list>
+                     <item>Målaremästaren A. Antonsson.</item>
+                     <lb/>
+                     <item>Arkitekten Ferdinand Boberg.</item>
+                     <lb/>
+                     <item>Öfverintendenten C. O. Möller.</item>
+                     <lb/>
+                     <item>Förtroendemannen Nils Persson.</item>
+                     <lb/>
+                     <item>Arkitekten Axel Stenberg.</item>
+                     <lb/>
+                     <item>Byggmästaren N. J. Stenmarck.</item>
+                     <lb/>
+                  </list>
+               </item>
+               <item>Sekreterare: Rådmannen Knut Dahlberg.</item>
+            </list>
          </p>
       </body>
    </text>
