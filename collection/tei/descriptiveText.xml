@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Danish exhibition building</title>
+            <author>Henning Hanssen</author>
+            <principal>My Lundborg, Robin Strandberg</principal>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Malmö stad</publisher>
+            <date>May 1914</date>
+            <availability>
+               <p>Out of copyright</p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>A page with the German, Russian, and Danish Building With text describing size of the Baltic exhibition </p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+      </profileDesc>
+   </teiHeader>
+   <facsimile>
+      <surface>
+         <figure>
+            <label>Image 1:3</label>
+            <figDesc>
+               A photograph of the German, Russian, and Danish building and descriptive text. 
+            </figDesc>
+            <graphic xml:id="image1.3" url="img/danishbuilding/1.3(page6).jpg"/>
+         </figure>
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <p>
+            <title>En torr men nyttig historia</title><lb/>
+            Baltiska utställningen är den största<lb/> utställningen som någonsin hållits i Norden.<lb/>
+            Den är mer än dubbelt så stor som den hit-<lb/>tills största, nämligen 1897 års Stock-<lb/>holmsutställning och omfattar 
+            51,6 hektar, <lb/> hvaraf 41 har äro land och 10,6 har sjö.<lb/> Viadukten är 420 meter lång, dess höjd <lb/>
+            öfver marken 6 meter. - Torget framför <lb/>hufvudentréen är 100 mtr bredt.- Kom-<lb/>missariets 
+            byggander ha en yta af 1,675<lb/> kv.-mtr; dess utvändiga trappor 480kv.-<lb/>mtr. - Malmö stads och Malmöhus 
+            läns<lb/> utställningar upptaga 2,700 kv.-mtr. - <lb/>Stora tornet är världens högsta trätorn och <lb/>
+            når 87 meter högt öfver marklinjen; dess <lb/> bas är 12 mtr i fyrkant. Till öfre galleriet <lb/>
+            66 mtr, till undre galleriet 63mtr.         
+         </p>
+      </body>
+   </text>
+</TEI>
