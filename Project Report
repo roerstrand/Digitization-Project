@@ -1,0 +1,70 @@
+Minimum 3500 maximum 4500 words (excluding references, table of contents, screen shots, tables, figures, images and other accompanying illustrative material). Specific technical documentation in the form of extensive lists, code or specs can be added as appendix (outside of the word count) or separate files. Use PDF as delivery format for the report.
+
+
+
+1. A thorough documentation of the methodological work you have done and the measures you have taken (approx. 1/3 of the report, remember that detailed technical documentation can be placed in an appendix exclusive from the word count).
+
+The project began as an assignment at the Digitising Cultural Heritage Materials (DCHM) course at the University of Borås. The assignment was specified in wide terms giving the students a lot of freedom regarding what they wanted to do. For all students the project required locating and identifying physical material of cultural heritage interest. Below follows the long chain of digitization for the project (M. Dahlström, personal communication, March 2023).
+
+<b>Planning and searching material</b>
+
+The first step of this project was hence to find institutions or other community resources that could potentially hold such material. Initial discussions were held between the two collaborating students (RS and ML) about potential sources for material. ML was in contact with Linköpings city library exploring and assessing whether suitable material could be found for the project work at the institution.
+
+RS was initially in contact personally with Malmö university where he'd identified old teaching material of cultural heritage interest not previously digitized. The institution was however unwilling to contribute to the project with the material as digitizing was not (at the time) something professionally carried out at the institution (as part of its duties). Reference was given to Lund university which is digitizing cultural heritage material at large scale. Contact was made with the digitizing faculty at the university. However, due to restrictions and cutting down on resources and staff they could not set aside any time or material for the project. Finally, after visiting the city library of Malmö city and after communicating with several staff members about the project, a staff member responsible over old material supported the project and presented plentiful of material to choose from.
+
+<b>Selecting, collecting and managing material</b>
+
+RS identified three options for the project; architectural stylew of regional churches in the past century, historical discourse in paper clips (eg. around political topics relevant today) and the jugend style of the Baltic exhibition. After discussing with ML the latter option was chosen. 
+
+<b>Document analysis and preparation</b>
+
+ML researched the material to make sure no digitization had been made before aswell as reaffirming the uniqueness of the material. ML also browsed which titles of most interest to the project in preparation for a physical visit to the library which included the digitization of the material.
+
+<b>Strategies</b>
+
+The titles selected were thourougly examined by RS and ML during the physical visit to the library hosting the cultural heritage material. Based on the background information and knowledge of the widespread public interest in architectural styles as decision was made to stragetgically focus on images displaying the jugend style. As a minor project the overall strategy was short term, first hand and proactive in a conservative manner towards the old books (M. Dahlström, personal communication, March 2023).
+
+<b>Tools (selecting, acquiring, developing)</b>
+
+Selected software tools used during the digitization project included visual studio code, gimp and github. Physical tools included the photo scanner Epson Perfection V600 Photo.
+
+<b>Text and image capture (scanning, digital camera)</b>
+
+24 bit color was chosen for the scanning. After assessing the scanned material 300 dpi was chosen for pages with images and 600 dpi was chosen for text and blueprint pages. A reference background of A4 was used during the original scan (not visible after photo editing).
+
+<b>Metadata</b>
+
+Metadata has been added in the TEI format, one for each building with its collection of images. The metadata includes reference to the original book with pagenumbering. 
+
+<b>Selecting delivery media and distribution forms/channels</b>
+
+<b>Publication and distribution</b>
+
+<b>Evaluation, documentation and reports</b>
+
+<b>Maintenance</b>
+
+
+
+
+
+
+2. A brief account of your division of labour (approx. 260 hours or a 10.5 credit assignment) for the various phases in the project (e.g. in the form of a table).
+
+Searching material - MY ??, RS 24 h
+
+
+3. An argumentation for the relevance of the project for the area of cultural heritage digitization.
+
+The project is highly relevant for the area of cultural heritage digitisation as it covers an extrordinary (and very large at the time) event which centered around an architectural and art style that ended its era a few years after the event - the jugend style. Staff at the city library of Malmö city aswell as at Malmö university has emphasized the eternal and constantly high interest of architecture and architectural styles within the region. The remains of the jugend style, formally ending in the 1920s, can still be seen today in older buildings around the city of Malmö and its surrounding urban areas. Sweden, spared from the destruction of two world wars, hold numerous architectural remains from eras such as the jugend one. As such, a project building on an already fervent interest in the area of architecture in the region is highly valuable to further attract tourism and build interest.
+
+With this background at hand, the collaborating students of the project chose to focus on images displaying the exhibition buildings (built and torn down solely for the event) manifesting the jugend style in Sweden for the very last time. Further material was gathered from the city archive of Malmö city. This material encompassed papers clips (reference material) to be used producing texts around the event, buildings and daily happenings. This served to further spur the interest around the architetural style for the browsing user.
+
+
+4. A critical analysis of/argumentation for your choices and the methods you have used in your work, and this argumentation must be grounded in literature, primarily course literature (especially the research based part of the literature).
+
+The motive for the digitization project was preservation to reduce wear and tear on the already fragile books one century old (M. Dahlström, personal communication, March 2023). The motives also encompassed making the material more accessible and to present the material in new ways by adding descriptive texts about what transpired in the day to day life during the event, focusing mainly on the exhibition buildings.
+
+
+
+5. Conclusions (such as lessons learned, recommendations for future work, scalability etc)
