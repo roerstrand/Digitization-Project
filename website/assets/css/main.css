@@ -4,6 +4,7 @@ body {
     line-height: 1.25;
     font-size: 1.3vw;
     width: 100%;
+    margin: 0
 }
 
 h1,
@@ -29,6 +30,11 @@ h3 {
     font-weight: bold;
     padding: 1vw;
 
+}
+
+h4  {
+    font-size: 1.5vw;
+    padding: 1vw;
 }
 
 #details {
@@ -59,7 +65,7 @@ footer {
 }
 
 
-/* End of template css */
+
 
 
 * {
@@ -71,12 +77,11 @@ footer {
 }
 
 img {
+    margin-top: 21px;
     vertical-align: middle;
-}
+    width:  100px;
+    height: 465px;
 
-body {
-    font-family: Verdana, sans-serif;
-    margin: 0
 }
 
 /* Container for gallery */
@@ -92,10 +97,9 @@ body {
 .next {
     cursor: pointer;
     position: absolute;
-    top: 10%;
+    top: 21px;
     width: auto;
     padding: 16px;
-    margin-top: -22px;
     color: white;
     font-weight: bold;
     font-size: 18px;
@@ -118,11 +122,12 @@ body {
 
 /* Number images */
 .number {
-    color: #f2f2f2;
-    font-size: 12px;
+    color: #000000;
+    font-size: 15px;
     padding: 8px 12px;
-    position: absolute;
     top: 0;
+    text-align: center;
+    position: relative;
 }
 
 /* Indicators */
@@ -134,11 +139,10 @@ body {
     cursor: pointer;
     height: 15px;
     width: 15px;
-    margin: 0 2px;
 }
 
 .active,
-.dot:hover {
+.indicator:hover {
     background-color: #717171;
 }
 
@@ -166,4 +170,16 @@ body {
     .text {
         font-size: 11px
     }
+}
+
+
+.overlay {
+    position: absolute; 
+    bottom: 0; 
+    top: 5;
+    color: #000000; 
+    width: 100%;
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
 }
