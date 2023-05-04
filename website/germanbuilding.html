@@ -4,6 +4,7 @@
 
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>
 
          German Exhibiton Building
@@ -11,6 +12,7 @@
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="assets/css/main.css">
+      <script type="text/javascript" src="assets/scripts/main.js"></script>
    </head>
 
    <body>
@@ -31,24 +33,24 @@
                   <div class="gallery-container">
 
                      <!-- Images with numbering -->
-                     <div class="gallery fade">
-                        <div class="number">1 / 4</div>
-                        <img src="/collection/img/germanbuilding/2.2(page4).jpg" style="width:100%" height="100%">
+                     <div class="gallery fade1" style="display: block;">
+                        <div class="number overlay">1 / 4</div>
+                        <img src="../collection/img/germanbuilding/2.2(page4).jpg" style="width:100%" height="100%">
                      </div>
 
-                     <div class="gallery fade">
-                        <div class="number">2 / 4</div>
-                        <img src="/collection/img/germanbuilding/4.8.jpg" style="width:100%" height="100%">
+                     <div class="gallery fade1">
+                        <div class="number overlay">2 / 4</div>
+                        <img src="../collection/img/germanbuilding/4.8.jpg" style="width:100%" height="100%">
                      </div>
 
-                     <div class="gallery fade">
-                        <div class="number">3 / 4</div>
-                        <img src="/collection/img/germanbuilding/4.9.jpg" style="width:100%" height="100%">
+                     <div class="gallery fade1">
+                        <div class="number overlay">3 / 4</div>
+                        <img src="../collection/img/germanbuilding/4.9.jpg" style="width:100%" height="100%">
                      </div>
 
-                     <div class="gallery fade">
-                        <div class="number">4 / 4</div>
-                        <img src="/collection/img/germanbuilding/5.5(page158-159).jpg" style="width:100%" height="100%">
+                     <div class="gallery fade1">
+                        <div class="number overlay">4 / 4</div>
+                        <img src="../collection/img/germanbuilding/5.5(page158-159).jpg" style="width:100%" height="100%">
                      </div>
 
                      <!-- Next and previous buttons -->
@@ -78,9 +80,9 @@
 
                      <break>
 
-                        <p>The jugend architectural symbolic features can be seen
-                           in...
-                        </p>
+                     <p>The jugend architectural symbolic features can be seen
+                        in...
+                     </p>
 
 
                   </article>
@@ -91,9 +93,9 @@
             <div class="col-sm">
                <article id="details">
                   <p><strong>Authors & Digitization by:</strong><br>Robin Strandberg & My Lundborg<br>
-                     <h4>XML & XSLT Data</h4>
+                     <h4>XML Data with XSLT</h4>
                      <p>The following content is generated from an XML TEI file:</p>
-                     <iframe src="/collection/tei/germanbuilding.xml" xslt="/website/assets/xsl/germanbuilding.xsl"></iframe></p>
+                     <iframe src="../collection/tei/germanbuilding.xml" xslt="assets/xsl/germanbuilding.xsl"></iframe></p>
                </article>
             </div>
          </div>
@@ -103,14 +105,13 @@
             <div class="col-sm copyright">
                <div><a href="https://creativecommons.org/licenses/by/4.0/legalcode"><img src="assets/img/logos/cc.svg"
                         class="copyright_logo" alt="Creative Commons License"><img src="assets/img/logos/by.svg"
-                        class="copyright_logo" alt="Attribution 4.0 International"></a></div>
+                        class="copyright_logo" alt="Attribution 4.0 International"></a>
+               </div>
                <div>
                   2023 Robin Strandberg & My Lundborg
                </div>
             </div>
          </div>
-
-         <!-- Delete this script? -->
 
       </footer>
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
