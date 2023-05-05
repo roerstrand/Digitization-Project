@@ -147,7 +147,7 @@ img {
 }
 
 /* Fading */
-.fade {
+.fade1 {
     animation-duration: 1.5s;
     animation-name: fade;
 }
