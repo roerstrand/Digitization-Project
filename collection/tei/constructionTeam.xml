@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Construction Commitee Discription</title>
+            <author>Not specified</author>
+            <principal>My Lundborg, Robin Strandberg</principal>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>Förlags-aktiebolagets i Malmö boktryckeri</publisher>
+            <date>May 1914</date>
+            <availability>
+               <p>Out of copyright according to Swedish law(1960:297) 4 Kap 44§</p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <p>A page out og"Officiel genralkatalog öfver industriafdelningen vid baltiska utställningen i Malmö 1914" detailing the construction commitee 
+            of the Baltic Exhibition in 1914.</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc> </profileDesc>
+   </teiHeader>
+   <facsimile>
+      <surface>
+         <figure>
+            <label>Image 5:1</label>
+            <figDesc> Discription of commissariat groups of the Baltic exhibition. </figDesc>
+            <graphic xml:id="image5.1" url="img/baltictower/5.1(pageIX).jpg"/>
+         </figure>
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <p>
+            <title>Byggnadsutskottet</title><lb/>
+            <list>
+               <item>Ordförande: Grosshandlaren S. Axelson.</item>
+               <lb/>
+               <item>v. Ordförande: Majoren A. Nilsson.</item>
+               <lb/>
+               <item> Ledamöter: <list>
+                     <item>Målaremästaren A. Antonsson.</item>
+                     <lb/>
+                     <item>Arkitekten Ferdinand Boberg.</item>
+                     <lb/>
+                     <item>Öfverintendenten C. O. Möller.</item>
+                     <lb/>
+                     <item>Förtroendemannen Nils Persson.</item>
+                     <lb/>
+                     <item>Arkitekten Axel Stenberg.</item>
+                     <lb/>
+                     <item>Byggmästaren N. J. Stenmarck.</item>
+                     <lb/>
+                  </list>
+               </item>
+               <item>Sekreterare: Rådmannen Knut Dahlberg.</item>
+            </list>
+         </p>
+      </body>
+   </text>
+</TEI>
