@@ -26,7 +26,7 @@
       </profileDesc>
    </teiHeader>
    <facsimile>
-      <surface>
+      <surface xml:id="page6">
          <figure>
             <label>Image 1:3</label>
             <figDesc>

@@ -12,7 +12,7 @@
                 <title>
                     <!-- add the title from the metadata. This is what will be shown
                     on your browsers tab-->
-                    Baltic Tower
+                    Danish Exhibition Building
                 </title>
                 <!-- load bootstrap css (requires internet!) so you can use their pre-defined css classes to style your html -->
                 <link rel="stylesheet"
@@ -33,35 +33,36 @@
                     <a href="danishbuilding.html">The Danish exhibition building</a> |
                     <a href="germanbuilding.html">The German exhibition building</a> |
                     <a href="baltictower.html">The Baltic Tower</a> |
-                    </nav>
+                </nav>
                 <main id="manuscript">
                     <!-- bootstrap "container" class makes the columns look pretty -->
                     <div class="container">
-                    <!-- define a row layout with bootstrap's css classes (two columns) -->
+                        <!-- define a row layout with bootstrap's css classes (three columns) -->
                         <div class="row">
-                            <!-- first column: load the image based on the IIIF link in the graphic above -->
-                            <div class="col-sm">
-                               <article id="scan">
-                                   <h3>Image</h3>
-                                <img width="400">
-                                    <xsl:attribute name="src">
-                                        <xsl:value-of select="//tei:surface[@xml:id='postit01']//tei:graphic[@xml:id='postit01_full']/@url"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="title">
-                                        <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='postit01']//tei:label"/>
-                                    </xsl:attribute>
-                                    <xsl:attribute name="alt">
-                                        <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='postit01']//tei:figDesc"/>
-                                    </xsl:attribute>
-                                </img>
-                               </article>
+                            <!-- first column: load the thumbnail image based on the IIIF link in the graphic above -->
+                            <div class="col-">
+                                <article id="thumbnail">
+                                    <img class="thumbnail">
+                                        <xsl:attribute name="src">
+                                            <xsl:value-of select="//tei:surface[@xml:id='pageix']//tei:graphic[@xml:id='image5.1']/@url"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="title">
+                                            <xsl:value-of select="//tei:surface[@xml:id='pageix']/tei:figure/tei:label"/>
+                                        </xsl:attribute>
+                                        <xsl:attribute name="alt">
+                                            <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='pageix']//tei:figDesc"/>
+                                        </xsl:attribute>
+                                    </img>
+                                </article>
                             </div>
                             <!-- second column: apply matching templates for anything nested underneath the tei:text element -->
-                            <div class="col-sm">
-                                <article id="transcription">
-                                    <h3>Transcription</h3>
+                            <div class="col-md">
+                                <article id="transcript">
                                     <xsl:apply-templates select="//tei:TEI//tei:text"/>
                                 </article>
+                            </div>
+                            <!-- third column: empty sidebar -->
+                            <div class="col-">
                             </div>
                         </div>
                     </div>
@@ -71,11 +72,11 @@
                   <div class="col-sm copyright">
                       <div>
                         <a href="https://creativecommons.org/licenses/by/4.0/legalcode">
-                          <img src="assets/img/logos/cc.svg" class="copyright_logo" alt="Creative Commons License"/><img src="assets/img/logos/by.svg" class="copyright_logo" alt="Attribution 4.0 International"/>
+                            <img src="assets/img/logos/cc.svg" class="copyright_logo" alt="Creative Commons License"/><img src="assets/img/logos/by.svg" class="copyright_logo" alt="Attribution 4.0 International"/>
                         </a>
                       </div>
                       <div>
-                         2022 Wout Dillen.
+                         Robin Strandberg, My Lundborg 2023
                       </div>
                     </div>
                 </div>
@@ -93,14 +94,6 @@
     html-->
     <xsl:template match="tei:teiHeader"/>
 
-    <!-- turn tei linebreaks (lb) into html linebreaks (br) -->
-    <xsl:template match="tei:lb">
-        <br/>
-    </xsl:template>
-    <!-- not: in the previous template there is no <xsl:apply-templates/>. This is because there is nothing to
-    process underneath (nested in) tei lb's. Therefore the XSLT processor does not need to look for templates to
-    apply to the nodes nested within it.-->
-
     <!-- we turn the tei head element (headline) into an html h1 element-->
     <xsl:template match="tei:head">
         <h2>
@@ -111,23 +104,13 @@
     <!-- transform tei paragraphs into html paragraphs -->
     <xsl:template match="tei:p">
         <p>
-            <!-- apply matching templates for anything that was nested in tei:p -->
-            <xsl:apply-templates/>
+
+               <xsl:apply-templates/>
         </p>
     </xsl:template>
 
-    <!-- transform tei del into html del -->
-    <xsl:template match="tei:del">
-        <del>
-            <xsl:apply-templates/>
-        </del>
-    </xsl:template>
-
-    <!-- transform tei add into html sup -->
-    <xsl:template match="tei:add">
-        <sup>
-            <xsl:apply-templates/>
-        </sup>
+    <xsl:template match="tei:lb">
+        <br/>
     </xsl:template>
 
     <!-- transform tei hi (highlighting) with the attribute @rend="u" into html u elements -->
@@ -136,6 +119,21 @@
         <u>
             <xsl:apply-templates/>
         </u>
+    </xsl:template>
+    <xsl:template match="tei:list">
+        <ul>
+            <xsl:apply-templates/>
+        </ul>
+    </xsl:template>
+    <xsl:template match="tei:item">
+        <li>
+            <xsl:apply-templates/>
+        </li>
+    </xsl:template>
+    <xsl:template match="tei:title">
+        <b>
+            <xsl:apply-templates/>
+        </b>
     </xsl:template>
 
 

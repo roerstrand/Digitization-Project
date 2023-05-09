@@ -33,7 +33,7 @@
                     <a href="danishbuilding.html">The Danish exhibition building</a> |
                     <a href="germanbuilding.html">The German exhibition building</a> |
                     <a href="baltictower.html">The Baltic Tower</a> |
-                    </nav>
+                </nav>
                 <main id="manuscript">
                     <!-- bootstrap "container" class makes the columns look pretty -->
                     <div class="container">
@@ -42,15 +42,15 @@
                             <!-- first column: load the image based on the IIIF link in the graphic above -->
                             <div class="col-sm">
                                <article id="thumbnail">
-                                <img>
+                                   <img class="thumbnail">
                                     <xsl:attribute name="src">
-                                        <xsl:value-of select="//tei:facsimile/tei:surface//tei:graphic[@xml:id='postit01_thumb']/@url"/>
+                                        <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='page6']//tei:graphic[@xml:id='image1.3']/@url"/>
                                     </xsl:attribute>
-                                    <xsl:attribute name="title">
-                                        <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='postit01']//tei:label"/>
-                                    </xsl:attribute>
+                                       <xsl:attribute name="title">
+                                           <xsl:value-of select="//tei:surface[@xml:id='page6']/tei:figure/tei:label"/>
+                                       </xsl:attribute>
                                     <xsl:attribute name="alt">
-                                        <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='postit01']//tei:figDesc"/>
+                                        <xsl:value-of select="//tei:facsimile/tei:surface[@xml:id='page6']//tei:figDesc"/>
                                     </xsl:attribute>
                                 </img>
                                </article>
@@ -62,6 +62,9 @@
                                     <strong>Description:</strong>
                                     <xsl:apply-templates select="//tei:TEI//tei:figDesc"/>
                                   </p>
+                                </article>
+                                <article>
+                                    <xsl:apply-templates select="//tei:TEI//tei:text"/>
                                 </article>
                             </div>
                         </div>
@@ -90,7 +93,7 @@
                   			</a>
                   		</div>
                   		<div class="copyright_text">
-                         2022 Wout Dillen.
+                         Robin Strandberg, My Lundborg 2023
                       </div>
                     </div>
                 </div>
@@ -101,4 +104,14 @@
             </body>
         </html>
     </xsl:template>
+    <xsl:template match="tei:lb">
+        <br/>
+    </xsl:template>
+    <xsl:template match="tei:title">
+        <b>
+            <xsl:apply-templates/>
+        </b>
+    </xsl:template>
+    
+    
 </xsl:stylesheet>

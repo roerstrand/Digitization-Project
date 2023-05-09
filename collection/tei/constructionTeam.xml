@@ -25,7 +25,7 @@
       <profileDesc> </profileDesc>
    </teiHeader>
    <facsimile>
-      <surface>
+      <surface xml:id="pageix">
          <figure>
             <label>Image 5:1</label>
             <figDesc> Discription of commissariat groups of the Baltic exhibition. </figDesc>

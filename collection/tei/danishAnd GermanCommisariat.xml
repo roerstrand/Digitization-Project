@@ -18,17 +18,18 @@
             </availability>
          </publicationStmt>
          <sourceDesc>
-            <p>A page out of "Officiel genralkatalog öfver industriafdelningen vid baltiska utställningen i Malmö 1914" detailing the Danish and German commissariat.</p>
+            <p>A page out of "Officiel genralkatalog öfver industriafdelningen vid baltiska
+               utställningen i Malmö 1914" detailing the Danish and German commissariat.</p>
          </sourceDesc>
       </fileDesc>
       <profileDesc> </profileDesc>
    </teiHeader>
    <facsimile>
-      <surface>
+      <surface xml:id="pagexii">
          <figure>
             <label>Image 5:2</label>
             <figDesc> Discription of Danish commissariat. </figDesc>
-            <graphic xml:id="image5.2" url="img/danishbuilding/5.2(page134-135).jpg"/>
+            <graphic xml:id="image5.2" url="../img/danishbuilding/5.2(page134-135).jpg"/>
          </figure>
       </surface>
    </facsimile>
@@ -85,7 +86,7 @@
                         <item>Kunsmaler Sigurd Wandel.</item>
                         <lb/>
                      </list></item>
-
+                  <lb/>
                   <item>Kommisariets juridiske Konsulent: Overretssagförer C. Gudmon.</item>
                   <lb/>
                   <item>Kommisariets Arkitekt: Henning Hansen.</item>
