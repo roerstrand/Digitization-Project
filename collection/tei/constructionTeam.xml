@@ -29,14 +29,15 @@
          <figure>
             <label>Image 5:1</label>
             <figDesc> Discription of commissariat groups of the Baltic exhibition. </figDesc>
-            <graphic xml:id="image5.1" url="img/baltictower/5.1(pageIX).jpg"/>
+            <graphic xml:id="image5.1" url="img/other/commissariats/5.1(pageIX).jpg"/>
          </figure>
       </surface>
    </facsimile>
    <text>
       <body>
          <p>
-            <title>Byggnadsutskottet</title><lb/>
+            <title>Byggnadsutskottet</title>
+              <lb/>
             <list>
                <item>Ordförande: Grosshandlaren S. Axelson.</item>
                <lb/>
