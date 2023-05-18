@@ -35,22 +35,22 @@
                   <!-- Images with numbering -->
                   <div class="gallery fade1" style="display: block;">
                      <div class="number overlay">1 / 4</div>
-                     <img src="../collection/img/germanbuilding/2.2(page4).jpg" style="width:100%" height="100%">
+                     <img src="../collection/img/germanbuilding/2.2(page4).jpg" style="width:100%" style="height:100%">
                   </div>
 
                   <div class="gallery fade1">
                      <div class="number overlay">2 / 4</div>
-                     <img src="../collection/img/germanbuilding/4.8.jpg" style="width:100%" height="100%">
+                     <img src="../collection/img/germanbuilding/4.8.jpg" style="width:100%" style="height:100%">
                   </div>
 
                   <div class="gallery fade1">
                      <div class="number overlay">3 / 4</div>
-                     <img src="../collection/img/germanbuilding/4.9.jpg" style="width:100%" height="100%">
+                     <img src="../collection/img/germanbuilding/4.9.jpg" style="width:100%" style="height:100%">
                   </div>
 
                   <div class="gallery fade1">
                      <div class="number overlay">4 / 4</div>
-                     <img src="../collection/img/germanbuilding/5.5(page158-159).jpg" style="width:100%" height="100%">
+                     <img src="../collection/img/germanbuilding/5.5(page158-159).jpg" style="width:100%" style="height:100%">
                   </div>
 
                   <!-- Next and previous buttons -->
@@ -107,30 +107,30 @@
             </div>
          </div>
       </div>
-      <div class="row">
-         <div class="col-sm">
-            <article id="details">
-               <p><strong>Authors & Digitization by:</strong><br>Robin Strandberg & My Lundborg<br>
-               <h4>XML Data with XSLT</h4>
-               <p>The following content is generated from an XML TEI file:</p>
-               <iframe src="../collection/tei/germanbuilding.xml" xslt="assets/xsl/germanbuilding.xsl"></iframe></p>
-            </article>
-         </div>
-      </div>
+
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="12">
+
+               <button onclick="displayIframe3()">Metadata for the German exhibition building</button>
+               <div id="iframeDisplay"></div>
+
+            </div>
+         </div 
+      </div   
    </main>
    <footer>
       <div class="row" id="footer">
          <div class="col-sm copyright">
-            <div><a href="https://creativecommons.org/licenses/by/4.0/legalcode"><img src="assets/img/logos/cc.svg"
-                     class="copyright_logo" alt="Creative Commons License"><img src="assets/img/logos/by.svg"
-                     class="copyright_logo" alt="Attribution 4.0 International"></a>
+            <div class="copyright_logos"><a href="https://creativecommons.org/licenses/by/4.0/legalcode"><img
+                     src="assets/img/logos/cc.svg" class="copyright_logo" alt="Creative Commons License"><img
+                     src="assets/img/logos/by.svg" class="copyright_logo" alt="Attribution 4.0 International"></a>
             </div>
-            <div>
-               2023 Robin Strandberg & My Lundborg
+            <div class="copyright_text">
+               2023 Robin Strandberg & My Lundborg.
             </div>
          </div>
       </div>
-
    </footer>
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

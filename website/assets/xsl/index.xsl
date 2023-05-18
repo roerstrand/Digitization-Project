@@ -90,7 +90,7 @@
                   			</a>
                   		</div>
                   		<div class="copyright_text">
-                         2022 Wout Dillen.
+                         2023 Robin Strandberg &amp; My Lundborg.
                       </div>
                     </div>
                 </div>
