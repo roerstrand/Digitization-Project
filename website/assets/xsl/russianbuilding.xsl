@@ -12,7 +12,7 @@
                 <title>
                     <!-- add the title from the metadata. This is what will be shown
                     on your browsers tab-->
-                    Danish Exhibition Building
+                    Russian Exhibition Building
                 </title>
                 <!-- load bootstrap css (requires internet!) so you can use their pre-defined css classes to style your html -->
                 <link rel="stylesheet"
@@ -20,7 +20,7 @@
                     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
                     crossorigin="anonymous"/>
                 <!-- load the stylesheets in the assets/css folder, where you can modify the styling of your website -->
-                <link rel="stylesheet" href="assets/css/main.css"/>
+                <link rel="stylesheet" href="../assets/css/main.css"/>
                 <link rel="stylesheet" href="assets/css/desktop.css"/>
             </head>
             <body>

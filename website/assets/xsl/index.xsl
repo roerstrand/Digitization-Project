@@ -93,7 +93,7 @@
                   			</a>
                   		</div>
                   		<div class="copyright_text">
-
+                         Robin Strandberg, My Lundborg 2023
                       </div>
                     </div>
                 </div>
