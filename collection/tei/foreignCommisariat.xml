@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml"
+	schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Foreign Commissariats</title>
+            <author>Not specified</author>
+            <sponsor>Malmö Baltic Exhibition 1914</sponsor>
+            <principal>My Lundborg, Robin Strandberg</principal>
+         </titleStmt>
+         <extent>6 kB</extent>
+         <publicationStmt>
+            <publisher>Förlags-aktiebolaget i Malmö boktryckeri</publisher>
+            <authority>Malmö city library</authority>
+            <date when="1914-05">May 1914</date>
+            <availability>
+               <p>Out of copyright according to Swedish law(1960:297) 4 Kap 44§</p>
+            </availability>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>Pgae 134-135 of "Officiel genralkatalog öfver industriafdelningen vid baltiska
+               utställningen i Malmö 1914" </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Text encoded to showcase the responsible persons of the buildings digitized for a
+               digitization project in th DCHM course at Borås university</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="sv-SE"> Contemporary Swedish</language>
+            <language ident="da-DK">Danish</language>
+            <language ident="de-DE">German</language>
+         </langUsage>
+         <abstract xml:lang="en">
+            <p>Lists of the positions and participants of foreign commissariats at the Baltic
+               exhibition </p>
+         </abstract>
+      </profileDesc>
+   </teiHeader>
+   <facsimile>
+      <surface xml:id="pagexii">
+         <figure>
+            <label>Image 5:2</label>
+            <figDesc> Discription of Danish commissariat. </figDesc>
+            <graphic xml:id="image5.2" url="../img/danishbuilding/5.2(page134-135).jpg"/>
+         </figure>
+      </surface>
+   </facsimile>
+   <text>
+      <body>
+         <div xml:id="commissariatHeading">
+            <p>
+               <title>De främmande i utställingen deltagande ländernas kommissariat </title>
+            </p>
+         </div>
+
+         <div xml:id="danishCommissariat">
+            <p>
+               <title>Danmark</title><lb/>
+               <list>
+                  <item>President: Departamentschef H. Wedel</item>
+                  <lb/>
+                  <item>Vicepresident:<list>
+                        <item>Departamentschef G. Busck-Nielsen</item>
+                        <lb/>
+                        <item>Ingeniör Alex. Foss.<lb/>
+                        </item>
+                     </list>
+                  </item>
+                  <item>Genrelakommisarie:<list>
+                        <item>Fred. Riise.</item>
+                        <lb/>
+                        <item>Arkitekt K Arne Petersen.</item>
+                        <lb/>
+                        <item>Direktör Harald Bing.</item>
+                        <lb/>
+                        <item>Kunstmaler H. Brasen.</item>
+                        <lb/>
+                        <item>Generalkonsul G. S. Bönnelyche.</item>
+                        <lb/>
+                        <item>Direktör B.Dessau.</item>
+                        <lb/>
+                        <item>Hof-juvelerer Alfr. Dragsted.</item>
+                        <lb/>
+                        <item>Borgemester, Etastraad Th.Dybdal.</item>
+                        <lb/>
+                        <item>Direktör Emil Hannover.</item>
+                        <lb/>
+                        <item>Landstingsmand Niels Jensen-Toustrup.</item>
+                        <lb/>
+                        <item>Grosserer H. Klitgaard.</item>
+                        <lb/>
+                        <item>Fabrikant Axel Meyer.</item>
+                        <lb/>
+                        <item>Fiskeriinsektör F. V.Mortensen.</item>
+                        <lb/>
+                        <item>Prof. Jul. Schultz.</item>
+                        <lb/>
+                        <item>Kunsmaler Sigurd Wandel.</item>
+                        <lb/>
+                     </list></item>
+                  <lb/>
+                  <item>Kommisariets juridiske Konsulent: Overretssagförer C. Gudmon.</item>
+                  <lb/>
+                  <item>Kommisariets Arkitekt: Henning Hansen.</item>
+                  <lb/>
+                  <item>Sekreterare: Cand. Phil. Frk. E. Rostrup.</item>
+                  <lb/>
+               </list>
+            </p>
+         </div>
+         <div xml:id="russianCommissariat">
+            <p><title>Ryssland</title>
+               <list>
+                  <item>President: S. Ex. Stallmeister des Allerhöchsten Hofes,<lb/> Mitglied des
+                     Reichsrats W. J. Denissoff.</item>
+                  <lb/>
+                  <item>vice President: Direktören Gustaf Nobel.</item>
+                  <lb/>
+                  <item>Kommissarie: Herr Johann Becker</item>
+               </list>
+            </p>
+         </div>
+         <div xml:id="germanCommissariat">
+            <p><title>Tyskland</title>
+               <list>
+                  <item> Generalkommissarie: H. Mathies, Kgl. Geheimer<lb/> Baurat, Mitglied des
+                     Preussi-<lb/> schen Abgeordnetenhauses, Vor-<lb/> standsmitglied der ständigen
+                     <lb/> Ausstellungskommission für die <lb/> deutsche Industrie <lb/>
+                  </item>
+                  <item> Generalkommissariens ställföretrrädare:<list>
+                        <lb/>
+                        <item> Aug. Schmitz, Kejserl. tysk konsul i Malmö. </item>
+                        <lb/>
+                        <item>Hans Alfred Richter, Chefarkitekt. </item>
+                        <lb/>
+                        <item> Peter Louis Ravené, Assistent hos Generalkommissarien. </item>
+                        <lb/>
+                        <item> Kuns Kaiserl. Marine-Stabszahlmeister a. D., Sekreterare.</item>
+                        <lb/>
+                        <item>Heumann, Kgl. Betriebs-Werkmeister, ingeniör.</item>
+                     </list></item>
+               </list>
+            </p>
+         </div>
+      </body>
+   </text>
+</TEI>

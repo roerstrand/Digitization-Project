@@ -8,35 +8,53 @@
          <titleStmt>
             <title>Construction Commitee Discription</title>
             <author>Not specified</author>
+            <sponsor>Malmö Baltic Exhibition 1914</sponsor>
             <principal>My Lundborg, Robin Strandberg</principal>
          </titleStmt>
+         <extent>3 kB</extent>
          <publicationStmt>
             <publisher>Förlags-aktiebolagets i Malmö boktryckeri</publisher>
-            <date>May 1914</date>
+            <authority>Malmö city library</authority>
+            <date when="1914-05">May 1914</date>
             <availability>
                <p>Out of copyright according to Swedish law(1960:297) 4 Kap 44§</p>
             </availability>
          </publicationStmt>
          <sourceDesc>
-            <p>A page out og"Officiel genralkatalog öfver industriafdelningen vid baltiska utställningen i Malmö 1914" detailing the construction commitee 
-            of the Baltic Exhibition in 1914.</p>
+            <bibl>Pgae 134-135 of "Officiel genralkatalog öfver industriafdelningen vid baltiska
+               utställningen i Malmö 1914" </bibl>
          </sourceDesc>
       </fileDesc>
-      <profileDesc> </profileDesc>
+      <encodingDesc>
+         <projectDesc>
+            <p>Text encoded to showcase the responsible persons of the buildings digitized for a
+               digitization project in th DCHM course at Borås university</p>
+         </projectDesc>
+      </encodingDesc>
+      <profileDesc>
+         <langUsage>
+            <language ident="sv-SE">Contemporary Swedish</language>
+         </langUsage>
+         <abstract xml:lang="en">
+            <p>List of the construction team resposible for the buildings of the Baltic exhibition,
+               including the Great Baltic Tower. </p>
+         </abstract>
+      </profileDesc>
    </teiHeader>
    <facsimile>
-      <surface>
+      <surface xml:id="pageix">
          <figure>
             <label>Image 5:1</label>
             <figDesc> Discription of commissariat groups of the Baltic exhibition. </figDesc>
-            <graphic xml:id="image5.1" url="img/baltictower/5.1(pageIX).jpg"/>
+            <graphic xml:id="image5.1" url="img/other/commissariats/5.1(pageIX).jpg"/>
          </figure>
       </surface>
    </facsimile>
    <text>
       <body>
          <p>
-            <title>Byggnadsutskottet</title><lb/>
+            <title>Byggnadsutskottet</title>
+            <lb/>
             <list>
                <item>Ordförande: Grosshandlaren S. Axelson.</item>
                <lb/>
