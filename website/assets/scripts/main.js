@@ -24,3 +24,17 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+function displayIframe1() {
+    document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"../collection/metadata_images/metadata_baltictower.xml\" height=\"200\" width=\"300\"> xslt=\"../website/assets/xsl/baltictower.xsl\"></iframe>";
+}
+
+function displayIframe2() {
+    document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"../collection/metadata_images/metadata_danishexhibitionbuilding.xml\" height=\"200\" width=\"300\"> xslt=\"../website/assets/xsl/danishbuilding.xsl\"></iframe>";
+
+}
+
+function displayIframe3() {
+    document.getElementById("iframeDisplay").innerHTML = "<iframe src=\"../collection/metadata_images/metadata_germanexhibitionbuilding.xml\" height=\"200\" width=\"300\"> xslt=\"../website/assets/xsl/germanbuilding.xsl\"></iframe>";
+
+}
