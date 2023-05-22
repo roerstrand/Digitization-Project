@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <gimp-metadata>
-
+	<iptc-tag>
+		<tag-name>Iptc.Application2.DateCreated</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>2023-05-20</tag-value>
+	</iptc-tag>
 	<iptc-tag>
 		<tag-name>Iptc.Application2.Urgency</tag-name>
 		<tag-mode>combo</tag-mode>
@@ -88,6 +92,11 @@
 		<tag-value>2</tag-value>
 	</xmp-tag>
 	<xmp-tag>
+		<tag-name>Xmp.photoshop.DateCreated</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>2023-05-20</tag-value>
+	</xmp-tag>
+	<xmp-tag>
 		<tag-name>Xmp.photoshop.CaptionWriter</tag-name>
 		<tag-mode>single</tag-mode>
 		<tag-value>Epson Perfection V600 Photo Scanner</tag-value>
@@ -137,45 +146,16 @@
 			</list-element>
 		</tag-list-value>
 	</xmp-tag>
+
 	<xmp-tag>
 		<tag-name>Xmp.iptcExt.DigitalSourceType</tag-name>
 		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
+		<tag-value>4</tag-value>
 	</xmp-tag>
 	<xmp-tag>
 		<tag-name>Xmp.plus.MinorModelAgeDisclosure</tag-name>
 		<tag-mode>combo</tag-mode>
-		<tag-value>11</tag-value>
-	</xmp-tag>
-	<xmp-tag>
-		<tag-name>Xmp.plus.ModelReleaseStatus</tag-name>
-		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
-	</xmp-tag>
-	<xmp-tag>
-		<tag-name>Xmp.plus.PropertyReleaseStatus</tag-name>
-		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
-	</xmp-tag>
-	<xmp-tag>
-		<tag-name>Exif.GPSInfo.GPSLongitudeRef</tag-name>
-		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
-	</xmp-tag>
-	<xmp-tag>
-		<tag-name>Exif.GPSInfo.GPSLatitudeRef</tag-name>
-		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
-	</xmp-tag>
-	<xmp-tag>
-		<tag-name>Exif.GPSInfo.GPSAltitudeRef</tag-name>
-		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
-	</xmp-tag>
-	<xmp-tag>
-		<tag-name>Xmp.DICOM.PatientSex</tag-name>
-		<tag-mode>combo</tag-mode>
-		<tag-value>0</tag-value>
+		<tag-value>15</tag-value>
 	</xmp-tag>
 	<xmp-tag>
 		<tag-name>Xmp.iptc.CiAdrCity</tag-name>

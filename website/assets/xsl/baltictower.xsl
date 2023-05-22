@@ -20,8 +20,7 @@
                     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
                     crossorigin="anonymous"/>
                 <!-- load the stylesheets in the assets/css folder, where you can modify the styling of your website -->
-                <link rel="stylesheet" href="assets/css/main.css"/>
-                <link rel="stylesheet" href="assets/css/desktop.css"/>
+                <link rel="stylesheet" href="assets/css/main.css"/>   
             </head>
             <body>
                 <header>
