@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='../website/assets/xsl/metadata.xsl'?>
+<gimp-metadata>
+	<iptc-tag>
+		<tag-name>Iptc.Application2.DateCreated</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>2023-05-20</tag-value>
+	</iptc-tag>
+	<iptc-tag>	
+		<tag-name>Iptc.Application2.SubLocation</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Pildammsparken</tag-value>
+	</iptc-tag>
+	<iptc-tag>
+		<tag-name>Iptc.Application2.Byline</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>My Lundborg, Robin Strandberg</tag-value>
+	</iptc-tag>
+	<iptc-tag>
+		<tag-name>Iptc.Application2.Keywords</tag-name>
+		<tag-mode>multi</tag-mode>
+		<tag-value>Russian exhibition building, Baltic Exhibition, Malmo, 1914.</tag-value>
+	</iptc-tag>
+	<iptc-tag>
+		<tag-name>Iptc.Application2.Copyright</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Lag (1960:729) §§7, 44.</tag-value>
+	</iptc-tag>
+	<iptc-tag>
+		<tag-name>Iptc.Application2.Writer</tag-name>
+		<tag-mode>multi</tag-mode>
+		<tag-value>Epson Perfection V600 Photo Scanner</tag-value>
+	</iptc-tag>
+	<xmp-tag>
+		<tag-name>Xmp.dc.creator</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>My Lundborg, Robin Strandberg</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.dc.subject</tag-name>
+		<tag-mode>multi</tag-mode>
+		<tag-value>Russian exhibition building, Baltic Exhibition, Malmo, 1914.</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.dc.rights</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Lag (1960:729) §§7, 44.</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.photoshop.CaptionWriter</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Epson Perfection V600 Photo Scanner</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.xmp.Rating</tag-name>
+		<tag-mode>combo</tag-mode>
+		<tag-value>0</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.xmpRights.Marked</tag-name>
+		<tag-mode>combo</tag-mode>
+		<tag-value>2</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.photoshop.DateCreated</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>2023-05-20</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.photoshop.CaptionWriter</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Epson Perfection V600 Photo Scanner</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.photoshop.Urgency</tag-name>
+		<tag-mode>combo</tag-mode>
+		<tag-value>3</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.Sublocation</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Pildammsparken</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.City</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Malmo</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.ProvinceState</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Skane</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.CountryName</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Sweden</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.CountryCode</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>SV</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.WorldRegion</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Europe</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.ArtworkOrObject</tag-name>
+		<tag-mode>list</tag-mode>
+		<tag-list-value>
+			<list-element>
+				<element>Russian exhibition building</element>
+				<element>M.M Periatkowitsch och Ferdinand Boberg</element>
+			</list-element>
+		</tag-list-value>
+	</xmp-tag>
+
+	<xmp-tag>
+		<tag-name>Xmp.iptcExt.DigitalSourceType</tag-name>
+		<tag-mode>combo</tag-mode>
+		<tag-value>4</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.plus.MinorModelAgeDisclosure</tag-name>
+		<tag-mode>combo</tag-mode>
+		<tag-value>15</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptc.CiAdrCity</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Malmo</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptc.CiAdrRegion</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Skane</tag-value>
+	</xmp-tag>
+	<xmp-tag>
+		<tag-name>Xmp.iptc.CiAdrCtry</tag-name>
+		<tag-mode>single</tag-mode>
+		<tag-value>Sweden</tag-value>
+	</xmp-tag>
+</gimp-metadata>
