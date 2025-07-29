@@ -39,3 +39,12 @@ function showSlides(n) {
         dots[slideIndex - 1].classList.add("active");
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("darkToggle");
+    if (toggle) {
+        toggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    }
+});

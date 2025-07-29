@@ -105,19 +105,24 @@ h3 {
 /* Navigation */
 #sitenav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1rem 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1rem;
+    padding: 1rem;
     background-color: #111;
-    /* optional */
     color: white;
+    -webkit-overflow-scrolling: touch;
+    /* smooth scroll on iOS */
 }
 
 #sitenav a {
+    display: inline-block;
     color: white;
-    margin: 0 0.75rem;
     text-decoration: none;
+    padding: 0 0.5rem;
+    flex-shrink: 0;
 }
+
 
 #sitenav a:hover {
     text-decoration: underline;
