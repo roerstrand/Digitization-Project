@@ -5,6 +5,13 @@
     padding: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111;
+        color: #eee;
+    }
+}
+
 /* Light Mode */
 body {
     background-color: #fdfdfd;
@@ -53,9 +60,10 @@ body.dark-mode nav#sitenav a:hover {
     z-index: 9999;
 }
 
-.dark-mode #darkModeToggle {
+.dark-mode #darkToggle {
     background-color: #222;
     border: 1px solid #555;
+    color: #eee;
 }
 
 /* Headings */
@@ -95,23 +103,23 @@ h3 {
 
 
 /* Navigation */
-nav#sitenav {
-    overflow-x: auto;
-    white-space: nowrap;
-    display: block;
-    padding: 1rem;
-    background-color: #222;
+#sitenav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem 0;
+    background-color: #111;
+    /* optional */
+    color: white;
 }
 
-nav#sitenav a {
-    display: inline-block;
-    color: #fff;
+#sitenav a {
+    color: white;
+    margin: 0 0.75rem;
     text-decoration: none;
-    margin-right: 1rem;
-    font-weight: 500;
 }
 
-nav#sitenav a:hover {
+#sitenav a:hover {
     text-decoration: underline;
 }
 

@@ -39,11 +39,3 @@ function showSlides(n) {
         dots[slideIndex - 1].classList.add("active");
     }
 }
-
-// Dark mode toggle (fallback for id or legacy toggle)
-const toggle = document.getElementById('darkmode-toggle') || document.getElementById('darkToggle');
-if (toggle) {
-    toggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
-}
