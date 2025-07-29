@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Home</title>
+
+   <!-- Fonts and CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="./css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+
+   <!-- Dark mode toggle -->
+   <button id="darkToggle" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
+   <!-- Hero -->
+   <div class="hero">
+      <h1>Welcome to the Baltic Exhibition</h1>
+      <p>A digital exploration of the 1914 event in Malmo, Sweden</p>
+   </div>
+
+   <!-- Navigation -->
+   <header>
+      <nav id="sitenav">
+         <a href="index.html">Home</a> |
+         <a href="./baltictower.html">The Swedish Baltic Tower</a> |
+         <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
+         <a href="./germanbuilding.html">The German Exhibition Building</a> |
+         <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+      </nav>
+   </header>
+
+   <!-- Main content -->
+   <main id="content">
+      <div class="container">
+         <div class="gallery-container">
+
+            <div class="gallery-box">
+               <div class="gallery-wrapper">
+                  <div class="gallery fade1" style="display: block;">
+                     <img src="./img/baltictower/2.12(page20).jpg" alt="Baltic Tower">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/2.4(page6).jpg" alt="Danish Building">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/germanbuilding/2.2(page4).jpg" alt="German Building">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/russianbuilding/2.6(page8).jpg" alt="Russian Building">
+                  </div>
+
+                  <a class="prev" onclick="plusSlides(-1)" role="button" aria-label="Previous Slide">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)" role="button" aria-label="Next Slide">&#10095;</a>
+               </div>
+
+               <div class="gallery-indicators">
+                  <span class="indicator" onclick="currentSlide(1)"></span>
+                  <span class="indicator" onclick="currentSlide(2)"></span>
+                  <span class="indicator" onclick="currentSlide(3)"></span>
+                  <span class="indicator" onclick="currentSlide(4)"></span>
+               </div>
+            </div>
+
+            <div class="textbox">
+               <h2>The last manifestation of the Jugend architectural & art style in Sweden</h2>
+               <p>The Baltic Exhibition was an art industry and craftsman event between the 15th of May and the 4th of
+                  October 1914. The exhibition took place in Malmo, Sweden. Four nations participated in the event:
+                  Sweden, Denmark, Germany and Russia. The participating countries exhibited buildings among other -
+                  built and torn down solely for the event manifesting the Jugend architectural and art style within
+                  Sweden, for the last time.</p>
+               <p>The exhibition was a friendly yet competitive event where each country sought to show their dignity by
+                  showcasing their cultural contribution and local papers fierying up the sense of national dignity.</p>
+               <p>The Jugend style was present from 1890 to the 1920s, signified by a reaction against the historicistic
+                  thinking. The style was a mix of several art flows; symbolized by asymmetries, meandering plant and
+                  flower lines with a naturalistic ornamentic. The Baltic exhibition represented the later Jugend style
+                  that differed from the earlier iterations with more straight lines and geometric shapes.</p>
+               <p>The exhibition in size measured 51.6 hectare. It was the biggest exhibition hosted in the Nordic
+                  countries at the time, double the size of the Stockholm exhibition of 1897.</p>
+               <p>Revisiting history, this website was built as part of a minor digitization project to once again
+                  illuminate an extraordinary event bringing nations together commonly fighting wars against one another
+                  throughout history. This time gathered at peace under the communion of cultural aspirations –
+                  exhibiting creativity, not destruction.</p>
+            </div>
+
+         </div>
+      </div>
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="footer-content">
+         <div class="license">
+            <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener noreferrer">
+               <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License"
+                  class="copyright_logo" />
+            </a>
+         </div>
+         <div class="copyright">
+            2023 Robin Strandberg & My Lundborg
+         </div>
+      </div>
+   </footer>
+
+
+   <!-- Bootstrap Scripts -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+   <script src="./scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Danish Exhibition Building</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      crossorigin="anonymous">
+   <link rel="stylesheet" href="./css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+   <script defer src="./scripts/main.js"></script>
+</head>
+
+<body>
+
+   <button id="darkToggle" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
+   <div class="hero">
+      <h1>Welcome to the Baltic Exhibition</h1>
+      <p>A digital exploration of the 1914 event in Malmö, Sweden</p>
+   </div>
+
+   <header>
+      <nav id="sitenav">
+         <a href="index.html">Home</a> |
+         <a href="./baltictower.html">The Swedish Baltic Tower</a> |
+         <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
+         <a href="./germanbuilding.html">The German Exhibition Building</a> |
+         <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+      </nav>
+   </header>
+
+   <main id="content">
+      <div class="container">
+         <div class="gallery-container">
+
+            <!-- Gallery Slideshow -->
+            <div class="gallery-box">
+               <div class="gallery-wrapper">
+                  <div class="gallery fade1" style="display: block;">
+                     <img src="./img/danishbuilding/2.4(page6).jpg" alt="Danish Building 1">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/2.5(page7).jpg" alt="Danish Building 2">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/4.10.jpg" alt="Danish Building 3">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/4.13.jpg" alt="Danish Building 4">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/4.14.jpg" alt="Danish Building 5">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/6.1(page4).jpg" alt="Danish Building 6">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/danishbuilding/7.4.jpg" alt="Danish Building 7">
+                  </div>
+
+                  <!-- Navigation Buttons -->
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+               </div>
+
+               <!-- Slide Indicators -->
+               <div class="gallery-indicators">
+                  <span class="indicator" onclick="currentSlide(1)"></span>
+                  <span class="indicator" onclick="currentSlide(2)"></span>
+                  <span class="indicator" onclick="currentSlide(3)"></span>
+                  <span class="indicator" onclick="currentSlide(4)"></span>
+                  <span class="indicator" onclick="currentSlide(5)"></span>
+                  <span class="indicator" onclick="currentSlide(6)"></span>
+                  <span class="indicator" onclick="currentSlide(7)"></span>
+               </div>
+            </div>
+
+            <!-- Textbox -->
+            <div class="col-12 col-md-10 col-lg-8">
+               <div id="about">
+                  <h2>The Danish Exhibition Building</h2>
+
+                  <p>A competition was held preceding the Baltic Exhibition in Denmark, where prominent Danish
+                     architects
+                     competed for significant prizes to represent the nation<!-- Paperlips 1914D, p.121 -->.
+                     Henning Hansen won and designed the building in the Danish Zealand mansion style. It had red walls
+                     and a brick roof. The midship featured a large Renaissance gate, preceded by a bridge over a
+                     moat<!-- Paperlips 1914D, p.125 -->.
+                     The gate was carved from sandstone shipped from Bornholm<!-- Paperlips 1914E, p.51 -->.</p>
+
+                  <p>The building had two floors, a brick façade, and square-paned
+                     windows<!-- Paperlips 1914D, p.82 -->.
+                     Its design was iconic of early 20th-century Jugend architecture and decorative arts.</p>
+
+                  <p>During the exhibition, construction halted briefly when Danish master Nielsen underpaid his
+                     workers,
+                     paying nearly half the Swedish union rate<!-- Paperlips 1914E, p.55 -->.
+                     The conflict was resolved by applying Swedish labor law—despite Denmark's proximity,
+                     the exhibition was held on Swedish ground.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="container">
+         <div class="row justify-content-center">
+            <a href="./metadataonwebsite/metadatadanishbuilding.html" class="metadata-link">View Metadata</a>
+         </div>
+      </div>
+   </main>
+
+   <footer>
+      <div class="footer-content">
+         <div class="license">
+            <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener noreferrer">
+               <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License"
+                  class="copyright_logo" />
+            </a>
+         </div>
+         <div class="copyright">
+            2023 Robin Strandberg & My Lundborg
+         </div>
+      </div>
+   </footer>
+
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
