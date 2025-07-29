@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type='text/xsl' href='../website/assets/xsl/metadata.xslt'?>
+<?xml-stylesheet type='text/xsl' href='../xsl/metadata.xslt'?>
 <gimp-metadata>
 	<iptc-tag>
 		<tag-name>Iptc.Application2.DateCreated</tag-name>
 		<tag-mode>single</tag-mode>
 		<tag-value>2023-05-20</tag-value>
 	</iptc-tag>
-	<iptc-tag>	
+	<iptc-tag>
+		<tag-name>Iptc.Application2.Urgency</tag-name>
+		<tag-mode>combo</tag-mode>
+		<tag-value>3</tag-value>
+	</iptc-tag>
+	<iptc-tag>
 		<tag-name>Iptc.Application2.SubLocation</tag-name>
 		<tag-mode>single</tag-mode>
 		<tag-value>Pildammsparken</tag-value>
@@ -19,7 +24,7 @@
 	<iptc-tag>
 		<tag-name>Iptc.Application2.Keywords</tag-name>
 		<tag-mode>multi</tag-mode>
-		<tag-value>Russian exhibition building, Baltic Exhibition, Malmo, 1914.</tag-value>
+		<tag-value>Danish exhibition building, Baltic Exhibition, Malmo, 1914.</tag-value>
 	</iptc-tag>
 	<iptc-tag>
 		<tag-name>Iptc.Application2.Copyright</tag-name>
@@ -39,7 +44,7 @@
 	<xmp-tag>
 		<tag-name>Xmp.dc.subject</tag-name>
 		<tag-mode>multi</tag-mode>
-		<tag-value>Russian exhibition building, Baltic Exhibition, Malmo, 1914.</tag-value>
+		<tag-value>Danish exhibition building, Baltic Exhibition, Malmo, 1914.</tag-value>
 	</xmp-tag>
 	<xmp-tag>
 		<tag-name>Xmp.dc.rights</tag-name>
@@ -111,12 +116,11 @@
 		<tag-mode>list</tag-mode>
 		<tag-list-value>
 			<list-element>
-				<element>Russian exhibition building</element>
-				<element>M.M Periatkowitsch och Ferdinand Boberg</element>
+				<element>Danishexhibitionbuilding</element>
+				<element>Henning Hansen</element>
 			</list-element>
 		</tag-list-value>
 	</xmp-tag>
-
 	<xmp-tag>
 		<tag-name>Xmp.iptcExt.DigitalSourceType</tag-name>
 		<tag-mode>combo</tag-mode>

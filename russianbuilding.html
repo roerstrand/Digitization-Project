@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Russian Exhibition</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      crossorigin="anonymous">
+   <link rel="stylesheet" href="./css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+   <script defer src="./scripts/main.js"></script>
+</head>
+
+<body>
+
+   <button id="darkToggle" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
+   <div class="hero">
+      <h1>Welcome to the Baltic Exhibition</h1>
+      <p>A digital exploration of the 1914 event in Malmö, Sweden</p>
+   </div>
+
+   <header>
+      <nav id="sitenav">
+         <a href="index.html">Home</a> |
+         <a href="./baltictower.html">The Swedish Baltic Tower</a> |
+         <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
+         <a href="./germanbuilding.html">The German Exhibition Building</a> |
+         <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+      </nav>
+   </header>
+
+   <main id="content">
+      <div class="container">
+         <div class="gallery-container">
+
+            <!-- Gallery Slideshow -->
+            <div class="gallery-box">
+               <div class="gallery-wrapper">
+                  <div class="gallery fade1" style="display: block;">
+                     <img src="./img/russianbuilding/2.6(page8).jpg" alt="Russian Exhibition Building">
+                  </div>
+
+                  <!-- Slideshow controls -->
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+               </div>
+
+               <!-- Indicators -->
+               <div class="gallery-indicators">
+                  <span class="indicator" onclick="currentSlide(1)"></span>
+               </div>
+            </div>
+
+            <!-- Text Section -->
+            <div class="col-12 col-md-10 col-lg-8">
+               <div id="about">
+                  <h2>The Russian Exhibition Building</h2>
+
+                  <p>This project has chosen to give less focus to the Russian exhibition building due to Russia
+                     withdrawing from the exhibition in the later stages of planning. The Swedish architect Ferdinand
+                     Boberg completed the design of the building with support from Russian consultants. Thanks to
+                     Boberg’s involvement, Russia remained represented at the Baltic Exhibition despite the Russian
+                     commissariat's withdrawal.</p>
+
+                  <p>Ferdinand Boberg played a key role in preserving the Russian presence in the exhibition. Although
+                     official participation was withdrawn, his architectural efforts ensured a visual and cultural
+                     inclusion of Russia at the event (Christenson et al., 1989).</p>
+                  <!-- Christenson, G., Ericsson, A.M. & Pehrsson, P.J. (1989). Baltiska Utställningen 1914. Bokförlaget Signum -->
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="container">
+         <div class="row justify-content-center">
+            <a href="./metadataonwebsite/metadatarussianbuilding.html" class="metadata-link">View Metadata</a>
+         </div>
+      </div>
+   </main>
+
+   <footer>
+      <div class="footer-content">
+         <div class="license">
+            <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener noreferrer">
+               <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License" />
+            </a>
+         </div>
+         <div class="copyright">
+            2023 Robin Strandberg & My Lundborg
+         </div>
+      </div>
+   </footer>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

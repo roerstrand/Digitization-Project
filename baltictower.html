@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xml:lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Baltic Tower</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="./css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet">
+</head>
+
+<body>
+
+   <!-- Dark mode toggle -->
+   <button id="darkToggle" onclick="document.body.classList.toggle('dark-mode')">🌓</button>
+
+   <!-- Hero -->
+   <div class="hero">
+      <h1>Welcome to the Baltic Exhibition</h1>
+      <p>A digital exploration of the 1914 event in Malmo, Sweden</p>
+   </div>
+
+   <!-- Navigation -->
+   <header>
+      <nav id="sitenav">
+         <a href="index.html">Home</a> |
+         <a href="./baltictower.html">The Swedish Baltic Tower</a> |
+         <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
+         <a href="./germanbuilding.html">The German Exhibition Building</a> |
+         <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+      </nav>
+   </header>
+
+   <!-- Main content -->
+   <main id="content">
+      <div class="container">
+         <div class="gallery-container">
+
+            <!-- Gallery box -->
+            <div class="gallery-box">
+
+               <!-- Image wrapper with slideshow -->
+               <div class="gallery-wrapper">
+                  <div class="gallery fade1" style="display: block;">
+                     <img src="./img/baltictower/1.1(page1).jpg" alt="Baltic Tower 1">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/1.5(page8).jpg" alt="Baltic Tower 2">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/2.1(page3).jpg" alt="Baltic Tower 3">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/2.10(page13).jpg" alt="Baltic Tower 4">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/2.12(page20).jpg" alt="Baltic Tower 5">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/2.13(page23).jpg" alt="Baltic Tower 6">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/2.14(page24).jpg" alt="Baltic Tower 7">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/4.1.jpg" alt="Baltic Tower 8">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/4.2.jpg" alt="Baltic Tower 9">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/4.4.jpg" alt="Baltic Tower 10">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/4.5.jpg" alt="Baltic Tower 11">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="./img/baltictower/4.6.jpg" alt="Baltic Tower 12">
+                  </div>
+
+                  <!-- Navigation buttons -->
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+               </div>
+
+               <!-- Indicators -->
+               <div class="gallery-indicators">
+                  <span class="indicator" onclick="currentSlide(1)"></span>
+                  <span class="indicator" onclick="currentSlide(2)"></span>
+                  <span class="indicator" onclick="currentSlide(3)"></span>
+                  <span class="indicator" onclick="currentSlide(4)"></span>
+                  <span class="indicator" onclick="currentSlide(5)"></span>
+                  <span class="indicator" onclick="currentSlide(6)"></span>
+                  <span class="indicator" onclick="currentSlide(7)"></span>
+                  <span class="indicator" onclick="currentSlide(8)"></span>
+                  <span class="indicator" onclick="currentSlide(9)"></span>
+                  <span class="indicator" onclick="currentSlide(10)"></span>
+                  <span class="indicator" onclick="currentSlide(11)"></span>
+                  <span class="indicator" onclick="currentSlide(12)"></span>
+               </div>
+            </div>
+
+            <!-- Textbox -->
+            <div class="textbox">
+               <h2>The Swedish Baltic Tower</h2>
+               <p>The Swedish Exhibition Building, the Baltic Tower, reached a height of 87 metres with 380 staircase
+                  steps.
+                  At the time, the Baltic Tower was considered the highest wooden tower in the world.
+                  The tower was designed by the Swedish architect Ferdinand Boberg, who also designed the whole area of
+                  the Baltic Exhibition.
+               </p>
+               <p>The tower had elevators installed which attracted thousands of visitors.
+                  The elevator rose to 66 metres in 44 seconds, offering panoramic views over the Baltic Exhibition and
+                  beyond —
+                  from Öresund and Copenhagen to Skåne’s landscapes.
+               </p>
+               <p>On September 30, 1914, the tower was struck by a storm.
+                  Despite structural damage, including dislodged tiles and trusses, the tower remained standing.
+               </p>
+            </div>
+         </div>
+
+         <!-- Metadata link -->
+         <div class="row justify-content-center">
+            <a href="./metadataonwebsite/metadatabaltictower.html" class="metadata-link">View Metadata</a>
+         </div>
+      </div>
+   </main>
+
+   <!-- Footer -->
+   <footer>
+      <div class="footer-content">
+         <div class="license">
+            <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank" rel="noopener noreferrer">
+               <img src="https://licensebuttons.net/l/by/4.0/88x31.png" alt="Creative Commons License" />
+            </a>
+         </div>
+         <div class="copyright">
+            2023 Robin Strandberg & My Lundborg
+         </div>
+      </div>
+   </footer>
+
+   <!-- Scripts -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+
+   <!-- Your main script -->
+   <script src="./scripts/main.js"></script>
+</body>
+
+</html>
