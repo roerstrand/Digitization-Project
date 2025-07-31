@@ -175,6 +175,8 @@ footer {
     padding: 2rem 1rem;
     margin-top: 3rem;
     text-align: center;
+    font-size: 0.9rem;
+  border-top: 1px solid #444;
 }
 
 .footer-content {
@@ -190,6 +192,10 @@ footer {
 
 .footer-content .copyright {
     font-size: 0.95rem;
+}
+
+footer a img {
+  vertical-align: middle;
 }
 
 .copyright_logo {
