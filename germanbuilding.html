@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>German Exhibition Building</title>
+   <title>German Hall</title>
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       crossorigin="anonymous">
@@ -25,13 +25,17 @@
 
    <header>
       <div class="container">
+         <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
          <nav id="sitenav">
-            <a href="index.html">Home</a> |
-            <a href="./baltictower.html">The Swedish Baltic Tower</a> |
-            <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
-            <a href="./germanbuilding.html">The German Exhibition Building</a> |
-            <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+            <a href="index.html">Home</a>
+            <a href="./baltictower.html">Baltic Tower</a>
+            <a href="./danishbuilding.html">Danish House</a>
+            <a href="./germanbuilding.html">German Hall</a>
+            <a href="./russianbuilding.html">Russian Pavilion</a>
          </nav>
+      </div>
    </header>
 
    <main id="content">
@@ -42,19 +46,32 @@
             <div class="gallery-box">
                <div class="gallery-wrapper">
                   <div class="gallery fade1" style="display: block;">
-                     <img src="./img/germanbuilding/2.2(page4).jpg" alt="German Building 1">
+                     <img src="./img/germanbuilding/2.2(page4).jpg" alt="German Exhibition Building — exterior"
+                          data-caption="The German Exhibition Building — two symmetrical Wilhelmine-style pavilions with large arched windows and visitors in the grounds"
+                          data-doctype="Photograph" data-docsource="Baltic Exhibition catalog, vol. 2, p. 4"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/germanbuilding/4.8.jpg" alt="German Building 2">
+                     <img src="./img/germanbuilding/4.8.jpg" alt="German building — view with garden"
+                          data-caption="The German Exhibition Building — the twin pavilions with newly planted trees in the formal garden and visitors strolling"
+                          data-doctype="Official postcard" data-docsource="Officiella brevkort, Baltiska Utställningen 1914"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/germanbuilding/4.9.jpg" alt="German Building 3">
+                     <img src="./img/germanbuilding/4.9.jpg" alt="German building inner courtyard"
+                          data-caption="The inner courtyard of the German pavilion — arched colonnade arcade with Jugend medallion ornaments, ornamental garden and a fountain sculpture"
+                          data-doctype="Official postcard" data-docsource="Officiella brevkort, Baltiska Utställningen 1914"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/germanbuilding/5.5(page158-159).jpg" alt="German Building 4">
+                     <img src="./img/germanbuilding/5.5(page158-159).jpg" alt="Floor plan of the German Exhibition"
+                          data-caption="'Plan af Tysklands Utställning' — architectural floor plan of the entire German Exhibition, showing the layout of halls and exhibition areas"
+                          data-doctype="Architectural floor plan" data-docsource="German exhibition catalog, pp. 158–159"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
 
                   <!-- Navigation -->
+                  <span class="slide-counter"></span>
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                </div>
@@ -66,27 +83,42 @@
                   <span class="indicator" onclick="currentSlide(3)"></span>
                   <span class="indicator" onclick="currentSlide(4)"></span>
                </div>
+               <p class="gallery-hint">Click image to enlarge</p>
             </div>
 
             <!-- Text Content -->
-            <div class="col-12 col-md-10 col-lg-8">
-               <div id="about">
-                  <h2>The German Exhibition Building</h2>
+            <div class="textbox">
+               <h2>The German Hall</h2>
 
-                  <p>The Jugend architectural symbolic features could be seen
-                     in the German exhibition building’s stylish arcades around the central yard. The building and
-                     contribution of Germany was done by Hans Alfred Richter (Christenson et al., 1989).</p>
+               <p>Germany’s contribution to the Baltic Exhibition was the largest in scale and among the most
+                  lavishly appointed. Budgeted at 100,000 mark and covering 16,000 square metres of exhibition
+                  space, the German pavilion was a statement of imperial cultural confidence. The overall design
+                  was led by Hans Alfred Richter, and the building combined the imposing presence of the
+                  Wilhelmine Wertheim commercial style with Jugend ornamentation.</p>
 
-                  <p>The central yard in its Jugend style had a fountain made of majolica to which blueprints
-                     had been made by the Swedish architect Alfred Grenander in Berlin. The building was a two-floor
-                     construction in the Wertheim style with Manzard roof, 75 meters long and 15 meters wide. It had
-                     vestibules, arcades, and stairs, with exhibitions featuring artifacts from Emperor Wilhelm’s
-                     castle.</p>
+               <p>The structure was two storeys tall, 75 metres long and 15 metres wide, with a Mansard roof,
+                  vaulted vestibules, and a system of arcades encircling a central open courtyard. At the heart
+                  of that courtyard stood a decorative fountain clad in majolica tiles, designed by Alfred
+                  Grenander — a Swedish architect then based in Berlin who was already gaining recognition
+                  for his work on the Berlin U-Bahn. The contrast between Grenander’s precise geometric Jugend
+                  sensibility and the heavier imperial framework of the building reflected the broader tension
+                  within German design culture at the time.</p>
 
-                  <p>Germany’s contribution was said to have been granted 100,000 mark and totaled 16,000 square meters.
-                     Construction was dangerous: one worker died falling 16 meters during the build. On May 7, 1914,
-                     a German warship picked up German nationals called to serve in WWI.</p>
-               </div>
+               <p>The interior exhibitions were rich in prestige objects. Among the highlights were artefacts
+                  loaned from the personal collection of Emperor Wilhelm II, displayed alongside applied arts,
+                  industrial goods, and examples of German craftwork. Germany’s aim was clear: to project power
+                  and cultural sophistication in equal measure.</p>
+
+               <p>Construction was not without cost. One worker died after falling 16 metres from the
+                  scaffolding during the build phase — a fatality recorded in contemporary accounts but
+                  largely overshadowed by the spectacle of the finished structure. The summer of 1914 would
+                  bring far darker news: on 7 May, while the exhibition was open, a German naval vessel docked
+                  in Malmö harbour to collect German nationals recalled for military service. Within weeks,
+                  Germany was at war. The pavilion that had been constructed as a cultural bridge became,
+                  retrospectively, a last flourish before catastrophe.</p>
+
+               <p>The building was dismantled following the exhibition’s close in October 1914, leaving only
+                  photographic and printed records — a portion of which are presented here.</p>
             </div>
          </div>
       </div>
@@ -98,15 +130,10 @@
       </div>
    </main>
 
-<footer class="text-center mt-5 py-4 bg-dark text-light">
-  <div class="container text-center">
-    <small>
-      &copy; 2025 Robin Erik Strandberg · Licensed under 
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-underline">
-        Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY–NC–SA 4.0)
-      </a>
-      — non-commercial use with credit; adaptations must be licensed under the same terms.
-    </small>
+<footer>
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+    <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
   </div>
 </footer>
 

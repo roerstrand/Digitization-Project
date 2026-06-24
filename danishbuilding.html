@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Danish Exhibition Building</title>
+   <title>Danish House</title>
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       crossorigin="anonymous">
@@ -25,13 +25,17 @@
 
    <header>
       <div class="container">
+         <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
          <nav id="sitenav">
-            <a href="index.html">Home</a> |
-            <a href="./baltictower.html">The Swedish Baltic Tower</a> |
-            <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
-            <a href="./germanbuilding.html">The German Exhibition Building</a> |
-            <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+            <a href="index.html">Home</a>
+            <a href="./baltictower.html">Baltic Tower</a>
+            <a href="./danishbuilding.html">Danish House</a>
+            <a href="./germanbuilding.html">German Hall</a>
+            <a href="./russianbuilding.html">Russian Pavilion</a>
          </nav>
+      </div>
    </header>
 
    <main id="content">
@@ -42,28 +46,50 @@
             <div class="gallery-box">
                <div class="gallery-wrapper">
                   <div class="gallery fade1" style="display: block;">
-                     <img src="./img/danishbuilding/2.4(page6).jpg" alt="Danish Building 1">
+                     <img src="./img/danishbuilding/2.4(page6).jpg" alt="Danish Exhibition Building — exterior"
+                          data-caption="The Danish Exhibition Building — red brick facade, Danish flag, bridge over the moat, and the sandstone Renaissance entrance gate"
+                          data-doctype="Photograph" data-docsource="Baltic Exhibition catalog, vol. 2, p. 6"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/danishbuilding/2.5(page7).jpg" alt="Danish Building 2">
+                     <img src="./img/danishbuilding/2.5(page7).jpg" alt="Danish building inner courtyard"
+                          data-caption="The inner courtyard of the Danish pavilion — decorative timber gate tower with Nordic ornamental detailing and a reflecting pool"
+                          data-doctype="Photograph" data-docsource="Baltic Exhibition catalog, vol. 2, p. 7"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/danishbuilding/4.10.jpg" alt="Danish Building 3">
+                     <img src="./img/danishbuilding/4.10.jpg" alt="Danish building from the central avenue"
+                          data-caption="The Danish Exhibition Building seen from the central avenue — distinctive stepped gables, with the Baltic Tower in the left background"
+                          data-doctype="Official postcard" data-docsource="Officiella brevkort, Baltiska Utställningen 1914"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/danishbuilding/4.13.jpg" alt="Danish Building 4">
+                     <img src="./img/danishbuilding/4.13.jpg" alt="Danish building from the garden"
+                          data-caption="The Danish building from the garden side — the sandstone Renaissance gateway with sculptural relief, flagpole and ornamental grounds"
+                          data-doctype="Official postcard" data-docsource="Officiella brevkort, Baltiska Utställningen 1914"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/danishbuilding/4.14.jpg" alt="Danish Building 5">
+                     <img src="./img/danishbuilding/4.14.jpg" alt="Interior of the Danish exhibition hall"
+                          data-caption="Interior of the Danish exhibition hall — display cases with arts, crafts and industrial products, ornamental columns with Nordic decorative motifs"
+                          data-doctype="Official postcard" data-docsource="Officiella brevkort, Baltiska Utställningen 1914"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/danishbuilding/6.1(page4).jpg" alt="Danish Building 6">
+                     <img src="./img/danishbuilding/6.1(page4).jpg" alt="Danish building main facade"
+                          data-caption="The Danish Exhibition Building — frontal view of the main facade, two-storey brick construction with the arched gateway and flanking corner towers"
+                          data-doctype="Catalog photograph" data-docsource="Danish exhibition catalog, p. 4"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
                   <div class="gallery fade1">
-                     <img src="./img/danishbuilding/7.4.jpg" alt="Danish Building 7">
+                     <img src="./img/danishbuilding/7.4.jpg" alt="Crowds at the Danish building entrance"
+                          data-caption="Crowds gathered at the entrance to the Danish Exhibition Building — visitors in formal dress, likely at or near the opening ceremony"
+                          data-doctype="Photograph" data-docsource="Photographic documentation"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
 
                   <!-- Navigation Buttons -->
+                  <span class="slide-counter"></span>
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                </div>
@@ -78,31 +104,41 @@
                   <span class="indicator" onclick="currentSlide(6)"></span>
                   <span class="indicator" onclick="currentSlide(7)"></span>
                </div>
+               <p class="gallery-hint">Click image to enlarge</p>
             </div>
 
             <!-- Textbox -->
-            <div class="col-12 col-md-10 col-lg-8">
-               <div id="about">
-                  <h2>The Danish Exhibition Building</h2>
+            <div class="textbox">
+               <h2>The Danish House</h2>
 
-                  <p>A competition was held preceding the Baltic Exhibition in Denmark, where prominent Danish
-                     architects
-                     competed for significant prizes to represent the nation<!-- Paperlips 1914D, p.121 -->.
-                     Henning Hansen won and designed the building in the Danish Zealand mansion style. It had red walls
-                     and a brick roof. The midship featured a large Renaissance gate, preceded by a bridge over a
-                     moat<!-- Paperlips 1914D, p.125 -->.
-                     The gate was carved from sandstone shipped from Bornholm<!-- Paperlips 1914E, p.51 -->.</p>
+               <p>Denmark's participation in the Baltic Exhibition was taken seriously as a matter of national
+                  prestige. A design competition was held among prominent Danish architects, offering significant
+                  prizes for the best proposal to represent the country. Henning Hansen emerged victorious,
+                  and his winning design drew on the tradition of the Danish Sjælland manor house —
+                  a deliberately vernacular choice, grounding Denmark's contribution in regional identity
+                  rather than cosmopolitan fashion.</p>
 
-                  <p>The building had two floors, a brick façade, and square-paned
-                     windows<!-- Paperlips 1914D, p.82 -->.
-                     Its design was iconic of early 20th-century Jugend architecture and decorative arts.</p>
+               <p>The building featured red brick walls, a tiled roof, and a two-storey façade with
+                  square-paned windows. Its most dramatic element was the central Renaissance-style gate,
+                  approached across a decorative moat. The gatework was carved from sandstone quarried on
+                  the island of Bornholm and shipped to Malmö — a detail that underscored the importance
+                  of authentic Danish materials to the project's conception.</p>
 
-                  <p>During the exhibition, construction halted briefly when Danish master Nielsen underpaid his
-                     workers,
-                     paying nearly half the Swedish union rate<!-- Paperlips 1914E, p.55 -->.
-                     The conflict was resolved by applying Swedish labor law—despite Denmark's proximity,
-                     the exhibition was held on Swedish ground.</p>
-               </div>
+               <p>Inside, the Danish pavilion displayed applied arts, crafts, and industrial goods.
+                  Denmark had long cultivated a reputation for refined decorative tradition, and the
+                  exhibition was an opportunity to showcase that character to Nordic and European visitors
+                  alike. The building was widely admired in the press on both sides of Öresund.</p>
+
+               <p>Behind the scenes, the construction period was not without tension. A Danish master
+                  craftsman named Nielsen was found to be paying his workers at nearly half the rate
+                  mandated by Swedish trade unions. The dispute briefly halted work and drew attention
+                  to the friction between Danish and Swedish labor norms. It was ultimately resolved by
+                  applying Swedish law — a reminder that despite the short crossing from Copenhagen,
+                  the fairgrounds were firmly on Swedish soil.</p>
+
+               <p>Like all the national pavilions, the Danish building was torn down after the exhibition
+                  closed in October 1914. Its physical traces exist only in photographs, catalogs, and
+                  contemporary press reporting — the documentary record this project seeks to preserve.</p>
             </div>
          </div>
       </div>
@@ -114,15 +150,10 @@
       </div>
    </main>
 
-<footer class="text-center mt-5 py-4 bg-dark text-light">
-  <div class="container text-center">
-    <small>
-      &copy; 2025 Robin Erik Strandberg · Licensed under 
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-underline">
-        Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY–NC–SA 4.0)
-      </a>
-      — non-commercial use with credit; adaptations must be licensed under the same terms.
-    </small>
+<footer>
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+    <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
   </div>
 </footer>
 

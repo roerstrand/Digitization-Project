@@ -4,7 +4,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Russian Exhibition</title>
+   <title>Russian Pavilion</title>
 
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       crossorigin="anonymous">
@@ -25,13 +25,17 @@
 
    <header>
       <div class="container">
+         <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
          <nav id="sitenav">
-            <a href="index.html">Home</a> |
-            <a href="./baltictower.html">The Swedish Baltic Tower</a> |
-            <a href="./danishbuilding.html">The Danish Exhibition Building</a> |
-            <a href="./germanbuilding.html">The German Exhibition Building</a> |
-            <a href="./russianbuilding.html">The Russian Exhibition Building</a>
+            <a href="index.html">Home</a>
+            <a href="./baltictower.html">Baltic Tower</a>
+            <a href="./danishbuilding.html">Danish House</a>
+            <a href="./germanbuilding.html">German Hall</a>
+            <a href="./russianbuilding.html">Russian Pavilion</a>
          </nav>
+      </div>
    </header>
 
    <main id="content">
@@ -42,10 +46,14 @@
             <div class="gallery-box">
                <div class="gallery-wrapper">
                   <div class="gallery fade1" style="display: block;">
-                     <img src="./img/russianbuilding/2.6(page8).jpg" alt="Russian Exhibition Building">
+                     <img src="./img/russianbuilding/2.6(page8).jpg" alt="Russian Exhibition Building"
+                          data-caption="The Russian Exhibition Building — twin onion-dome towers flanking the main entrance, Russian/Oriental architectural motifs, visitors gathered in the forecourt"
+                          data-doctype="Photograph" data-docsource="Baltic Exhibition catalog, vol. 2, p. 8"
+                          data-year="1914" data-collection="Malmö City Library">
                   </div>
 
                   <!-- Slideshow controls -->
+                  <span class="slide-counter"></span>
                   <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                   <a class="next" onclick="plusSlides(1)">&#10095;</a>
                </div>
@@ -54,24 +62,42 @@
                <div class="gallery-indicators">
                   <span class="indicator" onclick="currentSlide(1)"></span>
                </div>
+               <p class="gallery-hint">Click image to enlarge</p>
             </div>
 
             <!-- Text Section -->
-            <div class="col-12 col-md-10 col-lg-8">
-               <div id="about">
-                  <h2>The Russian Exhibition Building</h2>
+            <div class="textbox">
+               <h2>The Russian Pavilion</h2>
 
-                  <p>This project has chosen to give less focus to the Russian exhibition building due to Russia
-                     withdrawing from the exhibition in the later stages of planning. The Swedish architect Ferdinand
-                     Boberg completed the design of the building with support from Russian consultants. Thanks to
-                     Boberg’s involvement, Russia remained represented at the Baltic Exhibition despite the Russian
-                     commissariat's withdrawal.</p>
+               <p>Russia’s participation in the Baltic Exhibition was, from the beginning, complicated by
+                  diplomatic and logistical hesitation. Initial planning had included a substantial Russian
+                  commissariat — an official body responsible for coordinating exhibits and representing the
+                  country’s cultural and industrial output. The original architectural concept came from
+                  M.M. Periatkowitsch, a prominent Russian architect known for his work in St. Petersburg.</p>
 
-                  <p>Ferdinand Boberg played a key role in preserving the Russian presence in the exhibition. Although
-                     official participation was withdrawn, his architectural efforts ensured a visual and cultural
-                     inclusion of Russia at the event (Christenson et al., 1989).</p>
-                  <!-- Christenson, G., Ericsson, A.M. & Pehrsson, P.J. (1989). Baltiska Utställningen 1914. Bokförlaget Signum -->
-               </div>
+               <p>As the exhibition date approached, the Russian commissariat withdrew its formal participation.
+                  The reasons were partly administrative and partly political: the early months of 1914 brought
+                  mounting tension across Europe, and Russia’s leadership had other preoccupations. The
+                  withdrawal left the question of whether Russia would appear at all.</p>
+
+               <p>It was Ferdinand Boberg — the Swedish architect who had also designed the Baltic Tower and
+                  the exhibition’s master plan — who stepped in to complete the Russian pavilion.
+                  Working in consultation with remaining Russian contacts, Boberg produced a building that
+                  preserved a Russian architectural character while fitting within the broader visual
+                  harmony of the fairgrounds. His involvement ensured that a Russian presence was visible
+                  to the exhibition’s estimated 1.3 million visitors, even if the official machinery
+                  behind it had largely retreated.</p>
+
+               <p>The result was a building that occupied an ambiguous position: architecturally Russian,
+                  administratively absent. What was shown inside — to the extent that exhibits were assembled
+                  at all — reflected the reduced scope of the participation. The Russian pavilion stands, in
+                  retrospect, as an early sign of the dislocations that would define the rest of 1914.
+                  By August, Russia was at war. By October, the exhibition had closed. The pavilion,
+                  like all the others, was torn down.</p>
+
+               <p>Given the limited photographic documentation of the Russian building’s interior, this
+                  project has chosen to focus its attention on the other three national pavilions.
+                  A single exterior image is presented here as a record of the building’s appearance.</p>
             </div>
          </div>
       </div>
@@ -83,15 +109,10 @@
       </div>
    </main>
 
-<footer class="text-center mt-5 py-4 bg-dark text-light">
-  <div class="container text-center">
-    <small>
-      &copy; 2025 Robin Erik Strandberg · Licensed under 
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="text-light text-decoration-underline">
-        Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY–NC–SA 4.0)
-      </a>
-      — non-commercial use with credit; adaptations must be licensed under the same terms.
-    </small>
+<footer>
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+    <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
   </div>
 </footer>
 
