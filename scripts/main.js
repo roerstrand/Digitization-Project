@@ -187,6 +187,28 @@ function stopAutoplay() {
 =================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* --- Site logo (fixed top-left) --- */
+  const inSubdir = window.location.pathname.includes('/metadataonwebsite/');
+  const logoLink = document.createElement('a');
+  logoLink.id = 'siteLogo';
+  logoLink.href = inSubdir ? '../index.html' : 'index.html';
+  logoLink.setAttribute('aria-label', 'Baltic Exhibition 1914 — Home');
+  logoLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="15" height="20" fill="currentColor" aria-hidden="true">
+    <circle cx="18" cy="2" r="1.6"/>
+    <polygon points="18,3.6 15,10 21,10"/>
+    <rect x="14.5" y="10" width="7" height="16"/>
+    <rect x="7" y="25.5" width="22" height="2.5"/>
+    <rect x="7" y="24" width="6" height="1.5" rx="0.4"/>
+    <rect x="23" y="24" width="6" height="1.5" rx="0.4"/>
+    <rect x="7" y="28" width="5.5" height="14"/>
+    <rect x="23.5" y="28" width="5.5" height="14"/>
+    <rect x="5" y="42" width="26" height="2"/>
+    <rect x="2" y="44" width="32" height="2"/>
+    <rect x="0" y="46" width="36" height="2"/>
+    <path d="M7 31 Q18 19.5 29 31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  </svg><span>Home</span>`;
+  document.body.appendChild(logoLink);
+
   /* --- Dark mode --- */
   const toggle = document.getElementById('darkToggle');
   if (localStorage.getItem('darkMode') === 'on') {
@@ -271,6 +293,106 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealTargets.forEach(el => el.classList.add('visible'));
   }
+
+  /* --- Page nav (section strip) --- */
+  (function buildPageNav() {
+    const sections = Array.from(
+      document.querySelectorAll('.context-block, .method-section')
+    );
+    if (sections.length < 2) return;
+
+    sections.forEach((sec, i) => { if (!sec.id) sec.id = 'section-' + i; });
+
+    const nav = document.createElement('nav');
+    nav.className = 'page-nav';
+    nav.setAttribute('aria-label', 'Page sections');
+
+    const inner = document.createElement('div');
+    inner.className = 'page-nav-inner';
+
+    const label = document.createElement('span');
+    label.className = 'page-nav-label';
+    label.textContent = 'On this page';
+    inner.appendChild(label);
+
+    const links = [];
+    sections.forEach((sec, i) => {
+      const labelEl = sec.querySelector('.context-label, .section-label');
+      const headingEl = sec.querySelector('h2, h3');
+      const text = (labelEl && labelEl.textContent.trim()) ||
+                   (headingEl && headingEl.textContent.trim()) || '';
+      if (!text) return;
+
+      const a = document.createElement('a');
+      a.href = '#' + sec.id;
+      a.className = 'page-nav-link';
+      a.textContent = text;
+      inner.appendChild(a);
+      links.push({ el: a, sec, secIdx: i });
+    });
+
+    nav.appendChild(inner);
+    const header = document.querySelector('header');
+    if (!header || !links.length) return;
+    header.insertAdjacentElement('afterend', nav);
+    nav.style.top = header.offsetHeight + 'px';
+
+    let clickLock = false;
+    let lockTimer = null;
+
+    function setActive(linkIdx, fromClick) {
+      links.forEach(l => l.el.classList.remove('page-nav-active'));
+      sections.forEach(s => s.classList.remove('section-active'));
+      if (linkIdx < 0 || linkIdx >= links.length) return;
+      links[linkIdx].el.classList.add('page-nav-active');
+      links[linkIdx].sec.classList.add('section-active');
+      if (fromClick) {
+        links[linkIdx].el.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+      }
+    }
+
+    function getActiveIndex() {
+      const offset = header.offsetHeight + nav.offsetHeight + 24;
+      let active = 0;
+      links.forEach(({ sec }, i) => {
+        if (sec.getBoundingClientRect().top <= offset) active = i;
+      });
+      return active;
+    }
+
+    links.forEach(({ el, sec }, i) => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        setActive(i, true);
+        sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        clickLock = true;
+        clearTimeout(lockTimer);
+        lockTimer = setTimeout(() => { clickLock = false; }, 900);
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (clickLock) return;
+      setActive(getActiveIndex(), false);
+    }, { passive: true });
+
+    setActive(getActiveIndex(), false);
+  })();
+
+  /* --- Back to top --- */
+  const btt = document.createElement('button');
+  btt.id = 'backToTop';
+  btt.setAttribute('aria-label', 'Back to top');
+  btt.innerHTML = '<span aria-hidden="true">↑</span><span>Back to top</span>';
+  document.body.appendChild(btt);
+
+  window.addEventListener('scroll', () => {
+    btt.classList.toggle('visible', window.scrollY > 300);
+  }, { passive: true });
+
+  btt.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 
   /* --- Init slideshow & autoplay --- */
   showSlides(slideIndex);

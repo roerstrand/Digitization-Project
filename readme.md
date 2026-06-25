@@ -14,6 +14,19 @@ This site makes digitized catalog photographs and archival text accessible onlin
 
 ---
 
+## Digitization pipeline
+
+```
+Source Material  →  Digitization  →  Metadata  →  Public Website
+  references/          img/          metadata/     index.html +
+ paper_clippings    photographs     Dublin Core    building pages
+ (scanned prints)  (catalog imgs)    TEI XML
+```
+
+Physical catalogs and newspaper clippings from Malmö City Library were scanned and photographed to produce archival-quality image files. Each item was then described with Dublin Core metadata (XML) and key texts were transcribed as TEI XML. The result is this website — a freely accessible, structured digital collection.
+
+---
+
 ## Structure
 
 ```

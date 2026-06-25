@@ -14,7 +14,7 @@
 	<iptc-tag>
 		<tag-name>Iptc.Application2.Byline</tag-name>
 		<tag-mode>single</tag-mode>
-		<tag-value>My Lundborg, Robin Strandberg</tag-value>
+		<tag-value>Robin Strandberg, My Lundborg</tag-value>
 	</iptc-tag>
 	<iptc-tag>
 		<tag-name>Iptc.Application2.Keywords</tag-name>
@@ -34,7 +34,7 @@
 	<xmp-tag>
 		<tag-name>Xmp.dc.creator</tag-name>
 		<tag-mode>single</tag-mode>
-		<tag-value>My Lundborg, Robin Strandberg</tag-value>
+		<tag-value>Robin Strandberg, My Lundborg</tag-value>
 	</xmp-tag>
 	<xmp-tag>
 		<tag-name>Xmp.dc.subject</tag-name>

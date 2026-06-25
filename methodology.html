@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Methodology — Baltic Exhibition 1914</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <link rel="stylesheet" href="./css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+   <script defer src="./scripts/main.js"></script>
+   <style>
+      .method-section {
+         margin-bottom: 3rem;
+      }
+      .method-section h2 {
+         font-family: 'Playfair Display', serif;
+         color: var(--accent);
+         font-size: 1.5rem;
+         margin-bottom: 0.4rem;
+      }
+      .method-section .section-label {
+         display: inline-block;
+         font-size: 0.7rem;
+         font-weight: 700;
+         letter-spacing: 0.12em;
+         text-transform: uppercase;
+         color: var(--text-muted);
+         margin-bottom: 0.6rem;
+      }
+      .method-section p {
+         color: var(--text);
+         line-height: 1.8;
+         margin-bottom: 0.9rem;
+      }
+      .method-section p:last-child {
+         margin-bottom: 0;
+      }
+      .method-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+         gap: 1rem;
+         margin-top: 1.2rem;
+      }
+      .method-card {
+         background: var(--surface-2);
+         border: 1px solid var(--border);
+         border-radius: var(--r);
+         padding: 1rem 1.1rem;
+      }
+      .method-card .card-label {
+         display: block;
+         font-size: 0.65rem;
+         font-weight: 700;
+         letter-spacing: 0.1em;
+         text-transform: uppercase;
+         color: var(--text-muted);
+         margin-bottom: 0.3rem;
+      }
+      .method-card .card-value {
+         font-size: 0.95rem;
+         color: var(--text);
+         line-height: 1.5;
+      }
+      .method-card code {
+         font-size: 0.82rem;
+         background: var(--surface);
+         border: 1px solid var(--border);
+         border-radius: 4px;
+         padding: 0.1em 0.4em;
+         color: var(--accent-dk);
+         word-break: break-all;
+      }
+      .workflow {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 0;
+         margin-top: 1.2rem;
+         align-items: stretch;
+      }
+      .workflow-step {
+         flex: 1 1 140px;
+         background: var(--surface-2);
+         border: 1px solid var(--border);
+         border-radius: var(--r);
+         padding: 1rem;
+         text-align: center;
+         position: relative;
+      }
+      .workflow-step + .workflow-step {
+         margin-left: 0.5rem;
+      }
+      .workflow-step .step-num {
+         display: block;
+         font-size: 1.4rem;
+         font-weight: 700;
+         color: var(--accent);
+         line-height: 1;
+         margin-bottom: 0.4rem;
+      }
+      .workflow-step .step-title {
+         display: block;
+         font-size: 0.8rem;
+         font-weight: 700;
+         letter-spacing: 0.05em;
+         text-transform: uppercase;
+         color: var(--text);
+         margin-bottom: 0.3rem;
+      }
+      .workflow-step .step-desc {
+         font-size: 0.8rem;
+         color: var(--text-muted);
+         line-height: 1.5;
+      }
+      .schema-table {
+         width: 100%;
+         border-collapse: collapse;
+         margin-top: 1.2rem;
+         font-size: 0.9rem;
+      }
+      .schema-table th {
+         text-align: left;
+         font-size: 0.65rem;
+         font-weight: 700;
+         letter-spacing: 0.1em;
+         text-transform: uppercase;
+         color: var(--text-muted);
+         border-bottom: 2px solid var(--border);
+         padding: 0.4rem 0.8rem 0.6rem;
+      }
+      .schema-table td {
+         padding: 0.55rem 0.8rem;
+         border-bottom: 1px solid var(--border);
+         color: var(--text);
+         vertical-align: top;
+      }
+      .schema-table td:first-child {
+         font-weight: 600;
+         white-space: nowrap;
+         color: var(--accent-dk);
+      }
+      .schema-table tr:last-child td {
+         border-bottom: none;
+      }
+      .method-divider {
+         border: none;
+         border-top: 1px solid var(--border);
+         margin: 2.5rem 0;
+      }
+      @media (max-width: 640px) {
+         .workflow { flex-direction: column; }
+         .workflow-step + .workflow-step { margin-left: 0; margin-top: 0.5rem; }
+      }
+   </style>
+</head>
+
+<body>
+
+   <button id="darkToggle">🌓</button>
+
+   <div class="hero hero--sub">
+      <h1>Methodology</h1>
+      <p>How the material was digitized, described, and made reusable</p>
+   </div>
+
+   <header>
+      <div class="container">
+<button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         <nav id="sitenav">
+            <a href="index.html">Home</a>
+            <a href="./baltictower.html">Baltic Tower</a>
+            <a href="./danishbuilding.html">Danish House</a>
+            <a href="./germanbuilding.html">German Hall</a>
+            <a href="./russianbuilding.html">Russian Pavilion</a>
+            <a href="./methodology.html" aria-current="page">Methodology</a>
+         </nav>
+      </div>
+   </header>
+
+   <main id="content">
+      <div class="container" style="max-width: 820px; padding-top: 2.5rem; padding-bottom: 3rem;">
+
+         <section class="method-section">
+            <span class="section-label">Overview</span>
+            <h2>From Archive to Web</h2>
+            <p>Displaying historical images is straightforward. Making them <em>searchable, traceable, and reusable by
+            others</em> is not. This page documents the decisions behind the digitization workflow: what was recorded,
+            why those fields were chosen, and how the metadata is embedded into the site so that both humans and
+            machines can read it.</p>
+            <p>The source material consists of printed exhibition catalogs and photographic records from the 1914 Baltic
+            Exhibition, held at Malmö City Library under shelf mark <em>Bhz Baltiska utställningen</em>. All scanning
+            took place on 20 May 2023.</p>
+
+            <div class="workflow">
+               <div class="workflow-step">
+                  <span class="step-num">1</span>
+                  <span class="step-title">Archive</span>
+                  <span class="step-desc">Physical catalogs located at Malmö City Library</span>
+               </div>
+               <div class="workflow-step">
+                  <span class="step-num">2</span>
+                  <span class="step-title">Scan</span>
+                  <span class="step-desc">Flatbed scanning of printed, non-transparent medium</span>
+               </div>
+               <div class="workflow-step">
+                  <span class="step-num">3</span>
+                  <span class="step-title">Describe</span>
+                  <span class="step-desc">Metadata schema applied; TEI encoding of text documents</span>
+               </div>
+               <div class="workflow-step">
+                  <span class="step-num">4</span>
+                  <span class="step-title">Publish</span>
+                  <span class="step-desc">Web-embedded metadata; open license; public repository</span>
+               </div>
+            </div>
+         </section>
+
+         <hr class="method-divider">
+
+         <section class="method-section">
+            <span class="section-label">Digitization</span>
+            <h2>Equipment &amp; Capture</h2>
+            <p>All images were captured using a flatbed scanner rather than a camera to ensure even illumination, no
+            perspective distortion, and consistent resolution across the collection. The source documents are
+            printed catalogs — opaque, non-transparent media — which flatbed scanning handles reliably.</p>
+
+            <div class="method-grid">
+               <div class="method-card">
+                  <span class="card-label">Scanner</span>
+                  <span class="card-value">Epson Perfection V600 Photo Scanner · 24-bit colour</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Resolution — Images</span>
+                  <span class="card-value">300 dpi — sufficient for display; manageable file size</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Resolution — Text &amp; Blueprints</span>
+                  <span class="card-value">600 dpi — legible when zoomed; suitable for future OCR without revisiting the source</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Post-processing</span>
+                  <span class="card-value">GIMP — straightened, cropped, and metadata-embedded before commit</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Source Medium</span>
+                  <span class="card-value">Digitized from print — non-transparent medium</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Date of Digitization</span>
+                  <span class="card-value">20 May 2023</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Digitized By</span>
+                  <span class="card-value">Robin Strandberg &amp; My Lundborg</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Physical Location of Originals</span>
+                  <span class="card-value">Malmö City Library · <em>Bhz Baltiska utställningen</em></span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Surrogate Numbering</span>
+                  <span class="card-value">e.g. <code>2:4</code> = Book 2, page 4 — each filename preserves a direct link to its physical source</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Geographic Origin</span>
+                  <span class="card-value">Malmö · Skåne · Sweden · Europe</span>
+               </div>
+            </div>
+         </section>
+
+         <hr class="method-divider">
+
+         <section class="method-section">
+            <span class="section-label">Metadata Schema</span>
+            <h2>What Was Recorded and Why</h2>
+            <p>Each digitized object is described by a consistent set of fields aligned with the
+            <strong>Dublin Core</strong> standard — a widely adopted, interoperable schema for describing
+            cultural heritage resources. The schema covers provenance (where the original came from),
+            technical capture conditions (how it was digitized), intellectual content (what the image shows),
+            and rights (who may use it and under what terms). Together these fields allow an item to be
+            understood and re-used independently of this website.</p>
+            <p>Metadata was initially catalogued in a shared spreadsheet during the project, then embedded
+            directly into the image files via GIMP and documented on the per-building metadata pages on
+            this site.</p>
+
+            <table class="schema-table">
+               <thead>
+                  <tr>
+                     <th>Field</th>
+                     <th>Purpose</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Original Source</td>
+                     <td>Names the holding institution and shelf mark — the chain of custody from physical to digital.</td>
+                  </tr>
+                  <tr>
+                     <td>Building / Architect</td>
+                     <td>Subject description, enabling filtering by structure or creator.</td>
+                  </tr>
+                  <tr>
+                     <td>Date Digitized</td>
+                     <td>Documents when the digital surrogate was created — relevant if the physical original changes state.</td>
+                  </tr>
+                  <tr>
+                     <td>Digitized By</td>
+                     <td>Accountability; allows future users to contact the digitizers if questions arise.</td>
+                  </tr>
+                  <tr>
+                     <td>Scanning Equipment</td>
+                     <td>Technical provenance — enables quality assessment and reproducibility.</td>
+                  </tr>
+                  <tr>
+                     <td>Digital Source Type</td>
+                     <td>Specifies the nature of the original (print vs. photograph vs. manuscript), affecting how the image should be interpreted.</td>
+                  </tr>
+                  <tr>
+                     <td>Physical Location</td>
+                     <td>Where the originals can be consulted in person.</td>
+                  </tr>
+                  <tr>
+                     <td>Geographic Origin</td>
+                     <td>Hierarchical location (city → region → country → continent) for geographic indexing.</td>
+                  </tr>
+                  <tr>
+                     <td>Copyright Legislation</td>
+                     <td>References the specific Swedish law provisions under which the material is considered freely usable.</td>
+                  </tr>
+                  <tr>
+                     <td>License</td>
+                     <td>The explicit terms under which the digital surrogates are released to the public.</td>
+                  </tr>
+               </tbody>
+            </table>
+         </section>
+
+         <hr class="method-divider">
+
+         <section class="method-section">
+            <span class="section-label">TEI Encoding</span>
+            <h2>Structured Text with TEI/XML</h2>
+            <p>The written catalog texts — the commissariat lists naming each country's delegates — were encoded
+            in TEI (Text Encoding Initiative), an XML-based standard for representing historical and literary
+            documents in a machine-readable form. TEI is the international standard used by archives, libraries,
+            and digital humanities projects to encode text in a way that separates content from presentation.</p>
+            <p>An XSL stylesheet was then used to transform the TEI/XML source into the HTML pages served on
+            this site. This separation means the underlying data remains clean and standards-compliant regardless
+            of how it is displayed — the same TEI source could equally be transformed into a PDF, a dataset, or
+            ingested by a library catalogue system.</p>
+
+            <div class="method-grid">
+               <div class="method-card">
+                  <span class="card-label">Encoding Standard</span>
+                  <span class="card-value">Text Encoding Initiative (TEI P5)</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Format</span>
+                  <span class="card-value">XML with XSL transformation to HTML</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Documents Encoded</span>
+                  <span class="card-value">Commissariat lists for Germany, Denmark, Russia, and the construction committee</span>
+               </div>
+               <div class="method-card">
+                  <span class="card-label">Why TEI</span>
+                  <span class="card-value">Institution-grade interoperability; separates data from display; enables re-use in library systems</span>
+               </div>
+            </div>
+         </section>
+
+         <hr class="method-divider">
+
+         <section class="method-section">
+            <span class="section-label">Web Discoverability</span>
+            <h2>Metadata Embedded in the Page</h2>
+            <p>Every image on this site carries its descriptive metadata directly in the HTML as
+            <code>data-*</code> attributes. This means the metadata travels with the image element — it is not
+            stored in a separate database that could go offline or become decoupled from the content.</p>
+            <p>Each image records its caption, document type, source reference, year, and collection. This
+            structure allows the metadata to be read by JavaScript (for the caption overlay), by search
+            engines, and by anyone inspecting the page source.</p>
+
+            <div class="method-card" style="margin-top: 1.2rem;">
+               <span class="card-label">Example — image element attributes</span>
+               <span class="card-value" style="font-family: monospace; font-size: 0.8rem; line-height: 1.9; display: block; margin-top: 0.4rem;">
+                  <code>data-caption</code> — descriptive caption for the image<br>
+                  <code>data-doctype</code> — document type (e.g. Photograph)<br>
+                  <code>data-docsource</code> — catalog volume and page reference<br>
+                  <code>data-year</code> — year of the depicted event<br>
+                  <code>data-collection</code> — holding institution
+               </span>
+            </div>
+         </section>
+
+         <hr class="method-divider">
+
+         <section class="method-section">
+            <span class="section-label">Copyright &amp; Licensing</span>
+            <h2>Legal Framework</h2>
+            <p>The original photographs and catalog illustrations date from 1914 and are in the public domain
+            under Swedish copyright law. The applicable provisions are <strong>Lag (1960:729) §§ 7 and 44</strong>,
+            which govern the expiry of copyright for photographic works and other published material.</p>
+            <p>The digital surrogates produced for this project are released under
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">
+            Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International (CC BY–NC–SA 4.0)</a>.
+            This means anyone may share and adapt the material for non-commercial purposes, provided they
+            give attribution and apply the same license to any derivative work.</p>
+            <p>For questions about specific image-to-source correspondence, open an issue on the
+            <a href="https://github.com/roerstrand/Digitization-Project/issues" target="_blank" rel="noopener noreferrer">project repository on GitHub</a>.
+            Source volumes were held at Malmö City Library under shelf mark <em>Bhz Baltiska utställningen</em>
+            at the time of digitization.</p>
+         </section>
+
+      </div>
+   </main>
+
+   <footer>
+      <div class="container footer-inner">
+         <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+         <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
+      </div>
+   </footer>
+
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+</html>
