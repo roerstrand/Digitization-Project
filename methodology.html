@@ -148,6 +148,71 @@
          border-top: 1px solid var(--border);
          margin: 2.5rem 0;
       }
+      .dc-example {
+         margin-top: 1.8rem;
+         border: 1px solid var(--border);
+         border-radius: var(--r);
+         overflow: hidden;
+      }
+      .dc-example-label {
+         font-size: 0.65rem;
+         font-weight: 700;
+         letter-spacing: 0.12em;
+         text-transform: uppercase;
+         color: var(--text-muted);
+         background: var(--surface-2);
+         padding: 0.5rem 1rem;
+         margin: 0;
+         border-bottom: 1px solid var(--border);
+      }
+      .dc-record {
+         margin: 0;
+         padding: 0;
+      }
+      .dc-row {
+         display: grid;
+         grid-template-columns: 130px 1fr;
+         border-bottom: 1px solid var(--border);
+      }
+      .dc-row:last-child {
+         border-bottom: none;
+      }
+      .dc-row dt {
+         font-size: 0.72rem;
+         font-weight: 700;
+         letter-spacing: 0.06em;
+         text-transform: uppercase;
+         color: var(--accent-dk);
+         padding: 0.55rem 1rem;
+         background: var(--surface-2);
+         border-right: 1px solid var(--border);
+         align-self: start;
+      }
+      .dc-row dd {
+         font-size: 0.88rem;
+         color: var(--text);
+         padding: 0.55rem 1rem;
+         margin: 0;
+         line-height: 1.6;
+      }
+      @media (max-width: 520px) {
+         .dc-row { grid-template-columns: 1fr; }
+         .dc-row dt { border-right: none; border-bottom: 1px solid var(--border); }
+      }
+      .why-matters {
+         margin-top: 1.5rem;
+         padding: 1.1rem 1.3rem;
+         border-left: 3px solid var(--accent);
+         background: rgba(201,168,76,0.06);
+         border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      }
+      .why-matters p {
+         margin: 0;
+         font-size: 0.95rem;
+         color: var(--text);
+         line-height: 1.75;
+         font-style: italic;
+      }
       @media (max-width: 640px) {
          .workflow { flex-direction: column; }
          .workflow-step + .workflow-step { margin-left: 0; margin-top: 0.5rem; }
@@ -170,12 +235,13 @@
             <span></span><span></span><span></span>
          </button>
          <nav id="sitenav">
-            <a href="index.html">Home</a>
             <a href="./baltictower.html">Baltic Tower</a>
             <a href="./danishbuilding.html">Danish House</a>
             <a href="./germanbuilding.html">German Hall</a>
             <a href="./russianbuilding.html">Russian Pavilion</a>
             <a href="./methodology.html" aria-current="page">Methodology</a>
+            <a href="./about.html">About</a>
+            <a href="./lessons.html">Reflections</a>
          </nav>
       </div>
    </header>
@@ -336,6 +402,56 @@
                   </tr>
                </tbody>
             </table>
+
+            <div class="dc-example">
+               <p class="dc-example-label">Example metadata record — Dublin Core</p>
+               <dl class="dc-record">
+                  <div class="dc-row">
+                     <dt>Title</dt>
+                     <dd>The German Exhibition Building, Baltic Exhibition, Malmö 1914</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Creator</dt>
+                     <dd>Unknown (catalog illustration)</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Date</dt>
+                     <dd>1914; digitized 2023-05-20</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Subject</dt>
+                     <dd>Baltic Exhibition 1914; Jugend architecture; German pavilion; Malmö; international exhibitions</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Description</dt>
+                     <dd>Two symmetrical Wilhelmine-style pavilions with large arched windows and visitors in the grounds; exterior view from the exhibition grounds.</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Source</dt>
+                     <dd>Baltic Exhibition catalog, vol. 2, p. 4 — Malmö City Library, shelf mark <em>Bhz Baltiska utställningen</em></dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Rights</dt>
+                     <dd>Public domain under Lag (1960:729) §§ 7, 44. Digital surrogate: CC BY–NC–SA 4.0</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Format</dt>
+                     <dd>image/jpeg; 300 dpi; digitized from print of non-transparent medium</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Language</dt>
+                     <dd>N/A (visual resource)</dd>
+                  </div>
+                  <div class="dc-row">
+                     <dt>Identifier</dt>
+                     <dd>2.2(page4).jpg — notation: volume · page within source catalog</dd>
+                  </div>
+               </dl>
+            </div>
+
+            <div class="why-matters">
+               <p>Without metadata, digitized collections become increasingly difficult to search, understand, and preserve over time. A scan without a record is just a file — it could be anything, from anywhere, belonging to no one. Structured metadata is what turns a collection of image files into a usable, citable, and sustainable archive.</p>
+            </div>
          </section>
 
          <hr class="method-divider">
@@ -370,6 +486,24 @@
                   <span class="card-value">Institution-grade interoperability; separates data from display; enables re-use in library systems</span>
                </div>
             </div>
+         </section>
+
+         <hr class="method-divider">
+
+         <section class="method-section">
+            <span class="section-label">Interoperability &amp; Future Use</span>
+            <h2>Built for Machine Readability</h2>
+            <p>The technical decisions made during this project were not only about the present website — they
+            were about positioning the collection for use beyond it. The 600 dpi captures of text pages are
+            suitable for OCR extraction without revisiting the physical source. The Dublin Core metadata fields
+            are structured and labeled, ready for ingestion by external catalogue systems. The TEI XML encoding
+            separates data from display, meaning the same source can be transformed into PDFs, datasets, or
+            API responses with no changes to the underlying content.</p>
+            <p>Together these properties make the collection compatible with heritage aggregators such as
+            <strong>Europeana</strong> or the Swedish <strong>K-samsök</strong>, and with AI-assisted
+            applications: text extraction, named entity recognition on the commissariat lists, semantic search
+            across the described objects, or training data compilation. This was a design goal, not a
+            coincidental outcome of standards compliance.</p>
          </section>
 
          <hr class="method-divider">
@@ -422,6 +556,7 @@
       <div class="container footer-inner">
          <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
          <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
+         <p class="footer-source"><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
       </div>
    </footer>
 

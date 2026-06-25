@@ -394,6 +394,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+  /* --- Footer connect links --- */
+  const footerInner = document.querySelector('.footer-inner');
+  if (footerInner) {
+    const fConnect = document.createElement('div');
+    fConnect.className = 'footer-connect';
+    fConnect.innerHTML = '<a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/robin-strandberg" target="_blank" rel="noopener noreferrer">LinkedIn</a>';
+    footerInner.insertBefore(fConnect, footerInner.firstChild);
+  }
+
   /* --- Init slideshow & autoplay --- */
   showSlides(slideIndex);
   startAutoplay();

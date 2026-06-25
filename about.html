@@ -38,13 +38,13 @@
             <span></span><span></span><span></span>
          </button>
          <nav id="sitenav">
-            <a href="index.html">Home</a>
             <a href="./baltictower.html">Baltic Tower</a>
             <a href="./danishbuilding.html">Danish House</a>
             <a href="./germanbuilding.html">German Hall</a>
             <a href="./russianbuilding.html">Russian Pavilion</a>
             <a href="./methodology.html">Methodology</a>
             <a href="./about.html">About</a>
+            <a href="./lessons.html">Lessons Learned</a>
          </nav>
       </div>
    </header>
@@ -56,22 +56,83 @@
          <!-- Project intro card -->
          <div class="gallery-container">
             <div id="about">
-               <h2>Who made this and why</h2>
-               <p>This website was designed and built by <strong>Robin Strandberg</strong> as the public-facing outcome
-                  of a digitization project completed in 2023 as part of the <em>Digitizing Cultural Heritage
-                  Materials</em> course at the University of Borås, Sweden. The underlying academic project was
-                  conducted in collaboration with My Lundborg.</p>
-               <p>The website, archival research, HTML/CSS/JS development, image processing, and metadata documentation
-                  were carried out by Robin Strandberg. Scanning at Malmö City Library was a shared effort. TEI encoding
-                  and XSL stylesheet authoring for the commissariat texts were contributed by My Lundborg.</p>
-               <p>The goal was to take previously undigitized material held at Malmö City Library and turn it into an
-                  accessible, publicly available digital collection — complete with structured metadata, contextual text,
-                  and a professional web presentation built from scratch.</p>
-               <p>The material documents four national exhibition buildings erected — and torn down — solely for the 1914
-                  Baltic Exhibition in Malmö: the Baltic Tower (Sweden), the Danish House, the German Hall, and the
-                  Russian Pavilion. None of these structures survive today.</p>
+               <h2>About this project</h2>
+               <p>This project located, scanned, described, and published previously undigitized material from
+                  the 1914 Baltic Exhibition in Malmö — applying Dublin Core metadata, TEI encoding, and open
+                  licensing to a collection that had no prior digital presence.</p>
+               <p>The material documents four national exhibition buildings erected and torn down solely for the
+                  event: the Baltic Tower (Sweden), the Danish House, the German Hall, and the Russian Pavilion.
+                  None of these structures survive today.</p>
+               <p>Completed in 2023 as part of the <em>Digitizing Cultural Heritage Materials</em> course at
+                  the University of Borås, Sweden, by Robin Strandberg and My Lundborg. This site is its
+                  public-facing outcome.</p>
             </div>
          </div>
+
+         <!-- Digitization workflow timeline -->
+         <section class="digtimeline-section">
+            <span class="context-label" style="display:block;text-align:center;margin-bottom:0.75rem;">How the digitization was carried out</span>
+            <h2 class="digtimeline-title">The Digitization Workflow</h2>
+            <div class="digtimeline">
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">01</div>
+                  <div class="digtimeline-body">
+                     <h3>Archive Search</h3>
+                     <p>Located Baltic Exhibition material at Malmö City Library under shelf mark <em>Bhz Baltiska utställningen</em> and at Malmö City Archive. A librarian presented available titles and arranged scanning access; archive documents were photographed on-site for reference.</p>
+                  </div>
+               </div>
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">02</div>
+                  <div class="digtimeline-body">
+                     <h3>Selection</h3>
+                     <p>Evaluated seven identified volumes for physical condition, historical relevance, and copyright status. Selected a focused subset of printed catalogs, view albums, and photographic collections covering the four national pavilions.</p>
+                  </div>
+               </div>
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">03</div>
+                  <div class="digtimeline-body">
+                     <h3>Scanning</h3>
+                     <p>Carried out at Malmö City Library on an <strong>Epson Perfection V600</strong> Photo scanner. Photographs digitized at 300 dpi; text pages and blueprints at 600 dpi for legibility and future OCR compatibility. A white A4 sheet served as the reference background throughout.</p>
+                  </div>
+               </div>
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">04</div>
+                  <div class="digtimeline-body">
+                     <h3>Image Processing</h3>
+                     <p>All scans processed in <strong>GIMP</strong>: straightened, cropped, colour-balanced, and exported as JPEG for web delivery. Each file named using a surrogate numbering convention (e.g. 2:4 = catalog vol. 2, page 4) preserving a direct link to the physical source.</p>
+                  </div>
+               </div>
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">05</div>
+                  <div class="digtimeline-body">
+                     <h3>Metadata — Dublin Core</h3>
+                     <p>Each item described using 15 <strong>Dublin Core</strong> elements. Records first compiled collaboratively in a shared spreadsheet, then embedded into image files via GIMP. TEI XML encoding for commissariat texts carried out separately in oXygen.</p>
+                  </div>
+               </div>
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">06</div>
+                  <div class="digtimeline-body">
+                     <h3>Quality Assurance</h3>
+                     <p>Scans reviewed against physical originals for completeness and accuracy. Metadata records cross-checked across all items for consistency. Two known exceptions — items affected by a GitHub metadata embedding bug — were identified and documented.</p>
+                  </div>
+               </div>
+
+               <div class="digtimeline-step">
+                  <div class="digtimeline-num">07</div>
+                  <div class="digtimeline-body">
+                     <h3>Publication</h3>
+                     <p>The website was built from scratch in <strong>HTML, CSS, and JavaScript</strong> and deployed to <strong>GitHub Pages</strong>. All images, metadata records, and TEI-derived XHTML files committed to a public repository under a Creative Commons BY-NC-SA 4.0 licence.</p>
+                  </div>
+               </div>
+
+            </div>
+         </section>
 
          <!-- Detailed sections -->
          <section class="context-section">
@@ -96,16 +157,15 @@
                   responsible for older collections supported the project by presenting available titles and arranging
                   scanning access.</p>
                <p>Supplementary documentary material, including more detailed blueprints and contemporary newspaper
-                  clippings, was gathered by Robin Strandberg at <strong>Malmö City Archive</strong>, where documents
-                  were photographed on-site using a smartphone for contextual reference.</p>
+                  clippings, was gathered at <strong>Malmö City Archive</strong>, where documents were photographed
+                  on-site for contextual reference.</p>
             </div>
 
             <div class="context-block">
                <span class="context-label">Scanning</span>
                <h3>Equipment and Resolution Strategy</h3>
                <p>Scanning was carried out at Malmö City Library on an <strong>Epson Perfection V600 Photo</strong>
-                  scanner using 24-bit colour, with both Robin Strandberg and My Lundborg present during the scanning
-                  sessions. Two resolutions were chosen deliberately:</p>
+                  scanner using 24-bit colour. Two resolutions were chosen deliberately:</p>
                <p><strong>300 dpi</strong> for photographs and images — sufficient for display quality and viewer
                   experience without generating prohibitively large files. <strong>600 dpi</strong> for text documents
                   and blueprints — higher resolution enables legibility when zoomed in and keeps the material suitable
@@ -125,8 +185,8 @@
                <p>Metadata was initially catalogued collaboratively in a shared <strong>Google Drive</strong> spreadsheet
                   before being embedded directly into image files via GIMP and documented on the per-building metadata
                   pages accessible from each building page on this site.</p>
-               <p>TEI (Text Encoding Initiative) XML was used by My Lundborg to encode the commissariat texts, with
-                  XSL stylesheets transforming the TEI source into XHTML files for each participating nation.</p>
+               <p>TEI (Text Encoding Initiative) XML was used to encode the commissariat texts, with XSL stylesheets
+                  transforming the TEI source into XHTML files for each participating nation.</p>
             </div>
 
             <div class="context-block">
@@ -136,12 +196,44 @@
                   image, metadata record, TEI file, and stylesheet available for inspection, download, and reuse under a
                   Creative Commons licence. GitHub also served as the collaboration platform throughout the project,
                   enabling distributed work despite the team working remotely.</p>
-               <p>The website — built entirely in <strong>HTML, CSS, and JavaScript</strong> by Robin Strandberg — acts
-                  as the pedagogical layer: it contextualises the digitized material with historical background,
-                  presents images in a slideshow gallery, and links each building to its metadata record. No framework
-                  or CMS was used; the codebase is hand-authored and lightweight.</p>
+               <p>The website — built entirely in <strong>HTML, CSS, and JavaScript</strong> — acts as the
+                  pedagogical layer: it contextualises the digitized material with historical background, presents
+                  images in a slideshow gallery, and links each building to its metadata record. No framework or
+                  CMS was used; the codebase is hand-authored and lightweight.</p>
                <p><strong>Visual Studio Code</strong> was the primary editor; <strong>oXygen</strong> was used for TEI
                   and XSL work due to its built-in XML validation and real-time XSLT transformation support.</p>
+               <p><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer" style="font-weight:600;">View the project repository on GitHub &rarr;</a></p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Technical Profile</span>
+               <h3>Tools &amp; Standards</h3>
+               <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:0.7rem;margin-top:1rem;">
+                  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:0.85rem 1rem;">
+                     <span style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.35rem;">Standards</span>
+                     <span style="font-size:0.9rem;color:var(--text);line-height:1.5;">Dublin Core &middot; TEI P5 &middot; XSL</span>
+                  </div>
+                  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:0.85rem 1rem;">
+                     <span style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.35rem;">Development</span>
+                     <span style="font-size:0.9rem;color:var(--text);line-height:1.5;">HTML &middot; CSS &middot; JavaScript &mdash; no framework</span>
+                  </div>
+                  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:0.85rem 1rem;">
+                     <span style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.35rem;">Imaging</span>
+                     <span style="font-size:0.9rem;color:var(--text);line-height:1.5;">GIMP &middot; Epson V600 &middot; 300/600 dpi</span>
+                  </div>
+                  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:0.85rem 1rem;">
+                     <span style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.35rem;">Workflow</span>
+                     <span style="font-size:0.9rem;color:var(--text);line-height:1.5;">Git &middot; GitHub &middot; GitHub Pages</span>
+                  </div>
+                  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:0.85rem 1rem;">
+                     <span style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.35rem;">Editors</span>
+                     <span style="font-size:0.9rem;color:var(--text);line-height:1.5;">VS Code &middot; oXygen XML</span>
+                  </div>
+                  <div style="background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r);padding:0.85rem 1rem;">
+                     <span style="display:block;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.35rem;">Licensing</span>
+                     <span style="font-size:0.9rem;color:var(--text);line-height:1.5;">CC BY&ndash;NC&ndash;SA 4.0 &middot; Public domain (1914)</span>
+                  </div>
+               </div>
             </div>
 
             <div class="context-block">
@@ -196,6 +288,7 @@
          <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use
             with attribution; adaptations under the same terms.</p>
+         <p class="footer-source"><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
       </div>
    </footer>
 
