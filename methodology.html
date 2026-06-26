@@ -1,12 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <title>Methodology — Baltic Exhibition 1914</title>
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <link rel="stylesheet" href="./css/main.css">
    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
    <script defer src="./scripts/main.js"></script>
@@ -218,6 +216,22 @@
          .workflow-step + .workflow-step { margin-left: 0; margin-top: 0.5rem; }
       }
    </style>
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "WebPage",
+     "name": "Methodology — Baltic Exhibition 1914 Digitization Project",
+     "url": "https://roerstrand.github.io/DCHM-Project/methodology.html",
+     "description": "Documentation of the digitization workflow: equipment, scanning parameters, Dublin Core metadata schema, TEI/XML encoding, copyright framework, and decisions made for machine readability and long-term interoperability.",
+     "author": { "@type": "Person", "name": "Robin Erik Strandberg" },
+     "isPartOf": { "@type": "WebSite", "name": "Digital Cultural Heritage: Baltic Exhibition 1914", "url": "https://roerstrand.github.io/DCHM-Project/" },
+     "about": {
+       "@type": "CreativeWork",
+       "name": "Dublin Core Metadata and TEI P5 Encoding",
+       "description": "Metadata schema and encoding standards applied in the digitization of 1914 Baltic Exhibition materials from Malmo City Library."
+     }
+   }
+   </script>
 </head>
 
 <body>
@@ -235,12 +249,12 @@
             <span></span><span></span><span></span>
          </button>
          <nav id="sitenav">
+            <a href="./about.html">About</a>
             <a href="./baltictower.html">Baltic Tower</a>
             <a href="./danishbuilding.html">Danish House</a>
             <a href="./germanbuilding.html">German Hall</a>
             <a href="./russianbuilding.html">Russian Pavilion</a>
             <a href="./methodology.html" aria-current="page">Methodology</a>
-            <a href="./about.html">About</a>
             <a href="./lessons.html">Reflections</a>
          </nav>
       </div>
@@ -257,14 +271,14 @@
             why those fields were chosen, and how the metadata is embedded into the site so that both humans and
             machines can read it.</p>
             <p>The source material consists of printed exhibition catalogs and photographic records from the 1914 Baltic
-            Exhibition, held at Malmö City Library under shelf mark <em>Bhz Baltiska utställningen</em>. All scanning
-            took place on 20 May 2023.</p>
+            Exhibition, held at Malmö City Library (shelf mark <em>Bhz Baltiska utställningen</em>) and at Malmö City Archive. All scanning
+            took place on 20 May 2023. Images were described using <strong>Dublin Core</strong>; catalog texts were encoded in <strong>TEI P5 XML</strong> and transformed to HTML via an XSL stylesheet.</p>
 
             <div class="workflow">
                <div class="workflow-step">
                   <span class="step-num">1</span>
                   <span class="step-title">Archive</span>
-                  <span class="step-desc">Physical catalogs located at Malmö City Library</span>
+                  <span class="step-desc">Physical catalogs located at Malmö City Library and Malmö City Archive</span>
                </div>
                <div class="workflow-step">
                   <span class="step-num">2</span>
@@ -452,6 +466,7 @@
             <div class="why-matters">
                <p>Without metadata, digitized collections become increasingly difficult to search, understand, and preserve over time. A scan without a record is just a file — it could be anything, from anywhere, belonging to no one. Structured metadata is what turns a collection of image files into a usable, citable, and sustainable archive.</p>
             </div>
+            <p style="margin-top:1rem;">Browse the full metadata records: <a href="./metadataonwebsite/metadatabaltictower.html">Baltic Tower</a> &middot; <a href="./metadataonwebsite/metadatadanishbuilding.html">Danish House</a> &middot; <a href="./metadataonwebsite/metadatagermanbuilding.html">German Hall</a> &middot; <a href="./metadataonwebsite/metadatarussianbuilding.html">Russian Pavilion</a></p>
          </section>
 
          <hr class="method-divider">
@@ -486,6 +501,7 @@
                   <span class="card-value">Institution-grade interoperability; separates data from display; enables re-use in library systems</span>
                </div>
             </div>
+            <p style="margin-top:1rem;">Read the encoded texts: <a href="./TEI-XSL-HTML%20conversion%20files/germanCommissariat.html">German Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/danishCommissariat.html">Danish Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/russianCommissariat.html">Russian Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/constructionCommissariat.html">Construction Committee</a></p>
          </section>
 
          <hr class="method-divider">
@@ -517,6 +533,7 @@
             <p>Each image records its caption, document type, source reference, year, and collection. This
             structure allows the metadata to be read by JavaScript (for the caption overlay), by search
             engines, and by anyone inspecting the page source.</p>
+            <p>Each page also embeds a <code>&lt;script type="application/ld+json"&gt;</code> block, giving search engines a machine-readable summary using Schema.org vocabulary — the same structured-data standard used by Google's Knowledge Graph.</p>
 
             <div class="method-card" style="margin-top: 1.2rem;">
                <span class="card-label">Example — image element attributes</span>
@@ -556,16 +573,9 @@
       <div class="container footer-inner">
          <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
          <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
-         <p class="footer-source"><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
       </div>
    </footer>
 
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </body>
 </html>

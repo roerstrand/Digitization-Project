@@ -1,23 +1,35 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xml:lang="en">
 
 <head>
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-   <title>About the Digitization Project – Baltic Exhibition 1914</title>
+   <title>Robin Strandberg — Digitization Portfolio</title>
 
-   <meta property="og:title" content="About the Digitization Project – Baltic Exhibition 1914" />
+   <meta property="og:title" content="Robin Strandberg — Digitization Portfolio" />
    <meta property="og:description"
       content="How the Baltic Exhibition 1914 digitization project was planned, executed, and published — tools, standards, institutions, and challenges." />
    <meta property="og:url" content="https://roerstrand.github.io/DCHM-Project/about.html" />
    <meta property="og:image" content="./img/baltictower/2.10(page13).jpg" />
    <meta property="og:type" content="website" />
 
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
    <link rel="stylesheet" href="./css/main.css" />
    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet" />
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "AboutPage",
+     "name": "Robin Strandberg — Digitization Portfolio",
+     "url": "https://roerstrand.github.io/DCHM-Project/about.html",
+     "description": "Background on the Baltic Exhibition 1914 digitization project: archive search, scanning workflow, Dublin Core metadata, TEI encoding, copyright clearance, and publication. Completed 2023.",
+     "author": [
+       { "@type": "Person", "name": "Robin Erik Strandberg" },
+       { "@type": "Person", "name": "My Lundborg" }
+     ],
+     "isPartOf": { "@type": "WebSite", "name": "Digital Cultural Heritage: Baltic Exhibition 1914", "url": "https://roerstrand.github.io/DCHM-Project/" }
+   }
+   </script>
 </head>
 
 <body>
@@ -27,24 +39,24 @@
 
    <!-- Hero -->
    <div class="hero hero--sub">
-      <h1>About the Digitization Project</h1>
-      <p>Process &middot; Tools &middot; Standards &middot; Challenges</p>
+      <h1>Robin Strandberg</h1>
+      <p>Information Management &middot; Metadata &middot; Digital Preservation</p>
    </div>
 
    <!-- Navigation -->
    <header>
       <div class="container">
-<button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>
          </button>
          <nav id="sitenav">
+            <a href="./about.html">About</a>
             <a href="./baltictower.html">Baltic Tower</a>
             <a href="./danishbuilding.html">Danish House</a>
             <a href="./germanbuilding.html">German Hall</a>
             <a href="./russianbuilding.html">Russian Pavilion</a>
             <a href="./methodology.html">Methodology</a>
-            <a href="./about.html">About</a>
-            <a href="./lessons.html">Lessons Learned</a>
+            <a href="./lessons.html">Reflections</a>
          </nav>
       </div>
    </header>
@@ -57,82 +69,22 @@
          <div class="gallery-container">
             <div id="about">
                <h2>About this project</h2>
-               <p>This project located, scanned, described, and published previously undigitized material from
-                  the 1914 Baltic Exhibition in Malmö — applying Dublin Core metadata, TEI encoding, and open
-                  licensing to a collection that had no prior digital presence.</p>
-               <p>The material documents four national exhibition buildings erected and torn down solely for the
-                  event: the Baltic Tower (Sweden), the Danish House, the German Hall, and the Russian Pavilion.
-                  None of these structures survive today.</p>
-               <p>Completed in 2023 as part of the <em>Digitizing Cultural Heritage Materials</em> course at
-                  the University of Borås, Sweden, by Robin Strandberg and My Lundborg. This site is its
-                  public-facing outcome.</p>
+               <p>This project emerged from an interest in the cultural history of the Malmö region and in the Jugend architectural style — the last major expression of which in Sweden is represented by the Baltic Exhibition of 1914.</p>
+               <p><strong>Robin Strandberg</strong> designed and built this website, carried out archival research at two institutions (Malmö City Library and Malmö City Archive), executed the scanning sessions, processed all images, authored the Dublin Core metadata records across the full collection, performed copyright analysis under Swedish law, and conducted quality assurance. My Lundborg contributed TEI XML encoding and XSL stylesheet authoring for the commissariat texts; scanning sessions at Malmö City Library were a joint effort.</p>
+               <p>The project reviewed <strong>7 source volumes</strong>, produced a described collection spanning <strong>4 national pavilions</strong>, and documented each item with a <strong>15-element Dublin Core metadata record</strong> — published openly in a public GitHub repository under a Creative Commons licence.</p>
+               <p>This website — responsive layout, dark mode, custom JavaScript lightbox, mobile navigation, and all CSS — was <strong>hand-coded from scratch without any framework or CMS</strong>. The site is itself a technical artifact, not only a presentation layer.</p>
+               <blockquote class="pull-quote">The domain is cultural heritage archives. The methods — structured metadata, rights clearance, end-to-end digital delivery, and open data publishing — are transferable to any organisation managing unstructured information assets: municipal archives, corporate knowledge bases, library collections, or AI training datasets.</blockquote>
+               <p class="about-meta">Completed 2023 &middot; <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer">github.com/roerstrand</a> &middot; <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+               <p class="about-meta">The full digitization workflow — archive search, scanning, metadata, and publication — is documented on the <a href="./methodology.html">Methodology page</a>.</p>
+               <div class="contact-block">
+                  <h3>Get in touch</h3>
+                  <div class="contact-links">
+                     <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer" class="cta-btn">LinkedIn</a>
+                     <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer" class="cta-secondary">GitHub</a>
+                  </div>
+               </div>
             </div>
          </div>
-
-         <!-- Digitization workflow timeline -->
-         <section class="digtimeline-section">
-            <span class="context-label" style="display:block;text-align:center;margin-bottom:0.75rem;">How the digitization was carried out</span>
-            <h2 class="digtimeline-title">The Digitization Workflow</h2>
-            <div class="digtimeline">
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">01</div>
-                  <div class="digtimeline-body">
-                     <h3>Archive Search</h3>
-                     <p>Located Baltic Exhibition material at Malmö City Library under shelf mark <em>Bhz Baltiska utställningen</em> and at Malmö City Archive. A librarian presented available titles and arranged scanning access; archive documents were photographed on-site for reference.</p>
-                  </div>
-               </div>
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">02</div>
-                  <div class="digtimeline-body">
-                     <h3>Selection</h3>
-                     <p>Evaluated seven identified volumes for physical condition, historical relevance, and copyright status. Selected a focused subset of printed catalogs, view albums, and photographic collections covering the four national pavilions.</p>
-                  </div>
-               </div>
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">03</div>
-                  <div class="digtimeline-body">
-                     <h3>Scanning</h3>
-                     <p>Carried out at Malmö City Library on an <strong>Epson Perfection V600</strong> Photo scanner. Photographs digitized at 300 dpi; text pages and blueprints at 600 dpi for legibility and future OCR compatibility. A white A4 sheet served as the reference background throughout.</p>
-                  </div>
-               </div>
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">04</div>
-                  <div class="digtimeline-body">
-                     <h3>Image Processing</h3>
-                     <p>All scans processed in <strong>GIMP</strong>: straightened, cropped, colour-balanced, and exported as JPEG for web delivery. Each file named using a surrogate numbering convention (e.g. 2:4 = catalog vol. 2, page 4) preserving a direct link to the physical source.</p>
-                  </div>
-               </div>
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">05</div>
-                  <div class="digtimeline-body">
-                     <h3>Metadata — Dublin Core</h3>
-                     <p>Each item described using 15 <strong>Dublin Core</strong> elements. Records first compiled collaboratively in a shared spreadsheet, then embedded into image files via GIMP. TEI XML encoding for commissariat texts carried out separately in oXygen.</p>
-                  </div>
-               </div>
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">06</div>
-                  <div class="digtimeline-body">
-                     <h3>Quality Assurance</h3>
-                     <p>Scans reviewed against physical originals for completeness and accuracy. Metadata records cross-checked across all items for consistency. Two known exceptions — items affected by a GitHub metadata embedding bug — were identified and documented.</p>
-                  </div>
-               </div>
-
-               <div class="digtimeline-step">
-                  <div class="digtimeline-num">07</div>
-                  <div class="digtimeline-body">
-                     <h3>Publication</h3>
-                     <p>The website was built from scratch in <strong>HTML, CSS, and JavaScript</strong> and deployed to <strong>GitHub Pages</strong>. All images, metadata records, and TEI-derived XHTML files committed to a public repository under a Creative Commons BY-NC-SA 4.0 licence.</p>
-                  </div>
-               </div>
-
-            </div>
-         </section>
 
          <!-- Detailed sections -->
          <section class="context-section">
@@ -187,6 +139,7 @@
                   pages accessible from each building page on this site.</p>
                <p>TEI (Text Encoding Initiative) XML was used to encode the commissariat texts, with XSL stylesheets
                   transforming the TEI source into XHTML files for each participating nation.</p>
+               <p>The full metadata schema and encoding decisions are documented on the <a href="./methodology.html">Methodology page</a>.</p>
             </div>
 
             <div class="context-block">
@@ -240,7 +193,7 @@
                <span class="context-label">Web Publication</span>
                <h3>Open Access via GitHub Pages</h3>
                <p>The site is hosted on <strong>GitHub Pages</strong> — a zero-cost static hosting solution appropriate
-                  for a student project. Choosing GitHub as both repository and hosting platform ensures full
+                  for an open-source project. Choosing GitHub as both repository and hosting platform ensures full
                   transparency: visitors can inspect the source, fork the repository, or report issues directly.</p>
                <p>Before publishing, copyright was carefully verified. The digitized catalogs were published in 1914 by
                   <em>Förlags-aktiebolaget i Malmö</em>. Under Swedish copyright law (1960:729, §44), works whose
@@ -276,6 +229,7 @@
                   in the selection and encoding phase, where manual judgment and rich metadata replaced automated
                   throughput. This hybrid reflects the realities of a small-team, limited-budget project and was itself
                   a significant learning outcome.</p>
+               <p>For a frank account of what worked, what didn't, and what we'd do differently, see the <a href="./lessons.html">Reflections</a> page.</p>
             </div>
 
          </section>
@@ -288,19 +242,9 @@
          <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
                target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use
             with attribution; adaptations under the same terms.</p>
-         <p class="footer-source"><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
       </div>
    </footer>
 
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
    <script src="./scripts/main.js"></script>
 </body>
 

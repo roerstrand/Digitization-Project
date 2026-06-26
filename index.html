@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" xml:lang="en">
 
 <head>
@@ -22,11 +22,34 @@
    <meta name="twitter:image" content="./img/baltictower/2.10(page13).jpg" />
 
    <!-- Fonts and CSS -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
    <link rel="stylesheet" href="./css/main.css" />
    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet" />
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": ["WebSite", "CollectionPage"],
+     "name": "Digital Cultural Heritage: Baltic Exhibition 1914",
+     "url": "https://roerstrand.github.io/DCHM-Project/",
+     "description": "A digitization project applying Dublin Core metadata, TEI encoding, and open licensing to undigitized material from the 1914 Baltic Exhibition in Malmö, Sweden.",
+     "author": { "@type": "Person", "name": "Robin Erik Strandberg" },
+     "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+     "dateCreated": "2023",
+     "inLanguage": "en",
+     "about": {
+       "@type": "Event",
+       "name": "Baltic Exhibition 1914",
+       "description": "International art, industry, and craftsmanship exhibition held in Malmö, Sweden, 15 May–4 October 1914. The last major manifestation of the Jugend architectural and art style in Sweden.",
+       "startDate": "1914-05-15",
+       "endDate": "1914-10-04",
+       "location": {
+         "@type": "Place",
+         "name": "Malmö",
+         "address": { "@type": "PostalAddress", "addressLocality": "Malmö", "addressRegion": "Skåne", "addressCountry": "SE" }
+       }
+     }
+   }
+   </script>
 </head>
 
 
@@ -37,27 +60,48 @@
 
    <!-- Hero -->
    <div class="hero">
-      <h1>Welcome to the Baltic Exhibition</h1>
-      <p>A digital exploration of the 1914 event in Malmö, Sweden</p>
+      <h1>Baltic Exhibition 1914</h1>
+      <p>Information management &middot; Metadata &middot; Open data &mdash; Dublin Core &middot; TEI</p>
+      <p class="hero-byline">A digitization portfolio by <a href="./about.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Robin Strandberg</a></p>
    </div>
 
    <!-- Navigation -->
    <header>
       <div class="container">
-<button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+         <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>
          </button>
          <nav id="sitenav">
+            <a href="./about.html">About</a>
             <a href="./baltictower.html">Baltic Tower</a>
             <a href="./danishbuilding.html">Danish House</a>
             <a href="./germanbuilding.html">German Hall</a>
             <a href="./russianbuilding.html">Russian Pavilion</a>
             <a href="./methodology.html">Methodology</a>
-            <a href="./about.html">About</a>
             <a href="./lessons.html">Reflections</a>
          </nav>
       </div>
    </header>
+
+   <!-- Stats strip -->
+   <div class="stats-strip">
+      <div class="stat-item">
+         <span class="stat-num">7</span>
+         <span class="stat-label">Source volumes reviewed</span>
+      </div>
+      <div class="stat-item">
+         <span class="stat-num">4</span>
+         <span class="stat-label">National pavilions documented</span>
+      </div>
+      <div class="stat-item">
+         <span class="stat-num">15</span>
+         <span class="stat-label">Dublin Core fields per item</span>
+      </div>
+      <div class="stat-item">
+         <span class="stat-num" style="font-size:1.3rem;letter-spacing:-0.02em;">HTML/CSS/JS</span>
+         <span class="stat-label">Hand-coded, no framework</span>
+      </div>
+   </div>
 
    <!-- Main content -->
    <main id="content">
@@ -106,24 +150,25 @@
             </div>
 
             <div class="textbox">
-               <h2>The last manifestation of the Jugend architectural & art style in Sweden</h2>
-               <p>The Baltic Exhibition was an art industry and craftsman event between the 15th of May and the 4th of
-                  October 1914. The exhibition took place in Malmö, Sweden. Four nations participated in the event:
-                  Sweden, Denmark, Germany and Russia. The participating countries exhibited buildings among other -
-                  built and torn down solely for the event manifesting the Jugend architectural and art style within
-                  Sweden, for the last time.</p>
-               <p>The exhibition was a friendly yet competitive event where each country sought to show their dignity by
-                  showcasing their cultural contribution and local papers fierying up the sense of national dignity.</p>
-               <p>The Jugend style was present from 1890 to the 1920s, signified by a reaction against the historicistic
-                  thinking. The style was a mix of several art flows; symbolized by asymmetries, meandering plant and
-                  flower lines with a naturalistic ornamentic. The Baltic exhibition represented the later Jugend style
-                  that differed from the earlier iterations with more straight lines and geometric shapes.</p>
-               <p>The exhibition in size measured 51.6 hectare. It was the biggest exhibition hosted in the Nordic
-                  countries at the time, double the size of the Stockholm exhibition of 1897.</p>
-               <p>Revisiting history, this website was built as part of a minor digitization project to once again
-                  illuminate an extraordinary event bringing nations together commonly fighting wars against one another
-                  throughout history. This time gathered at peace under the communion of cultural aspirations –
-                  exhibiting creativity, not destruction.</p>
+               <h2>The last manifestation of the Jugend architectural &amp; art style in Sweden</h2>
+               <p>The Baltic Exhibition was an international art, industry, and crafts event held between 15 May
+                  and 4 October 1914 in Malmö, Sweden. Four nations participated: Sweden, Denmark, Germany, and
+                  Russia. Each erected a national exhibition building — constructed and dismantled solely for the
+                  occasion — representing the final major expression of the Jugend architectural and art style
+                  in Sweden.</p>
+               <p>The event was both a celebration and a competition. Each nation sought to showcase its cultural
+                  achievements, with local newspapers stoking national pride on both sides of the Baltic.</p>
+               <p>The Jugend style flourished from the 1890s to the 1920s as a reaction against historicist
+                  convention. It drew on multiple art movements, characterized by asymmetry, meandering plant
+                  and floral motifs, and a naturalistic ornamental vocabulary. The Baltic Exhibition represented
+                  the later phase of Jugend — more geometric and rectilinear than its earlier iterations.</p>
+               <p>The exhibition covered 51.6 hectares — the largest in the Nordic countries at the time,
+                  double the size of the Stockholm exhibition of 1897.</p>
+               <p>This site is the public outcome of a digitization project that returned this material to
+                  public reach. The exhibition brought together nations that, within months of its close,
+                  would be at war — a gathering defined by creativity at the threshold of catastrophe.</p>
+               <p>The methods applied — structured metadata, rights clearance, end-to-end digital delivery, and open data publishing — are transferable to any organisation managing unstructured information assets: municipal archives, corporate knowledge bases, library collections, or AI training datasets.</p>
+               <p>For a frank account of what worked and what we'd do differently, see <a href="./lessons.html">Reflections</a>.</p>
             </div>
 
          </div>
@@ -153,7 +198,7 @@
             <div class="context-block">
                <span class="context-label">Digital Cultural Heritage</span>
                <h3>Preserving the Record</h3>
-               <p>Physical archival materials — photographs, illustrated catalogs, architectural drawings — are vulnerable to decay, dispersal, and neglect. Digitization transforms these documents into searchable, shareable, and reproducible records that can outlast their physical originals. The materials presented on this site originate from printed catalogs and photographic records of the 1914 Baltic Exhibition. Making them accessible online is an act of preservation: ensuring that a brief, remarkable gathering of nations in a Swedish harbour city does not pass entirely out of memory.</p>
+               <p>Physical archival materials — photographs, illustrated catalogs, architectural drawings — are vulnerable to decay, dispersal, and neglect. Digitization transforms these documents into searchable, shareable, and reproducible records that can outlast their physical originals. The materials presented on this site originate from printed catalogs and photographic records of the 1914 Baltic Exhibition. No equivalent digital collection of this material was identified during research for this project. Making them accessible online is an act of preservation: ensuring that a brief, remarkable gathering of nations in a Swedish harbour city does not pass entirely out of memory.</p>
             </div>
 
          </section>
@@ -189,6 +234,18 @@
                   <p>Digitized content published as a freely accessible website — bringing a vanished 1914 exhibition back into public reach.</p>
                </div>
             </div>
+            <blockquote class="pull-quote" style="margin-top:2rem;">The methods applied here — structured metadata, rights clearance, end-to-end digital delivery, and open data publishing — are transferable to any organisation managing unstructured information assets: archives, knowledge bases, library collections, or AI training datasets.</blockquote>
+         </section>
+         <p style="text-align:center;margin-top:1.5rem;font-size:0.95rem;color:var(--text-muted);">For a detailed account of the methods and standards applied at each step, see the <a href="./methodology.html">Methodology page</a>.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="container">
+         <section class="cta-section">
+            <h2>Get in touch</h2>
+            <p>Available for roles in information management, digital heritage, and data organisation.</p>
+            <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer" class="cta-btn">LinkedIn</a>
+            <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer" class="cta-secondary">GitHub</a>
          </section>
       </div>
 
@@ -198,20 +255,9 @@
   <div class="container footer-inner">
     <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
     <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
-    <p class="footer-source"><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
   </div>
 </footer>
 
-   <!-- Bootstrap Scripts -->
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"></script>
    <script src="./scripts/main.js"></script>
 </body>
 

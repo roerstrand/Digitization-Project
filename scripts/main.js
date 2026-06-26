@@ -188,7 +188,8 @@ function stopAutoplay() {
 document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Site logo (fixed top-left) --- */
-  const inSubdir = window.location.pathname.includes('/metadataonwebsite/');
+  const inSubdir = window.location.pathname.includes('/metadataonwebsite/') ||
+                  window.location.pathname.includes('TEI-XSL-HTML');
   const logoLink = document.createElement('a');
   logoLink.id = 'siteLogo';
   logoLink.href = inSubdir ? '../index.html' : 'index.html';
@@ -399,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerInner) {
     const fConnect = document.createElement('div');
     fConnect.className = 'footer-connect';
-    fConnect.innerHTML = '<a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/robin-strandberg" target="_blank" rel="noopener noreferrer">LinkedIn</a>';
+    fConnect.innerHTML = '<a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer">LinkedIn</a>';
     footerInner.insertBefore(fConnect, footerInner.firstChild);
   }
 

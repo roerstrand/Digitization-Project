@@ -229,6 +229,20 @@ h1, h2, h3 {
   position: relative;
 }
 
+.hero-byline {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: rgba(240,235,227,0.55);
+  letter-spacing: 0.08em;
+}
+.hero-byline a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.hero-byline a:hover {
+  text-decoration: underline;
+}
+
 /* ===================================
    PAGE NAV (section strip)
 =================================== */
@@ -1476,4 +1490,137 @@ footer a img {
   color: var(--nav-text);
   opacity: 0.25;
   font-size: 0.7rem;
+}
+
+/* ===================================
+   PULL QUOTE
+=================================== */
+.pull-quote {
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  background: rgba(201,168,76,0.06);
+  border-radius: 0 var(--r) var(--r) 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  font-style: italic;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+body.dark-mode .pull-quote {
+  background: rgba(201,168,76,0.09);
+}
+
+/* ===================================
+   STATS STRIP (index.html)
+=================================== */
+.stats-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem 3rem;
+  padding: 2rem 1.5rem;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* ===================================
+   CTA SECTION
+=================================== */
+.cta-section {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.cta-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.cta-section > p {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 0.7rem 2rem;
+  background: var(--accent);
+  color: #1a1612;
+  font-weight: 700;
+  font-family: 'Lora', serif;
+  text-decoration: none;
+  border-radius: var(--r);
+  letter-spacing: 0.04em;
+  transition: background var(--t), transform var(--t), box-shadow var(--t);
+}
+
+.cta-btn:hover {
+  background: var(--accent-dk);
+  transform: translateY(-2px);
+  box-shadow: var(--sh-md);
+}
+
+.cta-secondary {
+  display: inline-block;
+  margin-left: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--t);
+}
+
+.cta-secondary:hover {
+  color: var(--text);
+}
+
+/* ===================================
+   CONTACT BLOCK (about.html)
+=================================== */
+.contact-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
 }
