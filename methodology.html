@@ -8,214 +8,6 @@
    <link rel="stylesheet" href="./css/main.css">
    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
    <script defer src="./scripts/main.js"></script>
-   <style>
-      .method-section {
-         margin-bottom: 3rem;
-      }
-      .method-section h2 {
-         font-family: 'Playfair Display', serif;
-         color: var(--accent);
-         font-size: 1.5rem;
-         margin-bottom: 0.4rem;
-      }
-      .method-section .section-label {
-         display: inline-block;
-         font-size: 0.7rem;
-         font-weight: 700;
-         letter-spacing: 0.12em;
-         text-transform: uppercase;
-         color: var(--text-muted);
-         margin-bottom: 0.6rem;
-      }
-      .method-section p {
-         color: var(--text);
-         line-height: 1.8;
-         margin-bottom: 0.9rem;
-      }
-      .method-section p:last-child {
-         margin-bottom: 0;
-      }
-      .method-grid {
-         display: grid;
-         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-         gap: 1rem;
-         margin-top: 1.2rem;
-      }
-      .method-card {
-         background: var(--surface-2);
-         border: 1px solid var(--border);
-         border-radius: var(--r);
-         padding: 1rem 1.1rem;
-      }
-      .method-card .card-label {
-         display: block;
-         font-size: 0.65rem;
-         font-weight: 700;
-         letter-spacing: 0.1em;
-         text-transform: uppercase;
-         color: var(--text-muted);
-         margin-bottom: 0.3rem;
-      }
-      .method-card .card-value {
-         font-size: 0.95rem;
-         color: var(--text);
-         line-height: 1.5;
-      }
-      .method-card code {
-         font-size: 0.82rem;
-         background: var(--surface);
-         border: 1px solid var(--border);
-         border-radius: 4px;
-         padding: 0.1em 0.4em;
-         color: var(--accent-dk);
-         word-break: break-all;
-      }
-      .workflow {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 0;
-         margin-top: 1.2rem;
-         align-items: stretch;
-      }
-      .workflow-step {
-         flex: 1 1 140px;
-         background: var(--surface-2);
-         border: 1px solid var(--border);
-         border-radius: var(--r);
-         padding: 1rem;
-         text-align: center;
-         position: relative;
-      }
-      .workflow-step + .workflow-step {
-         margin-left: 0.5rem;
-      }
-      .workflow-step .step-num {
-         display: block;
-         font-size: 1.4rem;
-         font-weight: 700;
-         color: var(--accent);
-         line-height: 1;
-         margin-bottom: 0.4rem;
-      }
-      .workflow-step .step-title {
-         display: block;
-         font-size: 0.8rem;
-         font-weight: 700;
-         letter-spacing: 0.05em;
-         text-transform: uppercase;
-         color: var(--text);
-         margin-bottom: 0.3rem;
-      }
-      .workflow-step .step-desc {
-         font-size: 0.8rem;
-         color: var(--text-muted);
-         line-height: 1.5;
-      }
-      .schema-table {
-         width: 100%;
-         border-collapse: collapse;
-         margin-top: 1.2rem;
-         font-size: 0.9rem;
-      }
-      .schema-table th {
-         text-align: left;
-         font-size: 0.65rem;
-         font-weight: 700;
-         letter-spacing: 0.1em;
-         text-transform: uppercase;
-         color: var(--text-muted);
-         border-bottom: 2px solid var(--border);
-         padding: 0.4rem 0.8rem 0.6rem;
-      }
-      .schema-table td {
-         padding: 0.55rem 0.8rem;
-         border-bottom: 1px solid var(--border);
-         color: var(--text);
-         vertical-align: top;
-      }
-      .schema-table td:first-child {
-         font-weight: 600;
-         white-space: nowrap;
-         color: var(--accent-dk);
-      }
-      .schema-table tr:last-child td {
-         border-bottom: none;
-      }
-      .method-divider {
-         border: none;
-         border-top: 1px solid var(--border);
-         margin: 2.5rem 0;
-      }
-      .dc-example {
-         margin-top: 1.8rem;
-         border: 1px solid var(--border);
-         border-radius: var(--r);
-         overflow: hidden;
-      }
-      .dc-example-label {
-         font-size: 0.65rem;
-         font-weight: 700;
-         letter-spacing: 0.12em;
-         text-transform: uppercase;
-         color: var(--text-muted);
-         background: var(--surface-2);
-         padding: 0.5rem 1rem;
-         margin: 0;
-         border-bottom: 1px solid var(--border);
-      }
-      .dc-record {
-         margin: 0;
-         padding: 0;
-      }
-      .dc-row {
-         display: grid;
-         grid-template-columns: 130px 1fr;
-         border-bottom: 1px solid var(--border);
-      }
-      .dc-row:last-child {
-         border-bottom: none;
-      }
-      .dc-row dt {
-         font-size: 0.72rem;
-         font-weight: 700;
-         letter-spacing: 0.06em;
-         text-transform: uppercase;
-         color: var(--accent-dk);
-         padding: 0.55rem 1rem;
-         background: var(--surface-2);
-         border-right: 1px solid var(--border);
-         align-self: start;
-      }
-      .dc-row dd {
-         font-size: 0.88rem;
-         color: var(--text);
-         padding: 0.55rem 1rem;
-         margin: 0;
-         line-height: 1.6;
-      }
-      @media (max-width: 520px) {
-         .dc-row { grid-template-columns: 1fr; }
-         .dc-row dt { border-right: none; border-bottom: 1px solid var(--border); }
-      }
-      .why-matters {
-         margin-top: 1.5rem;
-         padding: 1.1rem 1.3rem;
-         border-left: 3px solid var(--accent);
-         background: rgba(201,168,76,0.06);
-         border-radius: 0 var(--r-sm) var(--r-sm) 0;
-      }
-      .why-matters p {
-         margin: 0;
-         font-size: 0.95rem;
-         color: var(--text);
-         line-height: 1.75;
-         font-style: italic;
-      }
-      @media (max-width: 640px) {
-         .workflow { flex-direction: column; }
-         .workflow-step + .workflow-step { margin-left: 0; margin-top: 0.5rem; }
-      }
-   </style>
    <script type="application/ld+json">
    {
      "@context": "https://schema.org",
@@ -234,13 +26,16 @@
    </script>
 </head>
 
-<body>
+<body class="page-method">
 
    <button id="darkToggle">🌓</button>
 
    <div class="hero hero--sub">
-      <h1>Methodology</h1>
-      <p>How the material was digitized, described, and made reusable</p>
+      <img class="hero-img" src="./img/baltictower/1.1(page1).jpg" alt="" aria-hidden="true">
+      <div class="hero-panel">
+         <h1>Methodology</h1>
+         <p>How the material was digitized, described, and made reusable</p>
+      </div>
    </div>
 
    <header>
@@ -261,7 +56,7 @@
    </header>
 
    <main id="content">
-      <div class="container" style="max-width: 820px; padding-top: 2.5rem; padding-bottom: 3rem;">
+      <div class="container method-page">
 
          <section class="method-section">
             <span class="section-label">Overview</span>
@@ -466,7 +261,7 @@
             <div class="why-matters">
                <p>Without metadata, digitized collections become increasingly difficult to search, understand, and preserve over time. A scan without a record is just a file — it could be anything, from anywhere, belonging to no one. Structured metadata is what turns a collection of image files into a usable, citable, and sustainable archive.</p>
             </div>
-            <p style="margin-top:1rem;">Browse the full metadata records: <a href="./metadataonwebsite/metadatabaltictower.html">Baltic Tower</a> &middot; <a href="./metadataonwebsite/metadatadanishbuilding.html">Danish House</a> &middot; <a href="./metadataonwebsite/metadatagermanbuilding.html">German Hall</a> &middot; <a href="./metadataonwebsite/metadatarussianbuilding.html">Russian Pavilion</a></p>
+            <p class="method-links">Browse the full metadata records: <a href="./metadataonwebsite/metadatabaltictower.html">Baltic Tower</a> &middot; <a href="./metadataonwebsite/metadatadanishbuilding.html">Danish House</a> &middot; <a href="./metadataonwebsite/metadatagermanbuilding.html">German Hall</a> &middot; <a href="./metadataonwebsite/metadatarussianbuilding.html">Russian Pavilion</a></p>
          </section>
 
          <hr class="method-divider">
@@ -501,7 +296,20 @@
                   <span class="card-value">Institution-grade interoperability; separates data from display; enables re-use in library systems</span>
                </div>
             </div>
-            <p style="margin-top:1rem;">Read the encoded texts: <a href="./TEI-XSL-HTML%20conversion%20files/germanCommissariat.html">German Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/danishCommissariat.html">Danish Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/russianCommissariat.html">Russian Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/constructionCommissariat.html">Construction Committee</a></p>
+            <div class="code-example">
+               <p class="dc-example-label">Example TEI encoding &mdash; German commissariat (tei/foreignCommisariat.xml)</p>
+<pre><code>&lt;p&gt;&lt;title&gt;Tyskland&lt;/title&gt;
+   &lt;list&gt;
+      &lt;item&gt; Generalkommissarie: H. Mathies, Kgl. Geheimer&lt;lb/&gt; Baurat, ...&lt;/item&gt;
+      &lt;item&gt; Generalkommissariens ställföretrrädare:&lt;list&gt;
+            &lt;item&gt; Aug. Schmitz, Kejserl. tysk konsul i Malmö. &lt;/item&gt;
+            &lt;item&gt;Hans Alfred Richter, Chefarkitekt. &lt;/item&gt;
+         &lt;/list&gt;
+      &lt;/item&gt;
+   &lt;/list&gt;
+&lt;/p&gt;</code></pre>
+            </div>
+            <p class="method-links">Read the encoded texts: <a href="./TEI-XSL-HTML%20conversion%20files/germanCommissariat.html">German Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/danishCommissariat.html">Danish Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/russianCommissariat.html">Russian Commissariat</a> &middot; <a href="./TEI-XSL-HTML%20conversion%20files/constructionCommissariat.html">Construction Committee</a></p>
          </section>
 
          <hr class="method-divider">
@@ -535,9 +343,9 @@
             engines, and by anyone inspecting the page source.</p>
             <p>Each page also embeds a <code>&lt;script type="application/ld+json"&gt;</code> block, giving search engines a machine-readable summary using Schema.org vocabulary — the same structured-data standard used by Google's Knowledge Graph.</p>
 
-            <div class="method-card" style="margin-top: 1.2rem;">
+            <div class="method-card method-card--spaced">
                <span class="card-label">Example — image element attributes</span>
-               <span class="card-value" style="font-family: monospace; font-size: 0.8rem; line-height: 1.9; display: block; margin-top: 0.4rem;">
+               <span class="card-value card-value--mono">
                   <code>data-caption</code> — descriptive caption for the image<br>
                   <code>data-doctype</code> — document type (e.g. Photograph)<br>
                   <code>data-docsource</code> — catalog volume and page reference<br>

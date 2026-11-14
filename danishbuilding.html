@@ -37,13 +37,16 @@
    </script>
 </head>
 
-<body>
+<body class="page-danish">
 
    <button id="darkToggle">🌓</button>
 
    <div class="hero">
-      <h1>Danish House</h1>
-      <p>Henning Hansen &middot; Sj&aelig;lland manor &middot; 1914</p>
+      <img class="hero-img" src="./img/danishbuilding/2.4(page6).jpg" alt="" aria-hidden="true">
+      <div class="hero-panel">
+         <h1>Danish House</h1>
+         <p>Henning Hansen &middot; Sj&aelig;lland manor &middot; 1914</p>
+      </div>
    </div>
 
    <header>
@@ -115,8 +118,8 @@
 
                   <!-- Navigation Buttons -->
                   <span class="slide-counter"></span>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                  <button type="button" class="prev" onclick="plusSlides(-1)" aria-label="Previous image">&#10094;</button>
+                  <button type="button" class="next" onclick="plusSlides(1)" aria-label="Next image">&#10095;</button>
                </div>
 
                <!-- Slide Indicators -->

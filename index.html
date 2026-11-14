@@ -53,16 +53,20 @@
 </head>
 
 
-<body>
+<body class="page-home">
 
    <!-- Dark mode toggle -->
    <button id="darkToggle">🌓</button>
 
    <!-- Hero -->
-   <div class="hero">
-      <h1>Baltic Exhibition 1914</h1>
-      <p>Information management &middot; Metadata &middot; Open data &mdash; Dublin Core &middot; TEI</p>
-      <p class="hero-byline">A digitization portfolio by <a href="./about.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px;">Robin Strandberg</a></p>
+   <div class="hero hero--home">
+      <img class="hero-img" src="./img/baltictower/2.12(page20).jpg" alt="" aria-hidden="true">
+      <div class="hero-panel">
+         <span class="hero-kicker">Malmö &middot; 15 May &ndash; 4 October 1914</span>
+         <h1>Baltic Exhibition 1914</h1>
+         <p>Information management &middot; Metadata &middot; Open data &mdash; Dublin Core &middot; TEI</p>
+         <p class="hero-byline">A digitization portfolio by <a href="./about.html">Robin Strandberg</a></p>
+      </div>
    </div>
 
    <!-- Navigation -->
@@ -98,7 +102,7 @@
          <span class="stat-label">Dublin Core fields per item</span>
       </div>
       <div class="stat-item">
-         <span class="stat-num" style="font-size:1.3rem;letter-spacing:-0.02em;">HTML/CSS/JS</span>
+         <span class="stat-num stat-num--text">HTML/CSS/JS</span>
          <span class="stat-label">Hand-coded, no framework</span>
       </div>
    </div>
@@ -136,8 +140,8 @@
                   </div>
 
                   <span class="slide-counter"></span>
-                  <a class="prev" onclick="plusSlides(-1)" role="button" aria-label="Previous Slide">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)" role="button" aria-label="Next Slide">&#10095;</a>
+                  <button type="button" class="prev" onclick="plusSlides(-1)" aria-label="Previous image">&#10094;</button>
+                  <button type="button" class="next" onclick="plusSlides(1)" aria-label="Next image">&#10095;</button>
                </div>
 
                <div class="gallery-indicators">
@@ -207,7 +211,7 @@
       <!-- Digitization Pipeline -->
       <div class="container">
          <section class="process-section reveal">
-            <span class="context-label" style="display:block;text-align:center;margin-bottom:0.75rem;">How it was made</span>
+            <span class="context-label">How it was made</span>
             <h2 class="process-title">The Digitization Pipeline</h2>
             <div class="process-steps">
                <div class="process-step">
@@ -234,9 +238,9 @@
                   <p>Digitized content published as a freely accessible website — bringing a vanished 1914 exhibition back into public reach.</p>
                </div>
             </div>
-            <blockquote class="pull-quote" style="margin-top:2rem;">The methods applied here — structured metadata, rights clearance, end-to-end digital delivery, and open data publishing — are transferable to any organisation managing unstructured information assets: archives, knowledge bases, library collections, or AI training datasets.</blockquote>
+            <blockquote class="pull-quote">The methods applied here — structured metadata, rights clearance, end-to-end digital delivery, and open data publishing — are transferable to any organisation managing unstructured information assets: archives, knowledge bases, library collections, or AI training datasets.</blockquote>
          </section>
-         <p style="text-align:center;margin-top:1.5rem;font-size:0.95rem;color:var(--text-muted);">For a detailed account of the methods and standards applied at each step, see the <a href="./methodology.html">Methodology page</a>.</p>
+         <p class="section-footnote">For a detailed account of the methods and standards applied at each step, see the <a href="./methodology.html">Methodology page</a>.</p>
       </div>
 
       <!-- CTA -->
