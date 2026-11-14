@@ -27,8 +27,48 @@ function showSlides(n) {
   void current.offsetWidth;
   current.classList.add('fade1');
 
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].setAttribute('aria-current', i === slideIndex - 1 ? 'true' : 'false');
+  }
   if (dots[slideIndex - 1]) dots[slideIndex - 1].classList.add('active');
   if (counter) counter.textContent = `${slideIndex} / ${slides.length}`;
+
+  updateCaption(current.querySelector('img'));
+}
+
+function updateCaption(img) {
+  const caption = document.querySelector('.gallery-caption');
+  if (!caption || !img) return;
+  const source = [img.dataset.docsource, img.dataset.collection, img.dataset.year]
+    .filter(Boolean)
+    .join(' · ');
+  caption.querySelector('.gallery-caption-text').textContent = img.dataset.caption || img.alt;
+  caption.querySelector('.gallery-caption-source-value').textContent = source;
+}
+
+function buildCaption() {
+  const wrapper = document.querySelector('.gallery-wrapper');
+  if (!wrapper || wrapper.querySelector('.gallery-caption')) return;
+  const caption = document.createElement('div');
+  caption.className = 'gallery-caption';
+  caption.setAttribute('aria-live', 'polite');
+  caption.innerHTML = '<p class="gallery-caption-text"></p>' +
+    '<p class="gallery-caption-source"><b>Source</b><span class="gallery-caption-source-value"></span></p>';
+  const counter = wrapper.querySelector('.slide-counter');
+  if (counter) caption.appendChild(counter);
+  wrapper.appendChild(caption);
+
+  document.querySelectorAll('.gallery-indicators .indicator').forEach((dot, i) => {
+    dot.setAttribute('role', 'button');
+    dot.setAttribute('tabindex', '0');
+    dot.setAttribute('aria-label', `Show image ${i + 1}`);
+    dot.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        currentSlide(i + 1);
+      }
+    });
+  });
 }
 
 function plusSlides(n) {
@@ -212,14 +252,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Dark mode --- */
   const toggle = document.getElementById('darkToggle');
-  if (localStorage.getItem('darkMode') === 'on') {
+  let storedMode = null;
+  try { storedMode = localStorage.getItem('darkMode'); } catch (err) { storedMode = null; }
+  if (storedMode === 'on') {
     document.body.classList.add('dark-mode');
   }
   if (toggle) {
+    toggle.setAttribute('aria-label', 'Toggle dark mode');
+    toggle.setAttribute('aria-pressed', String(document.body.classList.contains('dark-mode')));
     toggle.addEventListener('click', () => {
       const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem('darkMode', isDark ? 'on' : 'off');
+      toggle.setAttribute('aria-pressed', String(isDark));
+      try { localStorage.setItem('darkMode', isDark ? 'on' : 'off'); } catch (err) { }
     });
+  }
+
+  /* --- Header glass: denser once it sticks over page content --- */
+  const siteHeader = document.querySelector('header');
+  if (siteHeader) {
+    const updateStuck = () => {
+      siteHeader.classList.toggle('is-stuck', siteHeader.getBoundingClientRect().top <= 0.5 && window.scrollY > 0);
+    };
+    window.addEventListener('scroll', updateStuck, { passive: true });
+    updateStuck();
+    document.documentElement.style.setProperty('--sticky-offset', siteHeader.offsetHeight + 'px');
   }
 
   /* --- Active nav link --- */
@@ -243,6 +299,10 @@ document.addEventListener('DOMContentLoaded', () => {
     navToggle.addEventListener('click', e => {
       e.stopPropagation();
       const isOpen = sitenav.classList.toggle('nav-open');
+      if (isOpen) {
+        const top = navToggle.closest('header').getBoundingClientRect().top;
+        if (top > 0) window.scrollTo({ top: window.scrollY + top, behavior: 'instant' });
+      }
       navToggle.classList.toggle('is-open', isOpen);
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
@@ -271,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --- Scroll reveal --- */
-  const revealTargets = document.querySelectorAll('.gallery-container, .textbox, #about, .context-block');
+  const revealTargets = document.querySelectorAll('.textbox, #about, .context-block');
   let contextBlockIndex = 0;
   revealTargets.forEach(el => {
     el.classList.add('reveal');
@@ -334,38 +394,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     nav.appendChild(inner);
     const header = document.querySelector('header');
-    if (!header || !links.length) return;
-    header.insertAdjacentElement('afterend', nav);
-    nav.style.top = header.offsetHeight + 'px';
+    const main = document.getElementById('content');
+    if (!header || !main || !links.length) return;
+    main.insertAdjacentElement('beforebegin', nav);
+
+    function updateOffsets() {
+      nav.style.top = header.offsetHeight + 'px';
+      document.documentElement.style.setProperty('--sticky-offset', (header.offsetHeight + nav.offsetHeight) + 'px');
+    }
+    updateOffsets();
+    window.addEventListener('resize', updateOffsets);
 
     let clickLock = false;
     let lockTimer = null;
+    let activeIdx = -1;
 
-    function setActive(linkIdx, fromClick) {
-      links.forEach(l => l.el.classList.remove('page-nav-active'));
+    function revealLink(el) {
+      const target = el.offsetLeft - (inner.clientWidth - el.offsetWidth) / 2;
+      inner.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+    }
+
+    function setActive(linkIdx) {
+      if (linkIdx === activeIdx) return;
+      activeIdx = linkIdx;
+      links.forEach(l => {
+        l.el.classList.remove('page-nav-active');
+        l.el.removeAttribute('aria-current');
+      });
       sections.forEach(s => s.classList.remove('section-active'));
       if (linkIdx < 0 || linkIdx >= links.length) return;
       links[linkIdx].el.classList.add('page-nav-active');
+      links[linkIdx].el.setAttribute('aria-current', 'location');
       links[linkIdx].sec.classList.add('section-active');
-      if (fromClick) {
-        links[linkIdx].el.scrollIntoView({ inline: 'nearest', block: 'nearest' });
-      }
+      revealLink(links[linkIdx].el);
     }
 
     function getActiveIndex() {
-      const offset = header.offsetHeight + nav.offsetHeight + 24;
+      const offset = header.offsetHeight + nav.offsetHeight + 40;
       let active = 0;
       links.forEach(({ sec }, i) => {
         if (sec.getBoundingClientRect().top <= offset) active = i;
       });
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        active = links.length - 1;
+      }
       return active;
     }
 
     links.forEach(({ el, sec }, i) => {
       el.addEventListener('click', e => {
         e.preventDefault();
-        setActive(i, true);
+        setActive(i);
         sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', '#' + sec.id);
         clickLock = true;
         clearTimeout(lockTimer);
         lockTimer = setTimeout(() => { clickLock = false; }, 900);
@@ -374,10 +455,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
       if (clickLock) return;
-      setActive(getActiveIndex(), false);
+      setActive(getActiveIndex());
     }, { passive: true });
 
-    setActive(getActiveIndex(), false);
+    setActive(getActiveIndex());
+
+    if (location.hash) {
+      const target = document.getElementById(location.hash.slice(1));
+      if (target) requestAnimationFrame(() => target.scrollIntoView({ block: 'start' }));
+    }
   })();
 
   /* --- Back to top --- */
@@ -405,6 +491,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --- Init slideshow & autoplay --- */
+  buildCaption();
   showSlides(slideIndex);
-  startAutoplay();
+  if (document.querySelector('.gallery-wrapper') &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    startAutoplay();
+  }
 });
