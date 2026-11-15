@@ -505,10 +505,13 @@ code {
 
 #siteLogo:hover .brand-copy { color: #fffaf0; opacity: 1; }
 
+.brand-dot { display: none; }
+
 @media (max-width: 480px) {
   #siteLogo { left: 0.6rem; gap: 0.45rem; padding: 0 0.85rem 0 0.6rem; }
   #darkToggle { right: 0.6rem; }
   .brand-x { display: none; }
+  .brand-dot { display: inline; }
   .brand-title { font-size: 0.9rem; }
   .brand-copy { font-size: 0.58rem; letter-spacing: 0.03em; }
 }
@@ -633,7 +636,7 @@ body.dark-mode #backToTop {
 }
 
 @media (min-width: 1024px) {
-  .hero.hero--frieze { padding-top: 1.25rem; padding-inline: calc(max(var(--brand-w, 120px), var(--theme-w, 120px)) + 1.5rem); }
+  .hero.hero--frieze { padding-top: 1.25rem; padding-left: calc(var(--brand-w, 120px) + 1.5rem); padding-right: calc(var(--theme-w, 120px) + 1.5rem); }
 }
 
 .hero--frieze .hero-img {
@@ -681,7 +684,11 @@ body.dark-mode #backToTop {
   .hero { min-height: 0; padding-top: 4.25rem; }
   .hero--home { min-height: 92svh; }
   .hero--sub { min-height: 230px; }
-  .hero.hero--frieze { height: 150px; padding: 0.5rem calc(max(var(--brand-w, 120px), var(--theme-w, 120px)) + 1.5rem) calc(var(--hero-overlap) + 0.5rem); }
+  .hero.hero--frieze { height: 150px; padding: 0.5rem calc(var(--theme-w, 120px) + 1.5rem) calc(var(--hero-overlap) + 0.5rem) calc(var(--brand-w, 120px) + 1.5rem); }
+  .brand-x { display: none; }
+  .brand-dot { display: inline; }
+  .brand-title { font-size: 0.85rem; }
+  .brand-copy { font-size: 0.58rem; }
 }
 
 .hero-panel {
@@ -939,6 +946,10 @@ header.nav-compact #navToggle {
 @media (max-width: 400px) {
   #darkToggle .theme-icon,
   .brand-year { display: none; }
+  #siteLogo { gap: 0.35rem; padding: 0 0.7rem 0 0.5rem; }
+  #siteLogo .brand-mark { width: 17px; height: 23px; }
+  .brand-title { font-size: 0.8rem; }
+  .brand-copy { font-size: 0.55rem; letter-spacing: 0.02em; }
 }
 
 header.nav-compact #sitenav {
@@ -3641,7 +3652,10 @@ footer a img {
 }
 
 .lang-opt {
-  padding: 0.2rem 0.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.45rem;
   border-radius: 6px;
   color: var(--smoke-text);
   opacity: 0.6;
@@ -3669,4 +3683,12 @@ header #sitenav a.nav-lang { display: none; }
     border-bottom: 1px solid var(--brass-line);
     margin-bottom: 0.3rem;
   }
+}
+
+.lang-flag {
+  display: block;
+  flex-shrink: 0;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.35);
 }

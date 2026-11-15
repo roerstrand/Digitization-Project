@@ -4,4 +4,5 @@ Each significant decision about the site's structure is recorded here when it is
 
 | ADR | Title | Status |
 |-----|-------|--------|
-| [ADR-001](ADR-001.md) | Swedish and English versions of the site | Accepted |
+| [ADR-001](ADR-001.md) | Swedish and English versions of the site | Accepted, amended by ADR-002 |
+| [ADR-002](ADR-002.md) | Swedish as the default language | Accepted |

@@ -8,7 +8,7 @@ const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 const LANG = document.documentElement.lang === 'sv' ? 'sv' : 'en';
 const SCRIPT_URL = document.currentScript ? document.currentScript.src : new URL('scripts/main.js', location.href).href;
 const ASSET_ROOT = new URL('../', SCRIPT_URL).href;
-const PAGE_ROOT = LANG === 'sv' ? `${ASSET_ROOT}sv/` : ASSET_ROOT;
+const PAGE_ROOT = LANG === 'en' ? `${ASSET_ROOT}en/` : ASSET_ROOT;
 
 const SV = {
   'Previous image': 'Föregående bild',
@@ -38,9 +38,9 @@ const SV = {
   '{count} clippings · {span} · {volumes}': '{count} klipp · {span} · {volumes}',
   'volume': 'volym',
   'volumes': 'volymer',
-  'Baltic Exhibition 1914 — Home. © 2026 Robin Erik Strandberg': 'Baltiska utställningen 1914 — Startsida. © 2026 Robin Erik Strandberg',
+  'Baltic Exhibition, Malmö 1914 — Home. © 2026 Robin Erik Strandberg': 'Baltiska utställningen i Malmö 1914 — Startsida. © 2026 Robin Erik Strandberg',
   'Baltic': 'Baltiska',
-  'Exhibition': 'utställningen',
+  'Exhibition,': 'utställningen i',
   'Dark mode': 'Mörkt läge',
   'Back to top': 'Till toppen',
   'All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and newspaper clippings and the official site plan from Malmö City Archive.':
@@ -956,7 +956,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const logoLink = document.createElement('a');
   logoLink.id = 'siteLogo';
   logoLink.href = `${PAGE_ROOT}index.html`;
-  logoLink.setAttribute('aria-label', t('Baltic Exhibition 1914 — Home. © 2026 Robin Erik Strandberg'));
+  logoLink.setAttribute('aria-label', t('Baltic Exhibition, Malmö 1914 — Home. © 2026 Robin Erik Strandberg'));
   logoLink.innerHTML = `<svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="22" height="29" fill="currentColor" aria-hidden="true">
     <circle cx="18" cy="2" r="1.6"/>
     <polygon points="18,3.6 15,10 21,10"/>
@@ -970,7 +970,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <rect x="2" y="44" width="32" height="2"/>
     <rect x="0" y="46" width="36" height="2"/>
     <path d="M7 31 Q18 19.5 29 31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  </svg><span class="brand-text"><span class="brand-title">${t('Baltic')} <span class="brand-x">${t('Exhibition')} </span>1914</span><span class="brand-copy">&copy; <span class="brand-year">2026 </span>Robin Erik Strandberg</span></span>`;
+  </svg><span class="brand-text"><span class="brand-title">${t('Baltic')}<span class="brand-x"> ${t('Exhibition,')}</span><span class="brand-dot"> ·</span> Malmö 1914</span><span class="brand-copy">&copy; <span class="brand-year">2026 </span>Robin Erik Strandberg</span></span>`;
   document.body.appendChild(logoLink);
 
   /* --- Language switch (same page in the other language) --- */
@@ -978,18 +978,24 @@ document.addEventListener('DOMContentLoaded', () => {
   let langLink = null;
   if (here.startsWith(ASSET_ROOT)) {
     let rel = here.slice(ASSET_ROOT.length);
-    rel = LANG === 'sv' ? rel.replace(/^sv\//, '') : `sv/${rel}`;
+    rel = LANG === 'en' ? rel.replace(/^en\//, '') : `en/${rel}`;
     if (rel === '' || rel.endsWith('/')) rel += 'index.html';
+    let flagId = 0;
+    const flag = code => {
+      if (code === 'sv') {
+        return '<svg class="lang-flag" viewBox="0 0 16 10" width="20" height="13" aria-hidden="true"><rect width="16" height="10" fill="#006aa7"/><rect x="5" width="2" height="10" fill="#fecc00"/><rect y="4" width="16" height="2" fill="#fecc00"/></svg>';
+      }
+      const id = `uk-clip-${++flagId}`;
+      return `<svg class="lang-flag" viewBox="0 0 60 30" width="20" height="10" aria-hidden="true"><clipPath id="${id}"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#${id})" stroke="#c8102e" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#c8102e" stroke-width="6"/></svg>`;
+    };
+    const option = code => `<span class="lang-opt${LANG === code ? ' is-current' : ''}">${flag(code)}${code.toUpperCase()}</span>`;
     const buildLang = className => {
       const a = document.createElement('a');
       a.className = className;
       a.href = ASSET_ROOT + rel;
       a.hreflang = LANG === 'sv' ? 'en' : 'sv';
-      a.setAttribute('aria-label', LANG === 'sv' ? 'EN · SV — Byt till engelska' : 'EN · SV — Switch to Swedish');
-      a.innerHTML =
-        `<span class="lang-opt${LANG === 'en' ? ' is-current' : ''}">EN</span>` +
-        '<span class="lang-sep" aria-hidden="true">·</span>' +
-        `<span class="lang-opt${LANG === 'sv' ? ' is-current' : ''}">SV</span>`;
+      a.setAttribute('aria-label', LANG === 'sv' ? 'SV · EN — Byt till engelska' : 'SV · EN — Switch to Swedish');
+      a.innerHTML = option('sv') + '<span class="lang-sep" aria-hidden="true">·</span>' + option('en');
       return a;
     };
     langLink = buildLang('lang-switch');

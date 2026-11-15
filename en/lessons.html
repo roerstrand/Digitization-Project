@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Reflections — Baltic Exhibition 1914</title>
+   <link rel="stylesheet" href="../css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+   <script defer src="../scripts/main.js"></script>
+   <link rel="alternate" hreflang="sv" href="../lessons.html">
+   <link rel="alternate" hreflang="en" href="./lessons.html">
+   <link rel="alternate" hreflang="x-default" href="../lessons.html">
+</head>
+
+<body class="page-lessons">
+
+   <button id="darkToggle">🌓</button>
+
+   <div class="hero hero--sub">
+      <img class="hero-img" src="../img/baltictower/2.13(page23).jpg" alt="View from the top of the Baltic Tower over the exhibition lake and grounds — catalog photograph, 1914">
+      <div class="hero-panel">
+         <h1>Reflections</h1>
+         <p>What the project taught about digitization, metadata, and public access</p>
+      </div>
+   </div>
+
+   <header>
+      <div class="container">
+         <button id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         <nav id="sitenav">
+            <a href="./about.html">About</a>
+            <a href="./baltictower.html">Baltic Tower</a>
+            <a href="./danishbuilding.html">Danish House</a>
+            <a href="./germanbuilding.html">German Hall</a>
+            <a href="./russianbuilding.html">Russian Pavilion</a>
+            <a href="./methodology.html">Methodology</a>
+            <a href="./lessons.html" aria-current="page">Reflections</a>
+         </nav>
+      </div>
+   </header>
+
+   <main id="content">
+      <div class="container lessons-page">
+         <section class="lessons-surface" aria-labelledby="lessons-title">
+         <div class="lessons-head">
+
+         <span class="section-label">Reflection</span>
+         <h2 id="lessons-title">Five things the project made clear</h2>
+         </div>
+
+         <ol class="lessons-list">
+            <li>
+               <span class="lesson-num" aria-hidden="true">1</span>
+               <div class="lesson-body">
+                  <strong>Metadata requires planning before digitization begins.</strong>
+                  <p>Deciding what to record after the scanning is done means going back — to the archive, to the
+                  scanner, to ambiguous decisions already made. A schema agreed on in advance costs an afternoon;
+                  retrofitting one costs far more. In this project, agreeing on field definitions and resolution targets before the scanning session on 20 May 2023 meant the 600 dpi decision for text pages was a design choice from the start — OCR compatibility was planned in, not patched on.</p>
+               </div>
+            </li>
+            <li>
+               <span class="lesson-num" aria-hidden="true">2</span>
+               <div class="lesson-body">
+                  <strong>Digitization is as much about context as preservation.</strong>
+                  <p>A scan without provenance is just a picture. What makes a digitized object useful is knowing
+                  where it came from, when it was captured, and what it shows. Stripping context in the name of
+                  efficiency produces collections that age poorly. The two commissariat images affected by a GitHub metadata-embedding bug in this project illustrate this directly: without the accompanying metadata record, those scans are photographs without identity.</p>
+               </div>
+            </li>
+            <li>
+               <span class="lesson-num" aria-hidden="true">3</span>
+               <div class="lesson-body">
+                  <strong>Public accessibility depends on information structure.</strong>
+                  <p>Publishing raw files is not the same as making material accessible. A structured presentation —
+                  consistent fields, stable identifiers, readable licenses — is what allows someone outside the
+                  project to actually use what has been made. The surrogate numbering system used here — 2:4 meaning Book 2, page 4 — is the concrete implementation of that principle: every digital file carries a traceable link back to its physical shelf mark at Malmö City Library.</p>
+               </div>
+            </li>
+            <li>
+               <span class="lesson-num" aria-hidden="true">4</span>
+               <div class="lesson-body">
+                  <strong>Digital preservation requires sustainable documentation.</strong>
+                  <p>Files without documentation are at risk of becoming uninterpretable. The surrogate numbering
+                  system, the shelf marks, the scanning parameters — these are not administrative overhead.
+                  They are what keeps the collection meaningful after the project team is gone. The shelf mark <em>Bhz Baltiska utställningen</em>, the scanning date of 20 May 2023, the equipment model — these fields exist so someone in 2040 can understand what they are looking at without contacting anyone from this project.</p>
+               </div>
+            </li>
+            <li>
+               <span class="lesson-num" aria-hidden="true">5</span>
+               <div class="lesson-body">
+                  <strong>Scope is a decision, not a limitation.</strong>
+                  <p>The Baltic Exhibition is a large topic. Constraining the project to four buildings was not a
+                  compromise — it was what made depth possible. A tightly scoped collection done thoroughly is
+                  more useful than a broad one done superficially. The exhibition covered 51.6 hectares across five months of activity. Choosing four buildings is what made thorough metadata, rich contextual writing, and consistent quality possible across the whole collection.</p>
+               </div>
+            </li>
+         </ol>
+         </section>
+
+      </div>
+   </main>
+
+   <footer>
+      <div class="container footer-inner">
+         <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+         <p class="footer-license">Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; non-commercial use with attribution; adaptations under the same terms.</p>
+      </div>
+   </footer>
+
+
+</body>
+</html>
