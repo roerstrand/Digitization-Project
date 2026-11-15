@@ -3,6 +3,7 @@
 =================================== */
 let slideIndex = 1;
 let autoplayTimer = null;
+let autoplayPaused = false;
 
 function showSlides(n) {
   const slides  = document.getElementsByClassName('gallery');
@@ -80,7 +81,7 @@ function currentSlide(n) {
 }
 
 function startAutoplay() {
-  if (autoplayTimer) return;
+  if (autoplayTimer || autoplayPaused) return;
   autoplayTimer = setInterval(() => plusSlides(1), 5000);
 }
 
@@ -114,6 +115,10 @@ function stopAutoplay() {
 
     wrapper.addEventListener('mouseenter', stopAutoplay);
     wrapper.addEventListener('mouseleave', startAutoplay);
+    wrapper.addEventListener('focusin', stopAutoplay);
+    wrapper.addEventListener('focusout', e => {
+      if (!wrapper.contains(e.relatedTarget)) startAutoplay();
+    });
   });
 })();
 
@@ -124,6 +129,12 @@ function stopAutoplay() {
   let lbImages = [];
   let lbIndex  = 0;
   let overlay  = null;
+  let lastFocus = null;
+
+  function focusables() {
+    return Array.from(overlay.querySelectorAll('button'))
+      .filter(b => b.style.display !== 'none');
+  }
 
   function buildOverlay() {
     const el = document.createElement('div');
@@ -170,6 +181,8 @@ function stopAutoplay() {
   }
 
   function openAt(i) {
+    const wasOpen = overlay.classList.contains('open');
+    if (!wasOpen) lastFocus = document.activeElement;
     lbIndex = (i + lbImages.length) % lbImages.length;
     const img = lbImages[lbIndex];
 
@@ -189,11 +202,13 @@ function stopAutoplay() {
     overlay.classList.add('open');
     overlay.scrollTop = 0;
     document.body.style.overflow = 'hidden';
+    if (!wasOpen) overlay.querySelector('.lightbox-close').focus();
   }
 
   function close() {
     overlay.classList.remove('open');
     document.body.style.overflow = '';
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
   }
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -205,7 +220,17 @@ function stopAutoplay() {
 
     lbImages.forEach((img, i) => {
       img.style.cursor = 'zoom-in';
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', `Enlarge image: ${img.alt}`);
       img.addEventListener('click', () => { stopAutoplay(); openAt(i); });
+      img.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          stopAutoplay();
+          openAt(i);
+        }
+      });
     });
 
     overlay.querySelector('.lightbox-close').addEventListener('click', close);
@@ -216,6 +241,14 @@ function stopAutoplay() {
 
   document.addEventListener('keydown', e => {
     if (!overlay?.classList.contains('open')) return;
+    if (e.key === 'Tab') {
+      const items = focusables();
+      const first = items[0];
+      const last  = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      else if (!overlay.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    }
     if (e.key === 'Escape')     close();
     if (e.key === 'ArrowLeft')  openAt(lbIndex - 1);
     if (e.key === 'ArrowRight') openAt(lbIndex + 1);
@@ -226,6 +259,17 @@ function stopAutoplay() {
    DOM READY
 =================================== */
 document.addEventListener('DOMContentLoaded', () => {
+
+  /* --- Skip link --- */
+  const mainEl = document.getElementById('content');
+  if (mainEl) {
+    if (!mainEl.hasAttribute('tabindex')) mainEl.setAttribute('tabindex', '-1');
+    const skip = document.createElement('a');
+    skip.className = 'skip-link';
+    skip.href = '#content';
+    skip.textContent = 'Skip to main content';
+    document.body.prepend(skip);
+  }
 
   /* --- Site logo (fixed top-left) --- */
   const inSubdir = window.location.pathname.includes('/metadataonwebsite/') ||
@@ -285,7 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('#sitenav a').forEach(link => {
     const href = (link.getAttribute('href') || '').split('/').pop();
-    if (href === currentPage) link.classList.add('active');
+    if (href === currentPage) {
+      link.classList.add('active');
+      link.setAttribute('aria-current', 'page');
+    }
   });
 
   /* --- Burger menu --- */
@@ -501,8 +548,32 @@ document.addEventListener('DOMContentLoaded', () => {
   /* --- Init slideshow & autoplay --- */
   buildCaption();
   showSlides(slideIndex);
-  if (document.querySelector('.gallery-wrapper') &&
-      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+  const galleryWrapper = document.querySelector('.gallery-wrapper');
+  const slideCount = document.querySelectorAll('.gallery').length;
+  if (galleryWrapper && slideCount > 1) {
+    autoplayPaused = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const controls = document.createElement('div');
+    controls.className = 'gallery-controls';
+    const pauseBtn = document.createElement('button');
+    pauseBtn.type = 'button';
+    pauseBtn.className = 'gallery-pause';
+    const syncPause = () => {
+      pauseBtn.textContent = autoplayPaused ? '▶ Play slideshow' : '❚❚ Pause slideshow';
+      pauseBtn.setAttribute('aria-pressed', String(autoplayPaused));
+    };
+    pauseBtn.addEventListener('click', () => {
+      autoplayPaused = !autoplayPaused;
+      if (autoplayPaused) stopAutoplay(); else startAutoplay();
+      syncPause();
+    });
+    syncPause();
+    controls.appendChild(pauseBtn);
+
+    const indicators = document.querySelector('.gallery-indicators');
+    (indicators || galleryWrapper).insertAdjacentElement('afterend', controls);
+
     startAutoplay();
   }
 });
