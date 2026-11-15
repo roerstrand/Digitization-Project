@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { extractSegments, translateHtml, rewritePaths, localizePage } from '../tools/i18n.mjs';
+import { extractSegments, translateHtml, relocateLinks, localizePage } from '../tools/i18n.mjs';
 
 test('extractSegments collects text nodes with whitespace collapsed', () => {
   const html = '<h1>Baltic   Tower</h1>\n<p>Built in\n   timber.</p>';
@@ -46,17 +46,27 @@ test('translateHtml escapes quotes in translated attributes', () => {
   assert.equal(out, '<img alt="Tornet &quot;Stora&quot;">');
 });
 
-test('rewritePaths moves asset paths up one level and keeps translated pages local', () => {
-  const html = '<link href="./css/main.css"><a href="./baltictower.html#story">T</a><img src="./img/a.jpg"><a href="https://example.com/">x</a><a href="#top">t</a>';
-  const out = rewritePaths(html, new Set(['baltictower.html']), '');
-  assert.equal(out, '<link href="../css/main.css"><a href="./baltictower.html#story">T</a><img src="../img/a.jpg"><a href="https://example.com/">x</a><a href="#top">t</a>');
+test('relocateLinks moves a page from en/ to the root, mapping page links and assets', () => {
+  const html = '<link href="../css/main.css"><a href="./danishbuilding.html#story">D</a><img src="../img/a.jpg"><a href="https://example.com/">x</a><a href="#top">t</a>';
+  const pages = new Map([['en/danishbuilding.html', 'danishbuilding.html']]);
+  const out = relocateLinks(html, 'en/baltictower.html', 'baltictower.html', pages);
+  assert.equal(out, '<link href="./css/main.css"><a href="./danishbuilding.html#story">D</a><img src="./img/a.jpg"><a href="https://example.com/">x</a><a href="#top">t</a>');
 });
 
-test('rewritePaths resolves links from pages in subfolders', () => {
-  const html = '<a href="../index.html">Home</a><script src="../scripts/main.js"></script><a href="./metadatadanishbuilding.html">m</a>';
-  const translated = new Set(['index.html', 'metadataonwebsite/metadatadanishbuilding.html']);
-  const out = rewritePaths(html, translated, 'metadataonwebsite/');
-  assert.equal(out, '<a href="../index.html">Home</a><script src="../../scripts/main.js"></script><a href="./metadatadanishbuilding.html">m</a>');
+test('relocateLinks keeps paths for pages in subfolders', () => {
+  const html = '<a href="../index.html">Home</a><script src="../../scripts/main.js"></script><a href="./metadatadanishbuilding.html">m</a>';
+  const pages = new Map([
+    ['en/index.html', 'index.html'],
+    ['en/metadataonwebsite/metadatadanishbuilding.html', 'metadataonwebsite/metadatadanishbuilding.html']
+  ]);
+  const out = relocateLinks(html, 'en/metadataonwebsite/metadatabaltictower.html', 'metadataonwebsite/metadatabaltictower.html', pages);
+  assert.equal(out, '<a href="../index.html">Home</a><script src="../scripts/main.js"></script><a href="./metadatadanishbuilding.html">m</a>');
+});
+
+test('relocateLinks moves a root page into en/ without remapping page links', () => {
+  const html = '<link href="./css/main.css"><a href="./about.html">A</a><a href="TEI-XSL-HTML conversion files/germanCommissariat.html">T</a>';
+  const out = relocateLinks(html, 'index.html', 'en/index.html', new Map([['about.html', 'en/about.html'], ['TEI-XSL-HTML conversion files/germanCommissariat.html', 'en/TEI-XSL-HTML conversion files/germanCommissariat.html']]));
+  assert.equal(out, '<link href="../css/main.css"><a href="./about.html">A</a><a href="./TEI-XSL-HTML conversion files/germanCommissariat.html">T</a>');
 });
 
 test('localizePage sets lang and adds hreflang alternates', () => {
