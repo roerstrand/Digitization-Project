@@ -3,6 +3,25 @@
 =================================== */
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const wideToc = window.matchMedia('(min-width: 1200px)');
+const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+function storedTheme() {
+  try { return localStorage.getItem('darkMode'); } catch (err) { return null; }
+}
+
+function applyTheme() {
+  const stored = storedTheme();
+  const dark = stored === 'on' || (stored !== 'off' && systemDark.matches);
+  document.body.classList.toggle('dark-mode', dark);
+  const toggle = document.getElementById('darkToggle');
+  if (toggle) toggle.setAttribute('aria-pressed', String(dark));
+  return dark;
+}
+
+applyTheme();
+systemDark.addEventListener('change', () => {
+  if (storedTheme() === null) applyTheme();
+});
 
 const ICONS = {
   prev: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
@@ -12,6 +31,7 @@ const ICONS = {
   plus: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
   minus: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14"/></svg>',
   info: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>',
+  scan: '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/></svg>',
   chevron: '<svg class="toc-chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>'
 };
 
@@ -849,12 +869,49 @@ document.addEventListener('DOMContentLoaded', () => {
     link.setAttribute('aria-label', `View scan: Malmö City Archive, ${link.textContent.trim()} (opens in a new tab)`);
   });
 
+  /* --- Press timeline: scan thumbnails and source line --- */
+  document.querySelectorAll('.press-item').forEach(item => {
+    const link = item.querySelector('.scan-link[href]');
+    if (!link) return;
+    const [volume, page] = link.dataset.scan.split('|');
+    const thumb = document.createElement('a');
+    thumb.className = 'press-scan';
+    thumb.href = link.href;
+    thumb.target = '_blank';
+    thumb.rel = 'noopener';
+    thumb.tabIndex = -1;
+    thumb.setAttribute('aria-hidden', 'true');
+    const img = document.createElement('img');
+    img.src = `${siteRoot}references/paper_clippings/thumbs/${volume.replace('Ö ', 'O')}-${page.replace(/\s+/g, '-')}.jpg`;
+    img.alt = '';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    thumb.appendChild(img);
+    item.appendChild(thumb);
+  });
+
+  document.querySelectorAll('.press-archive').forEach(section => {
+    const items = section.querySelectorAll('.press-item');
+    const head = section.querySelector('.press-head');
+    if (!items.length || !head) return;
+    const years = [...section.querySelectorAll('.press-item time')].map(t => t.dateTime.slice(0, 4)).sort();
+    const volumes = new Set([...section.querySelectorAll('.scan-link[data-scan]')].map(l => l.dataset.scan.split('|')[0]));
+    const span = years[0] === years[years.length - 1] ? years[0] : `${years[0]}–${years[years.length - 1]}`;
+    const source = document.createElement('p');
+    source.className = 'press-source';
+    source.innerHTML =
+      `<span class="press-source-badge">${ICONS.scan}Digitized original</span>` +
+      '<span>Malmö City Archive · newspaper clippings, SEMSA00032</span>' +
+      `<span>${items.length} clippings · ${span} · ${volumes.size} ${volumes.size === 1 ? 'volume' : 'volumes'}</span>`;
+    head.appendChild(source);
+  });
+
   /* --- Site logo (fixed top-left) --- */
   const logoLink = document.createElement('a');
   logoLink.id = 'siteLogo';
   logoLink.href = inSubdir ? '../index.html' : 'index.html';
-  logoLink.setAttribute('aria-label', 'Baltic Exhibition 1914 — Home');
-  logoLink.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="15" height="20" fill="currentColor" aria-hidden="true">
+  logoLink.setAttribute('aria-label', 'Baltic Exhibition 1914 — Home. © 2026 Robin Erik Strandberg');
+  logoLink.innerHTML = `<svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="22" height="29" fill="currentColor" aria-hidden="true">
     <circle cx="18" cy="2" r="1.6"/>
     <polygon points="18,3.6 15,10 21,10"/>
     <rect x="14.5" y="10" width="7" height="16"/>
@@ -867,25 +924,36 @@ document.addEventListener('DOMContentLoaded', () => {
     <rect x="2" y="44" width="32" height="2"/>
     <rect x="0" y="46" width="36" height="2"/>
     <path d="M7 31 Q18 19.5 29 31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  </svg><span>Home</span>`;
+  </svg><span class="brand-text"><span class="brand-title">Baltic <span class="brand-x">Exhibition </span>1914</span><span class="brand-copy">&copy; 2026 Robin Erik Strandberg</span></span>`;
   document.body.appendChild(logoLink);
+
+  const themeButton = document.getElementById('darkToggle');
+  const syncControlWidths = () => {
+    const root = document.documentElement.style;
+    root.setProperty('--brand-w', `${logoLink.offsetWidth}px`);
+    if (themeButton) root.setProperty('--theme-w', `${themeButton.offsetWidth}px`);
+  };
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(syncControlWidths);
+    ro.observe(logoLink);
+    if (themeButton) ro.observe(themeButton);
+  }
+  syncControlWidths();
 
   /* --- Dark mode --- */
   const toggle = document.getElementById('darkToggle');
-  let storedMode = null;
-  try { storedMode = localStorage.getItem('darkMode'); } catch (err) { storedMode = null; }
-  if (storedMode === 'on') document.body.classList.add('dark-mode');
   if (toggle) {
     toggle.innerHTML =
       '<svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>' +
       '<svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>';
-    toggle.setAttribute('aria-label', 'Toggle dark mode');
-    toggle.setAttribute('aria-pressed', String(document.body.classList.contains('dark-mode')));
+    toggle.insertAdjacentHTML('beforeend', '<span class="theme-label">Dark</span>');
+    toggle.setAttribute('aria-label', 'Dark mode');
     toggle.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      toggle.setAttribute('aria-pressed', String(isDark));
+      const isDark = !document.body.classList.contains('dark-mode');
       try { localStorage.setItem('darkMode', isDark ? 'on' : 'off'); } catch (err) { }
+      applyTheme();
     });
+    applyTheme();
   }
 
   /* --- Header glass: denser once it sticks over page content --- */
