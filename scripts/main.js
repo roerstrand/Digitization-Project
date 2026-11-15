@@ -271,6 +271,32 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.prepend(skip);
   }
 
+  /* --- Page plate: blurred hero photo behind all glass --- */
+  const heroImg = document.querySelector('.hero-img');
+  if (heroImg) {
+    document.documentElement.style.setProperty('--page-plate', `url("${heroImg.currentSrc || heroImg.src}")`);
+  }
+
+  /* --- Links from press entries to the archive scans --- */
+  const SCAN_FOLDERS = {
+    'Ö II1': 'Baltiska utställningen i Malmö (1914A). Tidningsurklipp, volym Ö II1, bok nr I. SEMSA00032ÖÖ II1',
+    'Ö II3': 'Baltiska utställningen i Malmö (1914B). Tidningsurklipp, volym Ö II3, bok nr VI. SEMSA00032ÖÖ II3',
+    'Ö II4': 'Baltiska utställningen i Malmö (1914C). Tidningsurklipp, volym Ö II4, bok nr XII SEMSA00032ÖÖ II4',
+    'Ö II5': 'Baltiska utställningen i Malmö (1914D). Tidningsurklipp, volym Ö II5, bok nr IX. SEMSA00032ÖÖ II5',
+    'Ö II6': 'Baltiska utställningen i Malmö (1914E). Tidningsurklipp, volym Ö II6, bok nr XII. SEMSA00032ÖÖ II6'
+  };
+  const siteRoot = (window.location.pathname.includes('/metadataonwebsite/') ||
+                    window.location.pathname.includes('TEI-XSL-HTML')) ? '../' : './';
+  document.querySelectorAll('.scan-link[data-scan]').forEach(link => {
+    const [volume, page] = link.dataset.scan.split('|');
+    const folder = SCAN_FOLDERS[volume];
+    if (!folder || !page) return;
+    link.href = `${siteRoot}references/paper_clippings/${encodeURIComponent(folder)}/${encodeURIComponent(page)}.jpg`;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', `View scan: Malmö City Archive, ${link.textContent.trim()} (opens in a new tab)`);
+  });
+
   /* --- Site logo (fixed top-left) --- */
   const inSubdir = window.location.pathname.includes('/metadataonwebsite/') ||
                   window.location.pathname.includes('TEI-XSL-HTML');
@@ -381,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* --- Scroll reveal --- */
-  const revealTargets = document.querySelectorAll('.textbox, #about, .context-block');
+  const revealTargets = document.querySelectorAll('.textbox, #about, .context-block, .press-archive');
   let contextBlockIndex = 0;
   revealTargets.forEach(el => {
     el.classList.add('reveal');
@@ -541,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fProvenance = document.createElement('p');
     fProvenance.className = 'footer-provenance';
-    fProvenance.textContent = 'All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and maps and newspaper clippings from Malmö City Archive.';
+    fProvenance.textContent = 'All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and newspaper clippings and the official site plan from Malmö City Archive.';
     footerInner.appendChild(fProvenance);
   }
 
