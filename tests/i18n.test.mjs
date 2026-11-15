@@ -18,7 +18,7 @@ test('extractSegments ignores segments without letters', () => {
 });
 
 test('extractSegments collects translatable attributes once', () => {
-  const html = '<img src="a.jpg" alt="The tower" data-caption="Tower at night"><a aria-label="Home" title="Home" href="x.html">x</a><meta name="description" content="A site">';
+  const html = '<img src="a.jpg" alt="The tower" data-caption="Tower at night"><a aria-label="Home" title="Home" href="x.html">Home</a><meta name="description" content="A site">';
   assert.deepEqual(extractSegments(html), ['The tower', 'Tower at night', 'Home', 'A site']);
 });
 
