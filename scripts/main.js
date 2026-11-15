@@ -188,8 +188,6 @@ function buildGallery() {
       const tImg = document.createElement('img');
       tImg.src = img.getAttribute('src');
       tImg.alt = '';
-      tImg.loading = 'lazy';
-      tImg.decoding = 'async';
       thumb.appendChild(tImg);
       thumb.addEventListener('click', () => showSlides(i + 1));
       thumbs.appendChild(thumb);
@@ -631,7 +629,7 @@ function setupToc() {
   if (!main || !header) return;
 
   const sections = Array.from(document.querySelectorAll(
-    '.gallery-container:has(.opening-head), .info-group, .method-section, .context-block, .process-section, .press-archive'
+    '.gallery-container:has(.opening-head), #story, .info-group, .method-section, .context-block, .process-section, .press-archive'
   )).filter(sec => !sec.closest('.info-group') || sec.classList.contains('info-group'));
 
   const entries = [];
