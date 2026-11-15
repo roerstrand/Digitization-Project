@@ -621,6 +621,64 @@ function setupMenu() {
 }
 
 /* ===================================
+   STORY PARTS (collapsible on narrow screens)
+=================================== */
+const narrowStory = window.matchMedia('(max-width: 1023px)');
+
+function setupStoryParts() {
+  const parts = [...document.querySelectorAll('#story .story-part')];
+  if (!parts.length) return;
+
+  const items = parts.map((part, i) => {
+    const heading = part.querySelector('h3');
+    const body = document.createElement('div');
+    body.className = 'story-body';
+    body.id = `story-part-${i + 1}`;
+    while (heading.nextSibling) body.appendChild(heading.nextSibling);
+    part.appendChild(body);
+    return { part, heading, body, title: heading.textContent, open: i === 0 };
+  });
+
+  const setOpen = (item, open) => {
+    item.open = open;
+    item.part.classList.toggle('is-open', open);
+    const btn = item.heading.querySelector('button');
+    if (btn) btn.setAttribute('aria-expanded', String(open));
+    if (open) item.body.removeAttribute('hidden');
+    else item.body.setAttribute('hidden', 'until-found');
+  };
+
+  const apply = () => {
+    items.forEach(item => {
+      if (narrowStory.matches) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'story-toggle';
+        btn.setAttribute('aria-controls', item.body.id);
+        btn.innerHTML = ICONS.chevron.replace('toc-chevron', 'story-chevron');
+        const label = document.createElement('span');
+        label.textContent = item.title;
+        btn.prepend(label);
+        btn.addEventListener('click', () => setOpen(item, !item.open));
+        item.heading.replaceChildren(btn);
+        item.part.classList.add('is-collapsible');
+        setOpen(item, item.open);
+      } else {
+        item.heading.replaceChildren(item.title);
+        item.part.classList.remove('is-collapsible', 'is-open');
+        item.body.removeAttribute('hidden');
+      }
+    });
+  };
+
+  items.forEach(item => {
+    item.body.addEventListener('beforematch', () => setOpen(item, true));
+  });
+  narrowStory.addEventListener('change', apply);
+  apply();
+}
+
+/* ===================================
    ON THIS PAGE (sidebar on wide, drop-down on narrow)
 =================================== */
 function setupToc() {
@@ -876,6 +934,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealTargets.forEach(el => el.classList.add('visible'));
   }
 
+  setupStoryParts();
   setupToc();
 
   /* --- Back to top --- */

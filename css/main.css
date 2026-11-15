@@ -1248,6 +1248,33 @@ main#content {
   .opening-lede { margin-top: -0.6rem; }
 }
 
+@media (max-width: 1023px) and (min-width: 600px) and (max-height: 520px) and (orientation: landscape) {
+  .gallery-container:has(.opening-head) {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    grid-template-rows: auto auto auto 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .opening-kicker,
+  .opening-head h1,
+  .opening-lede,
+  .opening-intro { grid-column: 1; }
+
+  .opening-kicker { grid-row: 1; }
+  .opening-head h1 { grid-row: 2; }
+  .opening-lede { grid-row: 3; }
+  .opening-intro { grid-row: 4; margin-top: 0; }
+
+  .gallery-container:has(.opening-head) > .gallery-box {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+  }
+
+  .opening-facts,
+  .gallery-container:has(.opening-head) > .textbox { grid-column: 1 / -1; }
+}
+
 @media (min-width: 1024px) {
   .gallery-container:has(.opening-head) {
     grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
@@ -1654,6 +1681,55 @@ main#content {
 .textbox strong,
 #about strong {
   color: var(--text);
+}
+
+.story-part h3 {
+  margin: 1.6rem 0 0.5rem;
+  font-size: 1.12rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.story-part:first-of-type h3 { margin-top: 0; }
+
+.story-part.is-collapsible h3 { margin: 0; }
+
+.story-part.is-collapsible {
+  border-top: 1px solid var(--brass-line);
+}
+
+.story-part.is-collapsible:last-child {
+  border-bottom: 1px solid var(--brass-line);
+}
+
+.story-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.6rem 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.story-chevron {
+  flex-shrink: 0;
+  color: var(--label);
+  transition: transform 180ms ease;
+}
+
+.story-part.is-open .story-chevron { transform: rotate(180deg); }
+
+.story-part.is-collapsible .story-body { padding-bottom: 1rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .story-chevron { transition: none; }
 }
 
 @media (max-width: 1099px) {
