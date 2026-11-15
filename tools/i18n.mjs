@@ -73,13 +73,19 @@ export function translateHtml(html, dict) {
   return { html: out, missing: [...missing] };
 }
 
-export function rewritePaths(html, translated, dir) {
+export function relocateLinks(html, fromPage, toPage, pages) {
+  const fromDir = posix.dirname(fromPage);
+  const toDir = posix.dirname(toPage);
   return html.replace(URL_ATTR, (match, start, url, end) => {
     if (!url || /^(?:[a-z][\w+.-]*:|\/|#)/i.test(url)) return match;
-    const path = url.split(/[?#]/)[0];
-    const target = posix.normalize(posix.join(dir, path));
-    if (translated.has(target)) return match;
-    return `${start}../${url.replace(/^\.\//, '')}${end}`;
+    const [, path, rest] = /^([^?#]*)(.*)$/.exec(url);
+    if (!path) return match;
+    const encoded = /%[0-9a-f]{2}/i.test(path);
+    let target = posix.normalize(posix.join(fromDir, encoded ? decodeURI(path) : path));
+    if (pages.has(target)) target = pages.get(target);
+    let relative = posix.relative(toDir, target);
+    if (!relative.startsWith('../')) relative = `./${relative}`;
+    return `${start}${encoded ? encodeURI(relative) : relative}${rest}${end}`;
   });
 }
 
