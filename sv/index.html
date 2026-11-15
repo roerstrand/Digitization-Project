@@ -1,0 +1,322 @@
+﻿<!DOCTYPE html>
+<html lang="sv" xml:lang="sv">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <title>Digitalt kulturarv: Baltiska utställningen 1914</title>
+
+   <!-- Open Graph Metadata for LinkedIn, Facebook, etc. -->
+   <meta property="og:title" content="Digitalt kulturarv – Baltiska utställningen 1914" />
+   <meta property="og:description"
+      content="Ett digitaliseringsprojekt som tillämpar Dublin Core-metadata, TEI-kodning och öppen licensiering på odigitaliserat material från Baltiska utställningen i Malmö 1914. Byggt från grunden i HTML, CSS och JavaScript." />
+   <meta property="og:url" content="https://roerstrand.github.io/DCHM-Project/" />
+   <meta property="og:image" content="./img/baltictower/2.10(page13).jpg" />
+   <meta property="og:type" content="website" />
+
+   <!-- Twitter Card Metadata -->
+   <meta name="twitter:card" content="summary_large_image" />
+   <meta name="twitter:title" content="Digital Cultural Heritage – Baltic Exhibition 1914" />
+   <meta name="twitter:description"
+      content="A digitization project applying Dublin Core metadata, TEI encoding, and open licensing to undigitized material from the 1914 Baltic Exhibition in Malmö. Built from scratch in HTML, CSS, and JavaScript." />
+   <meta name="twitter:image" content="./img/baltictower/2.10(page13).jpg" />
+
+   <!-- Fonts and CSS -->
+   <link rel="stylesheet" href="../css/main.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet" />
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": ["WebSite", "CollectionPage"],
+     "name": "Digital Cultural Heritage: Baltic Exhibition 1914",
+     "url": "https://roerstrand.github.io/DCHM-Project/",
+     "description": "A digitization project applying Dublin Core metadata, TEI encoding, and open licensing to undigitized material from the 1914 Baltic Exhibition in Malmö, Sweden.",
+     "author": { "@type": "Person", "name": "Robin Erik Strandberg" },
+     "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+     "dateCreated": "2023",
+     "inLanguage": "en",
+     "about": {
+       "@type": "Event",
+       "name": "Baltic Exhibition 1914",
+       "description": "International art, industry, and craftsmanship exhibition held in Malmö, Sweden, 15 May–4 October 1914. The last major manifestation of the Jugend architectural and art style in Sweden.",
+       "startDate": "1914-05-15",
+       "endDate": "1914-10-04",
+       "location": {
+         "@type": "Place",
+         "name": "Malmö",
+         "address": { "@type": "PostalAddress", "addressLocality": "Malmö", "addressRegion": "Skåne", "addressCountry": "SE" }
+       }
+     }
+   }
+   </script>
+   <link rel="alternate" hreflang="en" href="../index.html">
+   <link rel="alternate" hreflang="sv" href="./index.html">
+</head>
+
+
+<body class="page-home">
+
+   <!-- Dark mode toggle -->
+   <button id="darkToggle">🌓</button>
+
+   <!-- Hero -->
+   <div class="hero hero--home">
+      <img class="hero-img" src="../img/baltictower/2.12(page20).jpg" alt="Baltiska tornet och Hufvudrestaurangen speglade i utställningssjön, med svanar och promenerande besökare — katalogfotografi, 1914">
+      <div class="hero-panel">
+         <span class="hero-kicker">Malmö &middot; 15 maj &ndash; 4 oktober 1914</span>
+         <h1>Baltiska utställningen 1914</h1>
+         <p>Informationshantering &middot; Metadata &middot; Öppna data &mdash; Dublin Core &middot; TEI</p>
+         <p class="hero-byline">En digitaliseringsportfolio av <a href="./about.html">Robin Strandberg</a></p>
+      </div>
+   </div>
+
+   <!-- Navigation -->
+   <header>
+      <div class="container">
+         <button id="navToggle" aria-label="Visa eller dölj navigeringen" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         <nav id="sitenav">
+            <a href="./about.html">Om projektet</a>
+            <a href="./baltictower.html">Baltiska tornet</a>
+            <a href="./danishbuilding.html">Danska huset</a>
+            <a href="./germanbuilding.html">Tyska hallen</a>
+            <a href="./russianbuilding.html">Ryska paviljongen</a>
+            <a href="./methodology.html">Metod</a>
+            <a href="./lessons.html">Reflektioner</a>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Stats strip -->
+   <div class="stats-strip">
+      <div class="stat-item">
+         <span class="stat-num">7</span>
+         <span class="stat-label">Katalogvolymer · Malmö stadsbibliotek</span>
+      </div>
+      <div class="stat-item">
+         <span class="stat-num">37</span>
+         <span class="stat-label">Skannade tidningsklipp · Malmö stadsarkiv</span>
+      </div>
+      <div class="stat-item">
+         <span class="stat-num">4</span>
+         <span class="stat-label">Dokumenterade nationspaviljonger</span>
+      </div>
+      <div class="stat-item">
+         <span class="stat-num">15</span>
+         <span class="stat-label">Dublin Core-fält per objekt</span>
+      </div>
+   </div>
+
+   <!-- Main content -->
+   <main id="content">
+      <div class="container">
+         <div class="gallery-container">
+
+            <div class="gallery-box">
+               <div class="gallery-wrapper">
+                  <div class="gallery fade1" style="display: block;">
+                     <img src="../img/baltictower/2.12(page20).jpg" alt="Baltiska tornet speglat i sjön"
+                          data-caption="Panoramavy över Baltiska tornet och Hufvudrestaurangen speglade i utställningssjön, med svanar och promenerande besökare"
+                          data-doctype="Fotografi" data-docsource="Baltiska utställningens katalog, vol. 2, s. 20"
+                          data-year="1914" data-collection="Malmö City Library">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="../img/danishbuilding/2.4(page6).jpg" alt="Danska utställningsbyggnaden"
+                          data-caption="Danska utställningsbyggnaden — fasad i rött tegel, dansk flagga, bro över vallgraven och renässansporten i sandsten"
+                          data-doctype="Fotografi" data-docsource="Baltiska utställningens katalog, vol. 2, s. 6"
+                          data-year="1914" data-collection="Malmö City Library">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="../img/germanbuilding/2.2(page4).jpg" alt="Tyska utställningsbyggnaden"
+                          data-caption="Tyska utställningsbyggnaden — två symmetriska paviljonger i wilhelminsk stil med stora rundbågefönster och besökare på området"
+                          data-doctype="Fotografi" data-docsource="Baltiska utställningens katalog, vol. 2, s. 4"
+                          data-year="1914" data-collection="Malmö City Library">
+                  </div>
+                  <div class="gallery fade1">
+                     <img src="../img/russianbuilding/2.6(page8).jpg" alt="Ryska utställningsbyggnaden"
+                          data-caption="Ryska utställningsbyggnaden — två torn med lökkupoler som flankerar huvudentrén, ryska och orientaliska arkitekturmotiv, besökare på förplatsen"
+                          data-doctype="Fotografi" data-docsource="Baltiska utställningens katalog, vol. 2, s. 8"
+                          data-year="1914" data-collection="Malmö City Library">
+                  </div>
+
+                  <span class="slide-counter"></span>
+                  <button type="button" class="prev" onclick="plusSlides(-1)" aria-label="Föregående bild">&#10094;</button>
+                  <button type="button" class="next" onclick="plusSlides(1)" aria-label="Nästa bild">&#10095;</button>
+               </div>
+
+               <div class="gallery-indicators">
+                  <span class="indicator" onclick="currentSlide(1)"></span>
+                  <span class="indicator" onclick="currentSlide(2)"></span>
+                  <span class="indicator" onclick="currentSlide(3)"></span>
+                  <span class="indicator" onclick="currentSlide(4)"></span>
+               </div>
+               <p class="gallery-hint">Klicka på bilden för att förstora</p>
+            </div>
+
+            <div class="textbox">
+               <h2>Den sista manifestationen av jugendstilen inom arkitektur &amp; konst i Sverige</h2>
+               <p>Baltiska utställningen var en internationell konst-, industri- och hantverksutställning som hölls mellan 15 maj och 4 oktober 1914 i Malmö. Fyra nationer deltog: Sverige, Danmark, Tyskland och Ryssland. Var och en uppförde en nationell utställningsbyggnad — byggd och riven enbart för tillfället — och tillsammans utgjorde de jugendstilens sista stora uttryck inom arkitektur och konst i Sverige.</p>
+               <p>Utställningen var både fest och tävling. Varje nation ville visa upp sina kulturella landvinningar, och lokaltidningarna eldade på nationalkänslan på båda sidor om Östersjön.</p>
+               <p>Jugendstilen blomstrade från 1890-talet till 1920-talet som en reaktion mot historicismens konventioner. Den hämtade inslag från flera konstriktningar och kännetecknas av asymmetri, slingrande växt- och blommotiv och ett naturalistiskt ornamentspråk. Baltiska utställningen representerade jugendstilens senare fas — mer geometrisk och rätlinjig än de tidigare uttrycken.</p>
+               <p>Utställningen omfattade 51,6 hektar — den största i Norden vid den tiden och dubbelt så stor som Stockholmsutställningen 1897.</p>
+               <p>Allt som berättas på den här webbplatsen bygger på det digitaliserade materialet: utställningskatalogerna från Malmö stadsbibliotek och 37 skanningar ur fem inbundna volymer med tidningsklipp på Malmö stadsarkiv — bland dem den officiella planritningen över utställningen från 1914. Klippen för berättelsen bortom de officiella katalogerna: stormen som slet taket av Baltiska tornet, de fackliga konflikterna vid tornet och den danska paviljongen, dödsolyckan vid den tyska hallen och de nationella rivaliteter som utspelade sig i pressen.</p>
+               <p>Webbplatsen är det offentliga resultatet av ett digitaliseringsprojekt som gjorde materialet tillgängligt för allmänheten igen. Utställningen samlade nationer som inom några månader efter stängningen skulle befinna sig i krig — en sammankomst präglad av skaparkraft på randen till katastrof.</p>
+               <p>Metoderna som tillämpats — strukturerad metadata, rättighetshantering, digital leverans från början till slut och publicering av öppna data — går att överföra till alla organisationer som förvaltar ostrukturerade informationstillgångar: kommunala arkiv, kunskapsbaser i företag, bibliotekssamlingar eller träningsdata för AI.</p>
+               <p>För en ärlig redogörelse för vad som fungerade och vad som borde ha gjorts annorlunda, se <a href="./lessons.html">Reflektioner</a>.</p>
+            </div>
+
+         </div>
+      </div>
+      <!-- Contextual background sections -->
+      <div class="container">
+         <section class="context-section">
+
+            <div class="context-block">
+               <span class="context-label">Historisk bakgrund</span>
+               <h3>Krigets inpå</h3>
+               <p>Baltiska utställningen stängde den 4 oktober 1914 — bara två månader efter första världskrigets utbrott. När Sverige, Danmark, Tyskland och Ryssland samlades i Malmö i maj 1914 närmade sig de politiska spänningarna i Europa redan bristningsgränsen. Mordet på ärkehertig Franz Ferdinand i Sarajevo skedde den 28 juni, mitt under utställningen. Tyskland och Ryssland, vars nationspaviljonger stod sida vid sida på utställningsområdet, låg i krig med varandra inom några veckor från invigningen. Baltiska utställningen blev därmed ett ofrivilligt monument över ett försvinnande ögonblick av fred — en sammankomst av nationer på randen till katastrof.</p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Utställningskultur</span>
+               <h3>En tradition av internationella utställningar</h3>
+               <p>Internationella utställningar hade varit en tongivande kulturell institution sedan världsutställningen 1851 i Crystal Palace i London. De var tänkta som hyllningar till industri, hantverk och nationella framsteg och erbjöd en sorts tävlande diplomati som fördes med arkitektur och formgivning i stället för vapen. Världsutställningen i Paris 1900, världsutställningen i S:t Louis 1904 och Stockholmsutställningen 1897 föregick alla Baltiska utställningen och etablerade mallen med särskilt uppförda nationspaviljonger, byggda för tillfället och rivna när evenemanget var över. Baltiska utställningen följde denna tradition i regional skala — med fokus på kulturerna runt Östersjöns stränder.</p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Arkitektoniskt arv</span>
+               <h3>Jugend som europeisk rörelse</h3>
+               <p>Jugendstilen — uppkallad efter Münchentidskriften <em>Jugend</em> (Ungdom), grundad 1896 — var på samma gång en paneuropeisk rörelse och en utpräglat nationell. Varje land anpassade formspråket efter lokala traditioner: i Finland smälte stilen samman med nationalromantiken, i Österrike fick den Wienersecessionens stränga geometri och i Frankrike och Belgien omfamnade den organiska, naturalistiska kurvor. De svenska och danska bidragen vid Baltiska utställningen hämtade från alla dessa strömningar och blandade ett internationellt ornamentspråk med inhemska motiv. År 1914 pekade senjugendens tyngre, mer geometriska former redan fram mot det som skulle bli den tidiga modernismen.</p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Digitalt kulturarv</span>
+               <h3>Att bevara det som finns kvar</h3>
+               <p>Fysiskt arkivmaterial — fotografier, illustrerade kataloger, arkitektritningar — är sårbart för förfall, spridning och glömska. Digitalisering förvandlar dokumenten till sökbara, delbara och reproducerbara poster som kan överleva sina fysiska original. Materialet på webbplatsen kommer från tryckta kataloger och fotografier på Malmö stadsbibliotek och från fem inbundna volymer med tidningsklipp från 1912–1914 på Malmö stadsarkiv (SEMSA00032, vol. Ö II1–II6), som även innehåller den officiella planritningen över utställningen. Den historiska berättelsen på varje sida bygger på dessa källor. Ingen motsvarande digital samling av materialet hittades under arbetet med projektet. Att göra det tillgängligt på nätet är en bevarandeinsats: det ser till att en kort och märkvärdig sammankomst av nationer i en svensk hamnstad inte helt faller i glömska.</p>
+            </div>
+
+         </section>
+      </div>
+
+      <div class="container">
+         <section class="press-archive" aria-labelledby="press-home-title">
+            <div class="press-head">
+               <span class="context-label">Ur pressarkivet</span>
+               <h2 id="press-home-title">Utställningen i tidningarna, 1912–1914</h2>
+               <p>Fem inbundna volymer med tidningsklipp på Malmö stadsarkiv (SEMSA00032, vol. Ö II1–II6) följer utställningen från byggarbetsplats till sista veckan. Trettiosju sidor digitaliserades för projektet, och varje händelse på webbplatsen är hämtad därifrån. Varje post länkar till sin skanning.</p>
+            </div>
+            <ol class="press-list">
+               <li class="press-item">
+                  <time datetime="1913-03-06">6 mars 1913</time>
+                  <div class="press-body">
+                     <h3 lang="sv">Kejsar Wilhelm till baltiska spelen</h3>
+                     <p>Kejsar Wilhelm II väntas besöka utställningen sommaren därpå, under de Baltiska spelen.</p>
+                     <a class="scan-link" data-scan="Ö II5|Page 58">Vol. Ö II5, s. 58</a>
+                  </div>
+               </li>
+               <li class="press-item">
+                  <time datetime="1913-03-11">11 mars 1913</time>
+                  <div class="press-body">
+                     <h3 lang="sv">Svenskar, tyskar och danskar i tävlan</h3>
+                     <p>Arrangörerna uppmanar svensk industri att delta: de danska och tyska programmen visar att båda länderna förbereder sig för att tävla om prestige.</p>
+                     <a class="scan-link" data-scan="Ö II5|Page 108">Vol. Ö II5, s. 108</a>
+                  </div>
+               </li>
+               <li class="press-item">
+                  <time datetime="1914-04-18">18 apr. 1914</time>
+                  <div class="press-body">
+                     <h3 lang="sv">Militär handräckning till Baltiska</h3>
+                     <p>Eftersom yrkesarbetare saknas ber styrelsen regeringen om 200 ingenjörssoldater för att hjälpa till att färdigställa området före invigningen.</p>
+                     <a class="scan-link" data-scan="Ö II5|Page 33">Vol. Ö II5, s. 33</a>
+                  </div>
+               </li>
+               <li class="press-item">
+                  <time datetime="1914-05-08">8 maj 1914</time>
+                  <div class="press-body">
+                     <h3 lang="sv">Strejk vid Baltiskan</h3>
+                     <p>En vecka före invigningen strejkar 47 vakter och städare. De fick 100 kronor i månaden för tolvtimmarspass och krävde 140 kronor och åttatimmarsdag. Polis och reservvakter från de utländska hallarna håller vakt under natten, och statens förlikningsman erbjuder sig att medla.</p>
+                     <a class="scan-link" data-scan="Ö II3|Page 135">Vol. Ö II3, s. 135</a>
+                     <a class="scan-link" data-scan="Ö II5|Page 27">Vol. Ö II5, s. 27</a>
+                     <a class="scan-link" data-scan="Ö II5|Page 28">Vol. Ö II5, s. 28</a>
+                  </div>
+               </li>
+               <li class="press-item">
+                  <time datetime="1914">1914</time>
+                  <div class="press-body">
+                     <h3 lang="sv">Officiell plan öfver Baltiska utställningen</h3>
+                     <p>Utställningens officiella planritning, undertecknad av generalkommissarien, med ett register över varje hall och paviljong — den enda kartan i klippvolymerna.</p>
+                     <a class="scan-link" data-scan="Ö II6|Pages 96-97">Vol. Ö II6, s. 96–97</a>
+                  </div>
+               </li>
+               <li class="press-item">
+                  <time datetime="1914-09-26">26 sep. 1914</time>
+                  <div class="press-body">
+                     <h3 lang="sv">Öfver en miljon för utställningsbiljetter</h3>
+                     <p>En vecka före stängningen: 641 084 dagbesökare, 115 999 till konsthallen och biljettintäkter på 1 099 897,20 kronor.</p>
+                     <a class="scan-link" data-scan="Ö II4|Page 103">Vol. Ö II4, s. 103</a>
+                  </div>
+               </li>
+            </ol>
+         </section>
+      </div>
+
+      <!-- Digitization Pipeline -->
+      <div class="container">
+         <section class="process-section reveal">
+            <span class="context-label">Så gjordes det</span>
+            <h2 class="process-title">Digitaliseringsflödet</h2>
+            <div class="process-steps">
+               <div class="process-step">
+                  <div class="process-step-num">01</div>
+                  <h3>Källmaterial</h3>
+                  <p>Utställningskataloger och fotografier från Malmö stadsbibliotek; fem inbundna volymer med tidningsklipp, däribland den officiella planritningen, från Malmö stadsarkiv — fysiska dokument som riskerar att förfalla.</p>
+               </div>
+               <div class="process-arrow" aria-hidden="true">&#8594;</div>
+               <div class="process-step">
+                  <div class="process-step-num">02</div>
+                  <h3>Digitalisering</h3>
+                  <p>Högupplöst skanning av det fysiska materialet, som ger bildfiler av arkivkvalitet som bevaras i repositoriet.</p>
+               </div>
+               <div class="process-arrow" aria-hidden="true">&#8594;</div>
+               <div class="process-step">
+                  <div class="process-step-num">03</div>
+                  <h3>Metadata</h3>
+                  <p>Varje objekt beskrivs med Dublin Core-metadata och transkriberas som TEI XML — strukturerat, maskinläsbart och interoperabelt.</p>
+               </div>
+               <div class="process-arrow" aria-hidden="true">&#8594;</div>
+               <div class="process-step">
+                  <div class="process-step-num">04</div>
+                  <h3>Publik webbplats</h3>
+                  <p>Det digitaliserade innehållet publiceras som en fritt tillgänglig webbplats — och för tillbaka en försvunnen utställning från 1914 inom allmänhetens räckhåll.</p>
+               </div>
+            </div>
+            <blockquote class="pull-quote">Metoderna som tillämpats här — strukturerad metadata, rättighetshantering, digital leverans från början till slut och publicering av öppna data — går att överföra till alla organisationer som förvaltar ostrukturerade informationstillgångar: arkiv, kunskapsbaser, bibliotekssamlingar eller träningsdata för AI.</blockquote>
+         </section>
+         <p class="section-footnote">För en utförlig redogörelse för metoderna och standarderna i varje steg, se <a href="./methodology.html">metodsidan</a>.</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="container">
+         <section class="cta-section">
+            <h2>Kontakt</h2>
+            <p>Tillgänglig för roller inom informationshantering, digitalt kulturarv och dataorganisation.</p>
+            <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer" class="cta-btn">LinkedIn</a>
+            <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer" class="cta-secondary">GitHub</a>
+         </section>
+      </div>
+
+   </main>
+
+<footer>
+  <div class="container footer-inner">
+    <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+    <p class="footer-license">Licensierad under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; icke-kommersiell användning med erkännande; bearbetningar under samma villkor.</p>
+  </div>
+</footer>
+
+   <script src="../scripts/main.js"></script>
+</body>
+
+</html>

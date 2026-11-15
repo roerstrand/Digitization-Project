@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="sv" xml:lang="sv">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+   <title>Robin Strandberg — digitaliseringsportfolio</title>
+
+   <meta property="og:title" content="Robin Strandberg — digitaliseringsportfolio" />
+   <meta property="og:description"
+      content="Hur digitaliseringsprojektet om Baltiska utställningen 1914 planerades, genomfördes och publicerades — verktyg, standarder, institutioner och utmaningar." />
+   <meta property="og:url" content="https://roerstrand.github.io/DCHM-Project/about.html" />
+   <meta property="og:image" content="./img/baltictower/2.10(page13).jpg" />
+   <meta property="og:type" content="website" />
+
+   <link rel="stylesheet" href="../css/main.css" />
+   <link href="https://fonts.googleapis.com/css2?family=Lora&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet" />
+   <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "AboutPage",
+     "name": "Robin Strandberg — Digitization Portfolio",
+     "url": "https://roerstrand.github.io/DCHM-Project/about.html",
+     "description": "Background on the Baltic Exhibition 1914 digitization project: archive search, scanning workflow, Dublin Core metadata, TEI encoding, copyright clearance, and publication. Completed 2023.",
+     "author": [
+       { "@type": "Person", "name": "Robin Erik Strandberg" },
+       { "@type": "Person", "name": "My Lundborg" }
+     ],
+     "isPartOf": { "@type": "WebSite", "name": "Digital Cultural Heritage: Baltic Exhibition 1914", "url": "https://roerstrand.github.io/DCHM-Project/" }
+   }
+   </script>
+   <link rel="alternate" hreflang="en" href="../about.html">
+   <link rel="alternate" hreflang="sv" href="./about.html">
+</head>
+
+<body class="page-about">
+
+   <!-- Dark mode toggle -->
+   <button id="darkToggle">🌓</button>
+
+   <!-- Hero -->
+   <div class="hero hero--sub">
+      <img class="hero-img" src="../img/baltictower/2.10(page13).jpg" alt="Fiskehallen på pålar i utställningssjön, med Baltiska tornet och Hufvudrestaurangen bakom och båtar på vattnet — katalogfotografi, 1914">
+      <div class="hero-panel">
+         <h1>Robin Strandberg</h1>
+         <p>Informationshantering &middot; Metadata &middot; Digitalt bevarande</p>
+      </div>
+   </div>
+
+   <!-- Navigation -->
+   <header>
+      <div class="container">
+         <button id="navToggle" aria-label="Visa eller dölj navigeringen" aria-expanded="false">
+            <span></span><span></span><span></span>
+         </button>
+         <nav id="sitenav">
+            <a href="./about.html">Om projektet</a>
+            <a href="./baltictower.html">Baltiska tornet</a>
+            <a href="./danishbuilding.html">Danska huset</a>
+            <a href="./germanbuilding.html">Tyska hallen</a>
+            <a href="./russianbuilding.html">Ryska paviljongen</a>
+            <a href="./methodology.html">Metod</a>
+            <a href="./lessons.html">Reflektioner</a>
+         </nav>
+      </div>
+   </header>
+
+   <!-- Main content -->
+   <main id="content">
+      <div class="container">
+
+         <!-- Project intro card -->
+         <div class="gallery-container">
+            <div id="about">
+               <h2>Om projektet</h2>
+               <p>Projektet växte fram ur ett intresse för Malmöregionens kulturhistoria och för jugendstilen i arkitekturen — vars sista stora uttryck i Sverige är Baltiska utställningen 1914.</p>
+               <p><strong>Robin Strandberg</strong> formgav och byggde den här webbplatsen, genomförde arkivforskningen vid två institutioner (Malmö stadsbibliotek och Malmö stadsarkiv), utförde skanningarna, bearbetade alla bilder, skrev Dublin Core-posterna för hela samlingen, gjorde upphovsrättsanalysen enligt svensk lag och stod för kvalitetssäkringen. My Lundborg bidrog med TEI XML-kodning och XSL-stilmallar för kommissariatstexterna; skanningarna på Malmö stadsbibliotek gjordes gemensamt.</p>
+               <p>Projektet gick igenom <strong>7 katalogvolymer</strong> på Malmö stadsbibliotek och fotograferade <strong>37 sidor ur fem inbundna volymer med tidningsklipp</strong> på Malmö stadsarkiv, däribland den officiella planritningen över utställningen från 1914. Resultatet är en beskriven samling som omfattar <strong>4 nationspaviljonger</strong>, där varje objekt dokumenterats med en <strong>Dublin Core-post med 15 element</strong> och publicerats öppet i ett publikt GitHub-repositorium under en Creative Commons-licens.</p>
+               <p>Historien som berättas på webbplatsen bygger på det materialet. Katalogerna dokumenterar byggnaderna så som de presenterades; tidningsklippen berättar vad som hände runt dem — stormen som slet taket av Baltiska tornet i september 1914, de fackliga konflikterna som stoppade arbetet på tornet och den danska paviljongen, olyckorna vid den tyska hallen och de nationella rivaliteter som pressen rapporterade om.</p>
+               <blockquote class="pull-quote">Området är kulturarvsarkiv. Metoderna — strukturerad metadata, rättighetshantering, digital leverans från början till slut och publicering av öppna data — går att överföra till alla organisationer som förvaltar ostrukturerade informationstillgångar: kommunala arkiv, kunskapsbaser i företag, bibliotekssamlingar eller träningsdata för AI.</blockquote>
+               <p class="about-meta">Slutfört 2023 &middot; <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer">github.com/roerstrand</a> &middot; <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+               <p class="about-meta">Hela digitaliseringsflödet — arkivsökning, skanning, metadata och publicering — finns dokumenterat på <a href="./methodology.html">metodsidan</a>.</p>
+               <div class="contact-block">
+                  <h3>Kontakt</h3>
+                  <div class="contact-links">
+                     <a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer" class="cta-btn">LinkedIn</a>
+                     <a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer" class="cta-secondary">GitHub</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="info-groups">
+
+         <section class="info-group" id="purpose" aria-labelledby="purpose-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">01</span>
+               <h2 id="purpose-title">Varför projektet finns</h2>
+            </div>
+            <div class="info-grid">
+            <div class="context-block">
+               <span class="context-label">Projektets syfte</span>
+               <h3>Bevarande och tillgänglighet</h3>
+               <p>Det främsta motivet var bevarande: de fysiska källorna — hundraåriga kataloger, fotoalbum och ritningsböcker — är sköra, oersättliga och riskerar att gallras. Digitalisering minskar slitaget på originalen och ser till att materialet överlever i en form som kan delas fritt.</p>
+               <p>Ett andra motiv var tillgänglighet. Genom att bygga en webbplats som sätter materialet i sitt sammanhang, i stället för att bara ladda upp råa skanningar, skapar projektet en ingång för alla som är nyfikna på jugendstilen, Baltiska utställningen eller den europeiska utställningskulturen före kriget — inte bara för arkivarier och specialister.</p>
+            </div>
+            </div>
+         </section>
+
+         <section class="info-group" id="sources" aria-labelledby="sources-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">02</span>
+               <h2 id="sources-title">Källor</h2>
+            </div>
+            <div class="info-grid">
+            <div class="context-block">
+               <span class="context-label">Källinstitutioner</span>
+               <h3>Malmö stadsbibliotek &amp; stadsarkiv</h3>
+               <p>Det tryckta kärnmaterialet — utställningskataloger, officiella vyalbum, vykort och kommissariatsbroschyrer — hämtades från <strong>Malmö stadsbibliotek</strong>, som har en särskild hylla med publikationer om Baltiska utställningen klassificerade under <em>Bhz Baltiska utställningen 1914</em>. En medarbetare med ansvar för de äldre samlingarna stöttade projektet genom att visa tillgängliga titlar och ordna tillgång för skanning.</p>
+               <p>At <strong>Malmö stadsarkiv</strong>fotograferades 37 sidor på plats ur fem inbundna volymer med tidningsklipp som samlades in 1912–1914 (SEMSA00032, vol. Ö II1–II6), bland dem den officiella planritningen över utställningen. Klippen är den främsta källan till den historiska berättelsen på hela webbplatsen: stormen, arbetskonflikterna, olyckorna och den dagliga pressbevakningen av utställningen.</p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Källmaterial</span>
+               <h3>Vad som digitaliserades</h3>
+               <p>Sju tryckta volymer på Malmö stadsbibliotek granskades på plats, och ett urval valdes ut för digitalisering. Bland dem fanns officiella utställningskataloger, vykortsalbum, fotografiska vyalbum, den officiella huvudkatalogen med planritningar och en dansk kommissariatspublikation av fotografen Fred Riise.</p>
+               <p>Utöver bibliotekets volymer fotograferades 37 sidor ur fem inbundna klippvolymer på Malmö stadsarkiv, däribland den officiella planritningen. Klippen bidrar med de händelser och röster som de officiella katalogerna utelämnar, och varje byggnadssida listar de klipp den bygger på med en länk till skanningen.</p>
+               <p>Sammanlagt omfattar samlingen bilder av alla fyra utvalda byggnader från flera typer av källor: katalogillustrationer, exteriörfotografier, interiörfotografier, fotografier från byggarbetsplatsen och arkitektoniska planritningar. Surrogatnumreringen (t.ex. 2:4 = bok 2, sida 4) bevarar en direkt koppling mellan varje digital fil och dess fysiska källa.</p>
+            </div>
+            </div>
+         </section>
+
+         <section class="info-group" id="scanning" aria-labelledby="scanning-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">03</span>
+               <h2 id="scanning-title">Skanning</h2>
+            </div>
+            <div class="info-grid info-grid--single">
+            <div class="context-block">
+               <span class="context-label">Utrustning</span>
+               <h3>Två upplösningar, valda efter material</h3>
+               <p>Skanningen gjordes på Malmö stadsbibliotek med en <strong>Epson Perfection V600 Photo</strong>
+                  skanner i 24-bitars färg. Två upplösningar valdes medvetet:</p>
+               <div class="dpi-pair">
+                  <div class="dpi-card">
+                     <span class="dpi-value">300 <abbr title="punkter per tum">dpi</abbr></span>
+                     <span class="dpi-use">Fotografier &amp; bilder</span>
+                     <p>Räcker för visningskvalitet och betraktarupplevelse utan att ge orimligt stora filer.</p>
+                  </div>
+                  <div class="dpi-card">
+                     <span class="dpi-value">600 <abbr title="punkter per tum">dpi</abbr></span>
+                     <span class="dpi-use">Textdokument &amp; ritningar</span>
+                     <p>Håller liten text läsbar vid inzoomning och gör materialet redo för framtida OCR utan att någon behöver återvända till den fysiska källan.</p>
+                  </div>
+               </div>
+               <p>Ett vitt A4-ark användes som referensbakgrund under skanningen. Alla bilder bearbetades sedan i <strong>GIMP</strong>: rätades upp, beskars och försågs med beskrivande metadata innan de lades in i repositoriet.</p>
+            </div>
+            </div>
+         </section>
+
+         <section class="info-group" id="description" aria-labelledby="description-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">04</span>
+               <h2 id="description-title">Metadata &amp; struktur</h2>
+            </div>
+            <div class="info-grid">
+            <div class="context-block">
+               <span class="context-label">Metadata</span>
+               <h3>Dublin Core och inbäddad bildmetadata</h3>
+               <p>Varje digitaliserat objekt i samlingen har strukturerad metadata enligt
+                  <strong>Dublin Core</strong> -standarden — ett allmänt använt, interoperabelt schema för att beskriva kulturarvsresurser. Metadatafälten omfattar titel, upphov, ämne, beskrivning, utgivare, datum, typ, format, identifierare, källa, språk, relation, täckning och rättigheter.</p>
+               <p>Metadatan katalogiserades först gemensamt i ett delat <strong>Google Drive</strong> -kalkylark innan den bäddades in direkt i bildfilerna via GIMP och dokumenterades på de metadatasidor per byggnad som nås från varje byggnadssida på webbplatsen.</p>
+               <p>TEI (Text Encoding Initiative) XML användes för att koda kommissariatstexterna, och XSL-stilmallar omvandlade TEI-källan till XHTML-filer för varje deltagande nation.</p>
+               <p>Hela metadataschemat och kodningsbesluten finns dokumenterade på <a href="./methodology.html">metodsidan</a>.</p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Informationsstruktur</span>
+               <h3>GitHub, TEI, HTML/CSS/JS</h3>
+               <p>Projektets hela samling finns i ett publikt <strong>GitHub-repositorium</strong>, så att varje bild, metadatapost, TEI-fil och stilmall finns tillgänglig för granskning, nedladdning och återanvändning under en Creative Commons-licens. GitHub var också samarbetsplattformen under hela projektet och gjorde det möjligt att arbeta på distans.</p>
+               <p>Webbplatsen — helt byggd i <strong>HTML, CSS och JavaScript</strong> — fungerar som det pedagogiska lagret: den sätter det digitaliserade materialet i historiskt sammanhang, visar bilderna i ett bildspelsgalleri och länkar varje byggnad till dess metadatapost.</p>
+               <p><strong>Visual Studio Code</strong> var huvudeditorn; <strong>oXygen</strong> användes för TEI- och XSL-arbetet tack vare den inbyggda XML-valideringen och XSLT-omvandlingen i realtid.</p>
+               <p><a href="https://github.com/roerstrand/Digitization-Project" target="_blank" rel="noopener noreferrer">Se projektets repositorium på GitHub &rarr;</a></p>
+            </div>
+
+            <div class="context-block">
+               <span class="context-label">Teknisk profil</span>
+               <h3>Verktyg &amp; standarder</h3>
+               <div class="tool-grid">
+                  <div class="tool-card">
+                     <span class="tool-card-label">Standarder</span>
+                     <span class="tool-card-value">Dublin Core &middot; TEI P5 &middot; XSL</span>
+                  </div>
+                  <div class="tool-card">
+                     <span class="tool-card-label">Utveckling</span>
+                     <span class="tool-card-value">HTML &middot; CSS &middot; JavaScript</span>
+                  </div>
+                  <div class="tool-card">
+                     <span class="tool-card-label">Bildbehandling</span>
+                     <span class="tool-card-value">GIMP &middot; Epson V600 &middot; 300/600 dpi</span>
+                  </div>
+                  <div class="tool-card">
+                     <span class="tool-card-label">Arbetsflöde</span>
+                     <span class="tool-card-value">Git &middot; GitHub &middot; GitHub Pages</span>
+                  </div>
+                  <div class="tool-card">
+                     <span class="tool-card-label">Editorer</span>
+                     <span class="tool-card-value">VS Code &middot; oXygen XML</span>
+                  </div>
+                  <div class="tool-card">
+                     <span class="tool-card-label">Licenser</span>
+                     <span class="tool-card-value">CC BY&ndash;NC&ndash;SA 4.0 &middot; Allmän egendom (1914)</span>
+                  </div>
+               </div>
+            </div>
+            </div>
+         </section>
+
+         <section class="info-group" id="publication" aria-labelledby="publication-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">05</span>
+               <h2 id="publication-title">Publicering &amp; rättigheter</h2>
+            </div>
+            <div class="info-grid info-grid--single">
+            <div class="context-block">
+               <span class="context-label">Webbpublicering</span>
+               <h3>Öppen tillgång via GitHub Pages</h3>
+               <p>Webbplatsen ligger på <strong>GitHub Pages</strong> — en kostnadsfri statisk hostinglösning som passar ett projekt med öppen källkod. Att använda GitHub både som repositorium och hostingplattform ger full transparens: besökare kan granska källkoden, forka repositoriet eller rapportera problem direkt.</p>
+               <p>Före publiceringen kontrollerades upphovsrätten noggrant. De digitaliserade katalogerna gavs ut 1914 av
+                  <em>Förlags-aktiebolaget i Malmö</em>. Enligt svensk upphovsrättslag (1960:729, 44 §) blir verk vars upphovsrätt innehas av ett förlag allmän egendom 70 år efter tillkomsten — vilket placerar allt material långt utanför skyddet. Den ende namngivne fotografen, dansken Fred Riise, dog 1933, alltså också för mer än 70 år sedan.</p>
+            </div>
+            </div>
+         </section>
+
+         <section class="info-group" id="challenges" aria-labelledby="challenges-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">06</span>
+               <h2 id="challenges-title">Utmaningar</h2>
+            </div>
+            <div class="info-grid info-grid--single">
+            <div class="context-block">
+               <span class="context-label">Utmaningar</span>
+               <h3>Avgränsning, arbetsflöde och lärdomar</h3>
+               <p>Projektets största utmaning var <strong>avgränsningen</strong>: Baltiska utställningen är ett stort ämne och materialet var rikligt. Att begränsa fokus till fyra byggnader — och inom dem till arkitekturbilder — krävde ständiga urvalsbeslut i varje steg.</p>
+               <p>En känd metadatabugg i GitHub förhindrade fullständig inbäddning av metadata i två kommissariatsbilder; de är dokumenterade undantag i samlingen.</p>
+               <p>Processen kombinerade det Dahlström (2011) kallar <em>massdigitalisering</em> i den tidiga skanningsfasen — en bred insamling så att materialet kunde granskas på distans — med <em>kritisk digitalisering</em>
+                  i urvals- och kodningsfasen, där manuella bedömningar och rik metadata ersatte automatiserad genomströmning. Kombinationen speglar villkoren i ett litet projekt med begränsad budget och var i sig en viktig lärdom.</p>
+               <p>För en ärlig redogörelse för vad som fungerade, vad som inte gjorde det och vad som borde ha gjorts annorlunda, se sidan <a href="./lessons.html">Reflektioner</a> .</p>
+            </div>
+            </div>
+         </section>
+
+         </div>
+      </div>
+   </main>
+
+   <footer>
+      <div class="container footer-inner">
+         <p class="footer-copy">&copy; 2026 Robin Erik Strandberg</p>
+         <p class="footer-license">Licensierad under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+               target="_blank" rel="noopener noreferrer">CC BY&ndash;NC&ndash;SA 4.0</a> &mdash; icke-kommersiell användning med erkännande; bearbetningar under samma villkor.</p>
+      </div>
+   </footer>
+
+   <script src="../scripts/main.js"></script>
+</body>
+
+</html>

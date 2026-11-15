@@ -5,6 +5,53 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const wideToc = window.matchMedia('(min-width: 1200px)');
 const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 
+const LANG = document.documentElement.lang === 'sv' ? 'sv' : 'en';
+const SCRIPT_URL = document.currentScript ? document.currentScript.src : new URL('scripts/main.js', location.href).href;
+const ASSET_ROOT = new URL('../', SCRIPT_URL).href;
+const PAGE_ROOT = LANG === 'sv' ? `${ASSET_ROOT}sv/` : ASSET_ROOT;
+
+const SV = {
+  'Previous image': 'Föregående bild',
+  'Next image': 'Nästa bild',
+  'Enlarge image': 'Förstora bilden',
+  'Enlarge': 'Förstora',
+  'Source': 'Källa',
+  'Choose an image': 'Välj en bild',
+  'Image {n} of {count}: {alt}': 'Bild {n} av {count}: {alt}',
+  'Enlarge image: {alt}': 'Förstora bilden: {alt}',
+  'Close': 'Stäng',
+  'Zoom': 'Zooma',
+  'Zoom out': 'Zooma ut',
+  'Zoom in': 'Zooma in',
+  'Fit': 'Anpassa',
+  'Details': 'Detaljer',
+  'Image details': 'Bilddetaljer',
+  'Year': 'År',
+  'Collection': 'Samling',
+  'Menu': 'Meny',
+  'Overview & gallery': 'Översikt & galleri',
+  'On this page': 'På den här sidan',
+  'Skip to main content': 'Hoppa till huvudinnehållet',
+  'View scan: Malmö City Archive, {ref} (opens in a new tab)': 'Visa skanning: Malmö stadsarkiv, {ref} (öppnas i en ny flik)',
+  'Digitized original': 'Digitaliserat original',
+  'Malmö City Archive · newspaper clippings, SEMSA00032': 'Malmö stadsarkiv · tidningsklipp, SEMSA00032',
+  '{count} clippings · {span} · {volumes}': '{count} klipp · {span} · {volumes}',
+  'volume': 'volym',
+  'volumes': 'volymer',
+  'Baltic Exhibition 1914 — Home. © 2026 Robin Erik Strandberg': 'Baltiska utställningen 1914 — Startsida. © 2026 Robin Erik Strandberg',
+  'Baltic': 'Baltiska',
+  'Exhibition': 'utställningen',
+  'Dark mode': 'Mörkt läge',
+  'Back to top': 'Till toppen',
+  'All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and newspaper clippings and the official site plan from Malmö City Archive.':
+    'Allt historiskt innehåll på webbplatsen bygger på det digitaliserade materialet: utställningskataloger från Malmö stadsbibliotek samt tidningsklipp och den officiella planritningen från Malmö stadsarkiv.'
+};
+
+function t(text, vars = {}) {
+  const base = LANG === 'sv' && SV[text] ? SV[text] : text;
+  return base.replace(/\{(\w+)\}/g, (m, key) => (key in vars ? vars[key] : m));
+}
+
 function storedTheme() {
   try { return localStorage.getItem('darkMode'); } catch (err) { return null; }
 }
@@ -156,22 +203,22 @@ function buildGallery() {
   const multi = count > 1;
 
   if (multi) {
-    const stagePrev = makeButton('gallery-btn stage-arrow stage-prev', 'Previous image', ICONS.prev);
-    const stageNext = makeButton('gallery-btn stage-arrow stage-next', 'Next image', ICONS.next);
+    const stagePrev = makeButton('gallery-btn stage-arrow stage-prev', t('Previous image'), ICONS.prev);
+    const stageNext = makeButton('gallery-btn stage-arrow stage-next', t('Next image'), ICONS.next);
     stagePrev.addEventListener('click', () => plusSlides(-1));
     stageNext.addEventListener('click', () => plusSlides(1));
     wrapper.append(stagePrev, stageNext);
   }
 
-  const enlarge = makeButton('gallery-btn stage-enlarge', 'Enlarge image', ICONS.expand, 'Enlarge');
+  const enlarge = makeButton('gallery-btn stage-enlarge', t('Enlarge image'), ICONS.expand, t('Enlarge'));
   enlarge.addEventListener('click', () => openViewer(g.index, enlarge));
   wrapper.appendChild(enlarge);
 
   const controls = document.createElement('div');
   controls.className = 'gallery-controls';
   if (multi) {
-    const prev = makeButton('gallery-btn', 'Previous image', ICONS.prev);
-    const next = makeButton('gallery-btn', 'Next image', ICONS.next);
+    const prev = makeButton('gallery-btn', t('Previous image'), ICONS.prev);
+    const next = makeButton('gallery-btn', t('Next image'), ICONS.next);
     const counter = document.createElement('span');
     counter.className = 'gallery-counter';
     prev.addEventListener('click', () => plusSlides(-1));
@@ -185,7 +232,7 @@ function buildGallery() {
   info.innerHTML =
     '<div class="gallery-info-text">' +
       '<p class="gallery-info-caption" aria-live="polite"></p>' +
-      '<p class="gallery-info-source"><span class="gallery-info-label">Source</span> <span class="gallery-info-source-value"></span></p>' +
+      '<p class="gallery-info-source"><span class="gallery-info-label">' + t('Source') + '</span> <span class="gallery-info-source-value"></span></p>' +
     '</div>' +
     (multi ? '<span class="gallery-counter gallery-counter--info"></span>' : '');
   g.caption = info.querySelector('.gallery-info-caption');
@@ -199,12 +246,12 @@ function buildGallery() {
     const thumbs = document.createElement('div');
     thumbs.className = 'gallery-thumbs';
     thumbs.setAttribute('role', 'group');
-    thumbs.setAttribute('aria-label', 'Choose an image');
+    thumbs.setAttribute('aria-label', t('Choose an image'));
     g.imgs.forEach((img, i) => {
       const thumb = document.createElement('button');
       thumb.type = 'button';
       thumb.className = 'gallery-thumb';
-      thumb.setAttribute('aria-label', `Image ${i + 1} of ${count}: ${img.alt}`);
+      thumb.setAttribute('aria-label', t('Image {n} of {count}: {alt}', { n: i + 1, count, alt: img.alt }));
       const tImg = document.createElement('img');
       tImg.src = img.getAttribute('src');
       tImg.alt = '';
@@ -292,29 +339,29 @@ function buildViewer() {
   el.setAttribute('aria-labelledby', 'viewer-title');
   el.innerHTML = `
     <div class="viewer-bar">
-      <button type="button" class="viewer-btn viewer-close">${ICONS.close}<span>Close</span></button>
+      <button type="button" class="viewer-btn viewer-close">${ICONS.close}<span>${t('Close')}</span></button>
       <span class="viewer-counter" aria-live="polite"></span>
-      <div class="viewer-zoom" role="group" aria-label="Zoom">
-        <button type="button" class="viewer-btn viewer-zoom-out" aria-label="Zoom out">${ICONS.minus}</button>
+      <div class="viewer-zoom" role="group" aria-label="${t('Zoom')}">
+        <button type="button" class="viewer-btn viewer-zoom-out" aria-label="${t('Zoom out')}">${ICONS.minus}</button>
         <output class="viewer-zoom-level" aria-live="polite">100%</output>
-        <button type="button" class="viewer-btn viewer-zoom-in" aria-label="Zoom in">${ICONS.plus}</button>
-        <button type="button" class="viewer-btn viewer-zoom-fit"><span>Fit</span></button>
+        <button type="button" class="viewer-btn viewer-zoom-in" aria-label="${t('Zoom in')}">${ICONS.plus}</button>
+        <button type="button" class="viewer-btn viewer-zoom-fit"><span>${t('Fit')}</span></button>
       </div>
-      <button type="button" class="viewer-btn viewer-details" aria-expanded="false" aria-controls="viewer-info">${ICONS.info}<span>Details</span></button>
+      <button type="button" class="viewer-btn viewer-details" aria-expanded="false" aria-controls="viewer-info">${ICONS.info}<span>${t('Details')}</span></button>
     </div>
     <div class="viewer-body">
       <div class="viewer-stage">
         <div class="viewer-canvas"><img class="viewer-img" alt="" draggable="false"></div>
-        <button type="button" class="viewer-btn viewer-nav viewer-prev" aria-label="Previous image">${ICONS.prev}</button>
-        <button type="button" class="viewer-btn viewer-nav viewer-next" aria-label="Next image">${ICONS.next}</button>
+        <button type="button" class="viewer-btn viewer-nav viewer-prev" aria-label="${t('Previous image')}">${ICONS.prev}</button>
+        <button type="button" class="viewer-btn viewer-nav viewer-next" aria-label="${t('Next image')}">${ICONS.next}</button>
       </div>
-      <aside class="viewer-info" id="viewer-info" aria-label="Image details">
+      <aside class="viewer-info" id="viewer-info" aria-label="${t('Image details')}">
         <h2 class="viewer-title" id="viewer-title"></h2>
         <dl class="viewer-meta">
           <div><dt>Format</dt><dd class="vm-type"></dd></div>
-          <div><dt>Source</dt><dd class="vm-source"></dd></div>
-          <div><dt>Year</dt><dd class="vm-year"></dd></div>
-          <div><dt>Collection</dt><dd class="vm-collection"></dd></div>
+          <div><dt>${t('Source')}</dt><dd class="vm-source"></dd></div>
+          <div><dt>${t('Year')}</dt><dd class="vm-year"></dd></div>
+          <div><dt>${t('Collection')}</dt><dd class="vm-collection"></dd></div>
         </dl>
       </aside>
     </div>`;
@@ -350,7 +397,7 @@ function buildViewer() {
       img.style.cursor = 'zoom-in';
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
-      img.setAttribute('aria-label', `Enlarge image: ${img.alt}`);
+      img.setAttribute('aria-label', t('Enlarge image: {alt}', { alt: img.alt }));
       img.addEventListener('click', () => openViewer(i, img));
       img.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openViewer(i, img); }
@@ -592,7 +639,7 @@ function setupMenu() {
   toggle.removeAttribute('aria-label');
   toggle.setAttribute('aria-controls', 'sitenav');
   if (!toggle.querySelector('.nav-toggle-text')) {
-    toggle.insertAdjacentHTML('beforeend', '<span class="nav-toggle-text">Menu</span>');
+    toggle.insertAdjacentHTML('beforeend', `<span class="nav-toggle-text">${t('Menu')}</span>`);
   }
 
   const closeNav = () => {
@@ -713,7 +760,7 @@ function setupToc() {
   const entries = [];
   sections.forEach((sec, i) => {
     let text = '';
-    if (sec.matches('.gallery-container')) text = 'Overview & gallery';
+    if (sec.matches('.gallery-container')) text = t('Overview & gallery');
     else if (sec.matches('.info-group')) text = sec.querySelector('h2')?.textContent.trim() || '';
     else text = (sec.querySelector('.context-label, .section-label')?.textContent.trim()) ||
                 (sec.querySelector('h2, h3')?.textContent.trim()) || '';
@@ -730,15 +777,15 @@ function setupToc() {
 
   const toc = document.createElement('nav');
   toc.className = 'toc';
-  toc.setAttribute('aria-label', 'On this page');
+  toc.setAttribute('aria-label', t('On this page'));
   toc.innerHTML = `
     <div class="toc-panel">
       <button type="button" class="toc-toggle" aria-expanded="false" aria-controls="toc-list">
-        <span class="toc-label">On this page</span>
+        <span class="toc-label">${t('On this page')}</span>
         <span class="toc-current"></span>
         ${ICONS.chevron}
       </button>
-      <p class="toc-heading" aria-hidden="true">On this page</p>
+      <p class="toc-heading" aria-hidden="true">${t('On this page')}</p>
       <ol class="toc-list" id="toc-list"></ol>
     </div>`;
   const list = toc.querySelector('.toc-list');
@@ -838,7 +885,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const skip = document.createElement('a');
     skip.className = 'skip-link';
     skip.href = '#content';
-    skip.textContent = 'Skip to main content';
+    skip.textContent = t('Skip to main content');
     document.body.prepend(skip);
   }
 
@@ -856,9 +903,7 @@ document.addEventListener('DOMContentLoaded', () => {
     'Ö II5': 'Baltiska utställningen i Malmö (1914D). Tidningsurklipp, volym Ö II5, bok nr IX. SEMSA00032ÖÖ II5',
     'Ö II6': 'Baltiska utställningen i Malmö (1914E). Tidningsurklipp, volym Ö II6, bok nr XII. SEMSA00032ÖÖ II6'
   };
-  const inSubdir = window.location.pathname.includes('/metadataonwebsite/') ||
-                   window.location.pathname.includes('TEI-XSL-HTML');
-  const siteRoot = inSubdir ? '../' : './';
+  const siteRoot = ASSET_ROOT;
   const scanFile = (dir, volume, page) =>
     `${siteRoot}references/paper_clippings/${dir}/${volume.replace('Ö ', 'O')}-${page.replace(/\s+/g, '-')}.jpg`;
   document.querySelectorAll('.scan-link[data-scan]').forEach(link => {
@@ -867,7 +912,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.href = scanFile('display', volume, page);
     link.target = '_blank';
     link.rel = 'noopener';
-    link.setAttribute('aria-label', `View scan: Malmö City Archive, ${link.textContent.trim()} (opens in a new tab)`);
+    link.setAttribute('aria-label', t('View scan: Malmö City Archive, {ref} (opens in a new tab)', { ref: link.textContent.trim() }));
   });
 
   /* --- Press timeline: scan thumbnails and source line --- */
@@ -901,17 +946,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const source = document.createElement('p');
     source.className = 'press-source';
     source.innerHTML =
-      `<span class="press-source-badge">${ICONS.scan}Digitized original</span>` +
-      '<span>Malmö City Archive · newspaper clippings, SEMSA00032</span>' +
-      `<span>${items.length} clippings · ${span} · ${volumes.size} ${volumes.size === 1 ? 'volume' : 'volumes'}</span>`;
+      `<span class="press-source-badge">${ICONS.scan}${t('Digitized original')}</span>` +
+      `<span>${t('Malmö City Archive · newspaper clippings, SEMSA00032')}</span>` +
+      `<span>${t('{count} clippings · {span} · {volumes}', { count: items.length, span, volumes: `${volumes.size} ${t(volumes.size === 1 ? 'volume' : 'volumes')}` })}</span>`;
     head.appendChild(source);
   });
 
   /* --- Site logo (fixed top-left) --- */
   const logoLink = document.createElement('a');
   logoLink.id = 'siteLogo';
-  logoLink.href = inSubdir ? '../index.html' : 'index.html';
-  logoLink.setAttribute('aria-label', 'Baltic Exhibition 1914 — Home. © 2026 Robin Erik Strandberg');
+  logoLink.href = `${PAGE_ROOT}index.html`;
+  logoLink.setAttribute('aria-label', t('Baltic Exhibition 1914 — Home. © 2026 Robin Erik Strandberg'));
   logoLink.innerHTML = `<svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 48" width="22" height="29" fill="currentColor" aria-hidden="true">
     <circle cx="18" cy="2" r="1.6"/>
     <polygon points="18,3.6 15,10 21,10"/>
@@ -925,20 +970,53 @@ document.addEventListener('DOMContentLoaded', () => {
     <rect x="2" y="44" width="32" height="2"/>
     <rect x="0" y="46" width="36" height="2"/>
     <path d="M7 31 Q18 19.5 29 31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  </svg><span class="brand-text"><span class="brand-title">Baltic <span class="brand-x">Exhibition </span>1914</span><span class="brand-copy">&copy; <span class="brand-year">2026 </span>Robin Erik Strandberg</span></span>`;
+  </svg><span class="brand-text"><span class="brand-title">${t('Baltic')} <span class="brand-x">${t('Exhibition')} </span>1914</span><span class="brand-copy">&copy; <span class="brand-year">2026 </span>Robin Erik Strandberg</span></span>`;
   document.body.appendChild(logoLink);
+
+  /* --- Language switch (same page in the other language) --- */
+  const here = location.href.split('#')[0].split('?')[0];
+  let langLink = null;
+  if (here.startsWith(ASSET_ROOT)) {
+    let rel = here.slice(ASSET_ROOT.length);
+    rel = LANG === 'sv' ? rel.replace(/^sv\//, '') : `sv/${rel}`;
+    if (rel === '' || rel.endsWith('/')) rel += 'index.html';
+    const buildLang = className => {
+      const a = document.createElement('a');
+      a.className = className;
+      a.href = ASSET_ROOT + rel;
+      a.hreflang = LANG === 'sv' ? 'en' : 'sv';
+      a.setAttribute('aria-label', LANG === 'sv' ? 'EN · SV — Byt till engelska' : 'EN · SV — Switch to Swedish');
+      a.innerHTML =
+        `<span class="lang-opt${LANG === 'en' ? ' is-current' : ''}">EN</span>` +
+        '<span class="lang-sep" aria-hidden="true">·</span>' +
+        `<span class="lang-opt${LANG === 'sv' ? ' is-current' : ''}">SV</span>`;
+      return a;
+    };
+    langLink = buildLang('lang-switch');
+    langLink.id = 'langToggle';
+    document.body.appendChild(langLink);
+    const siteNav = document.getElementById('sitenav');
+    if (siteNav) siteNav.prepend(buildLang('nav-lang'));
+  }
 
   const themeButton = document.getElementById('darkToggle');
   const syncControlWidths = () => {
     const root = document.documentElement.style;
     root.setProperty('--brand-w', `${logoLink.offsetWidth}px`);
-    if (themeButton) root.setProperty('--theme-w', `${themeButton.offsetWidth}px`);
+    if (!themeButton) return;
+    root.setProperty('--switch-w', `${themeButton.offsetWidth}px`);
+    const lefts = [themeButton.getBoundingClientRect().left];
+    if (langLink && langLink.offsetWidth) lefts.push(langLink.getBoundingClientRect().left);
+    const right = parseFloat(getComputedStyle(themeButton).right) || 0;
+    root.setProperty('--theme-w', `${Math.round(window.innerWidth - Math.min(...lefts) - right)}px`);
   };
   if ('ResizeObserver' in window) {
     const ro = new ResizeObserver(syncControlWidths);
     ro.observe(logoLink);
     if (themeButton) ro.observe(themeButton);
+    if (langLink) ro.observe(langLink);
   }
+  window.addEventListener('resize', syncControlWidths);
   syncControlWidths();
 
   /* --- Dark mode --- */
@@ -949,8 +1027,8 @@ document.addEventListener('DOMContentLoaded', () => {
       '<span class="theme-track" aria-hidden="true"><span class="theme-knob"></span></span>' +
       '<svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>';
     toggle.setAttribute('role', 'switch');
-    toggle.title = 'Dark mode';
-    toggle.setAttribute('aria-label', 'Dark mode');
+    toggle.title = t('Dark mode');
+    toggle.setAttribute('aria-label', t('Dark mode'));
     toggle.addEventListener('click', () => {
       const isDark = !document.body.classList.contains('dark-mode');
       try { localStorage.setItem('darkMode', isDark ? 'on' : 'off'); } catch (err) { }
@@ -971,7 +1049,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* --- Active nav link --- */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('#sitenav a').forEach(link => {
+  document.querySelectorAll('#sitenav a:not(.nav-lang)').forEach(link => {
     const href = (link.getAttribute('href') || '').split('/').pop();
     if (href === currentPage) {
       link.classList.add('active');
@@ -1012,8 +1090,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const btt = document.createElement('button');
   btt.id = 'backToTop';
   btt.type = 'button';
-  btt.setAttribute('aria-label', 'Back to top');
-  btt.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg><span>Back to top</span>';
+  btt.setAttribute('aria-label', t('Back to top'));
+  btt.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg><span>' + t('Back to top') + '</span>';
   document.body.appendChild(btt);
   window.addEventListener('scroll', () => {
     btt.classList.toggle('visible', window.scrollY > 300);
@@ -1032,7 +1110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fProvenance = document.createElement('p');
     fProvenance.className = 'footer-provenance';
-    fProvenance.textContent = 'All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and newspaper clippings and the official site plan from Malmö City Archive.';
+    fProvenance.textContent = t('All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and newspaper clippings and the official site plan from Malmö City Archive.');
     footerInner.appendChild(fProvenance);
   }
 

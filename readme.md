@@ -79,12 +79,24 @@ Physical catalogs and newspaper clippings from Malmö City Library were scanned 
 
 ## Running locally
 
-No build step required. Open any `.html` file directly in a browser, or serve the root with a local server to avoid path issues:
+Open any `.html` file directly in a browser, or serve the root with a local server to avoid path issues:
 
 ```bash
 npx serve .
 # or
 python -m http.server
+```
+
+---
+
+## Swedish version
+
+The Swedish pages in `sv/` are generated from the English pages and the translation files in `i18n/sv/` (see [ADR-001](docs/ADRs/ADR-001.md)). Never edit `sv/` by hand. After changing an English page:
+
+```bash
+node tools/build-sv.mjs --extract   # add new English text to i18n/sv/*.json with empty values
+node tools/build-sv.mjs             # rebuild sv/ and list any untranslated text
+node --test "tests/*.test.mjs"      # builder tests
 ```
 
 ---
