@@ -14,7 +14,7 @@ function applyTheme() {
   const dark = stored === 'on' || (stored !== 'off' && systemDark.matches);
   document.body.classList.toggle('dark-mode', dark);
   const toggle = document.getElementById('darkToggle');
-  if (toggle) toggle.setAttribute('aria-pressed', String(dark));
+  if (toggle) toggle.setAttribute('aria-checked', String(dark));
   return dark;
 }
 
@@ -859,11 +859,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const inSubdir = window.location.pathname.includes('/metadataonwebsite/') ||
                    window.location.pathname.includes('TEI-XSL-HTML');
   const siteRoot = inSubdir ? '../' : './';
+  const scanFile = (dir, volume, page) =>
+    `${siteRoot}references/paper_clippings/${dir}/${volume.replace('Ö ', 'O')}-${page.replace(/\s+/g, '-')}.jpg`;
   document.querySelectorAll('.scan-link[data-scan]').forEach(link => {
     const [volume, page] = link.dataset.scan.split('|');
-    const folder = SCAN_FOLDERS[volume];
-    if (!folder || !page) return;
-    link.href = `${siteRoot}references/paper_clippings/${encodeURIComponent(folder)}/${encodeURIComponent(page)}.jpg`;
+    if (!SCAN_FOLDERS[volume] || !page) return;
+    link.href = scanFile('display', volume, page);
     link.target = '_blank';
     link.rel = 'noopener';
     link.setAttribute('aria-label', `View scan: Malmö City Archive, ${link.textContent.trim()} (opens in a new tab)`);
@@ -882,7 +883,7 @@ document.addEventListener('DOMContentLoaded', () => {
     thumb.tabIndex = -1;
     thumb.setAttribute('aria-hidden', 'true');
     const img = document.createElement('img');
-    img.src = `${siteRoot}references/paper_clippings/thumbs/${volume.replace('Ö ', 'O')}-${page.replace(/\s+/g, '-')}.jpg`;
+    img.src = scanFile('thumbs', volume, page);
     img.alt = '';
     img.loading = 'lazy';
     img.decoding = 'async';
@@ -924,7 +925,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <rect x="2" y="44" width="32" height="2"/>
     <rect x="0" y="46" width="36" height="2"/>
     <path d="M7 31 Q18 19.5 29 31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-  </svg><span class="brand-text"><span class="brand-title">Baltic <span class="brand-x">Exhibition </span>1914</span><span class="brand-copy">&copy; 2026 Robin Erik Strandberg</span></span>`;
+  </svg><span class="brand-text"><span class="brand-title">Baltic <span class="brand-x">Exhibition </span>1914</span><span class="brand-copy">&copy; <span class="brand-year">2026 </span>Robin Erik Strandberg</span></span>`;
   document.body.appendChild(logoLink);
 
   const themeButton = document.getElementById('darkToggle');
@@ -944,9 +945,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('darkToggle');
   if (toggle) {
     toggle.innerHTML =
-      '<svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>' +
-      '<svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>';
-    toggle.insertAdjacentHTML('beforeend', '<span class="theme-label">Dark</span>');
+      '<svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>' +
+      '<span class="theme-track" aria-hidden="true"><span class="theme-knob"></span></span>' +
+      '<svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>';
+    toggle.setAttribute('role', 'switch');
+    toggle.title = 'Dark mode';
     toggle.setAttribute('aria-label', 'Dark mode');
     toggle.addEventListener('click', () => {
       const isDark = !document.body.classList.contains('dark-mode');
