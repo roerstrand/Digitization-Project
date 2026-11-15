@@ -258,6 +258,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('dark-mode');
   }
   if (toggle) {
+    toggle.innerHTML =
+      '<svg class="theme-icon icon-moon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>' +
+      '<svg class="theme-icon icon-sun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>';
     toggle.setAttribute('aria-label', 'Toggle dark mode');
     toggle.setAttribute('aria-pressed', String(document.body.classList.contains('dark-mode')));
     toggle.addEventListener('click', () => {
@@ -470,7 +473,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const btt = document.createElement('button');
   btt.id = 'backToTop';
   btt.setAttribute('aria-label', 'Back to top');
-  btt.innerHTML = '<span aria-hidden="true">↑</span><span>Back to top</span>';
+  btt.innerHTML = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5"/></svg><span>Back to top</span>';
   document.body.appendChild(btt);
 
   window.addEventListener('scroll', () => {
@@ -488,6 +491,11 @@ document.addEventListener('DOMContentLoaded', () => {
     fConnect.className = 'footer-connect';
     fConnect.innerHTML = '<a href="https://github.com/roerstrand" target="_blank" rel="noopener noreferrer">GitHub</a><span aria-hidden="true">·</span><a href="https://www.linkedin.com/in/robinerikstrandberg/" target="_blank" rel="noopener noreferrer">LinkedIn</a>';
     footerInner.insertBefore(fConnect, footerInner.firstChild);
+
+    const fProvenance = document.createElement('p');
+    fProvenance.className = 'footer-provenance';
+    fProvenance.textContent = 'All historical content on this site is drawn from the digitized material: exhibition catalogs from Malmö City Library, and maps and newspaper clippings from Malmö City Archive.';
+    footerInner.appendChild(fProvenance);
   }
 
   /* --- Init slideshow & autoplay --- */
