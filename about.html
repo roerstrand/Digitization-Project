@@ -89,9 +89,14 @@
             </div>
          </div>
 
-         <!-- Detailed sections -->
-         <section class="context-section">
+         <div class="info-groups">
 
+         <section class="info-group" id="purpose" aria-labelledby="purpose-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">01</span>
+               <h2 id="purpose-title">Why the project exists</h2>
+            </div>
+            <div class="info-grid">
             <div class="context-block">
                <span class="context-label">Project Purpose</span>
                <h3>Preservation and Access</h3>
@@ -102,7 +107,15 @@
                   scans, the project creates an entry point for anyone curious about the Jugend architectural style, the
                   Baltic Exhibition, or pre-war European exhibition culture — not only archivists or specialists.</p>
             </div>
+            </div>
+         </section>
 
+         <section class="info-group" id="sources" aria-labelledby="sources-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">02</span>
+               <h2 id="sources-title">Sources</h2>
+            </div>
+            <div class="info-grid">
             <div class="context-block">
                <span class="context-label">Source Institutions</span>
                <h3>Malmö City Library &amp; City Archive</h3>
@@ -119,19 +132,60 @@
             </div>
 
             <div class="context-block">
-               <span class="context-label">Scanning</span>
-               <h3>Equipment and Resolution Strategy</h3>
+               <span class="context-label">Source Material</span>
+               <h3>What Was Digitized</h3>
+               <p>Seven printed volumes held at Malmö City Library were reviewed in person; a subset was selected for
+                  digitization. These included official exhibition catalogs, postcard albums, photographic view albums,
+                  the official general catalogue with floor plans, and a Danish commissariat publication authored by
+                  photographer Fred Riise.</p>
+               <p>Alongside the library volumes, 37 pages from five bound clipping volumes were photographed at Malmö
+                  City Archive, including the official site plan. These clippings supply the events and voices that the
+                  official catalogs leave out, and each building page lists the clippings it draws on with a link to
+                  the scan.</p>
+               <p>In total, the collection covers images of all four selected buildings across multiple source types:
+                  catalog illustrations, exterior photographs, interior photographs, construction-site photographs, and
+                  architectural floor-plan blueprints. Surrogate numbering (e.g. 2:4 = Book 2, page 4) preserves a
+                  direct link between each digital file and its physical source.</p>
+            </div>
+            </div>
+         </section>
+
+         <section class="info-group" id="scanning" aria-labelledby="scanning-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">03</span>
+               <h2 id="scanning-title">Scanning</h2>
+            </div>
+            <div class="info-grid info-grid--single">
+            <div class="context-block">
+               <span class="context-label">Equipment</span>
+               <h3>Two Resolutions, Chosen per Material</h3>
                <p>Scanning was carried out at Malmö City Library on an <strong>Epson Perfection V600 Photo</strong>
                   scanner using 24-bit colour. Two resolutions were chosen deliberately:</p>
-               <p><strong>300 dpi</strong> for photographs and images — sufficient for display quality and viewer
-                  experience without generating prohibitively large files. <strong>600 dpi</strong> for text documents
-                  and blueprints — higher resolution enables legibility when zoomed in and keeps the material suitable
-                  for future OCR processing without requiring a return visit to the physical source.</p>
+               <div class="dpi-pair">
+                  <div class="dpi-card">
+                     <span class="dpi-value">300 <abbr title="dots per inch">dpi</abbr></span>
+                     <span class="dpi-use">Photographs &amp; images</span>
+                     <p>Sufficient for display quality and viewer experience without generating prohibitively large files.</p>
+                  </div>
+                  <div class="dpi-card">
+                     <span class="dpi-value">600 <abbr title="dots per inch">dpi</abbr></span>
+                     <span class="dpi-use">Text documents &amp; blueprints</span>
+                     <p>Keeps small print legible when zoomed in, and leaves the material ready for future OCR without a return visit to the physical source.</p>
+                  </div>
+               </div>
                <p>A white A4 sheet was used as a reference background during scanning. All images were subsequently
                   processed in <strong>GIMP</strong>: straightened, cropped, and embedded with descriptive metadata
                   before being committed to the repository.</p>
             </div>
+            </div>
+         </section>
 
+         <section class="info-group" id="description" aria-labelledby="description-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">04</span>
+               <h2 id="description-title">Metadata &amp; structure</h2>
+            </div>
+            <div class="info-grid">
             <div class="context-block">
                <span class="context-label">Metadata</span>
                <h3>Dublin Core and Embedded Image Metadata</h3>
@@ -192,7 +246,15 @@
                   </div>
                </div>
             </div>
+            </div>
+         </section>
 
+         <section class="info-group" id="publication" aria-labelledby="publication-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">05</span>
+               <h2 id="publication-title">Publication &amp; rights</h2>
+            </div>
+            <div class="info-grid info-grid--single">
             <div class="context-block">
                <span class="context-label">Web Publication</span>
                <h3>Open Access via GitHub Pages</h3>
@@ -205,24 +267,15 @@
                   material well outside protection. The one named photographer, Fred Riise (Danish), died in 1933,
                   also past the 70-year threshold.</p>
             </div>
-
-            <div class="context-block">
-               <span class="context-label">Source Material</span>
-               <h3>What Was Digitized</h3>
-               <p>Seven printed volumes held at Malmö City Library were reviewed in person; a subset was selected for
-                  digitization. These included official exhibition catalogs, postcard albums, photographic view albums,
-                  the official general catalogue with floor plans, and a Danish commissariat publication authored by
-                  photographer Fred Riise.</p>
-               <p>Alongside the library volumes, 37 pages from five bound clipping volumes were photographed at Malmö
-                  City Archive, including the official site plan. These clippings supply the events and voices that the
-                  official catalogs leave out, and each building page lists the clippings it draws on with a link to
-                  the scan.</p>
-               <p>In total, the collection covers images of all four selected buildings across multiple source types:
-                  catalog illustrations, exterior photographs, interior photographs, construction-site photographs, and
-                  architectural floor-plan blueprints. Surrogate numbering (e.g. 2:4 = Book 2, page 4) preserves a
-                  direct link between each digital file and its physical source.</p>
             </div>
+         </section>
 
+         <section class="info-group" id="challenges" aria-labelledby="challenges-title">
+            <div class="group-head">
+               <span class="group-index" aria-hidden="true">06</span>
+               <h2 id="challenges-title">Challenges</h2>
+            </div>
+            <div class="info-grid info-grid--single">
             <div class="context-block">
                <span class="context-label">Challenges</span>
                <h3>Scope, Workflow, and What Was Learned</h3>
@@ -238,8 +291,10 @@
                   a significant learning outcome.</p>
                <p>For a frank account of what worked, what didn't, and what we'd do differently, see the <a href="./lessons.html">Reflections</a> page.</p>
             </div>
-
+            </div>
          </section>
+
+         </div>
       </div>
    </main>
 
