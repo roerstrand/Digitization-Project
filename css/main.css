@@ -925,6 +925,16 @@ header.nav-compact #navToggle {
   display: grid;
 }
 
+header.nav-compact.is-free .container {
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+header.nav-compact.is-free #sitenav {
+  right: auto;
+  left: calc(50% - min(11rem, 50vw - 0.75rem));
+}
+
 @media (max-width: 440px) {
   header.nav-compact #navToggle {
     width: 48px;
@@ -1744,7 +1754,7 @@ main#content {
 
 #about {
   margin: 0 auto;
-  max-width: 780px;
+  max-width: none;
 }
 
 .textbox h2,

@@ -1047,8 +1047,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const siteHeader = document.querySelector('header');
   if (siteHeader) {
     const updateStuck = () => {
-      siteHeader.classList.toggle('is-stuck', siteHeader.getBoundingClientRect().top <= 0.5 && window.scrollY > 0);
+      const top = siteHeader.getBoundingClientRect().top;
+      siteHeader.classList.toggle('is-stuck', top <= 0.5 && window.scrollY > 0);
+      const logo = document.getElementById('siteLogo');
+      siteHeader.classList.toggle('is-free', !!logo && top >= logo.getBoundingClientRect().bottom + 4);
     };
+    window.addEventListener('resize', updateStuck);
     window.addEventListener('scroll', updateStuck, { passive: true });
     updateStuck();
   }
