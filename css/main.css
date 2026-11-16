@@ -1161,6 +1161,12 @@ header.nav-compact #sitenav a.active {
     width: 100%;
   }
 
+  main#content.has-toc > :has(> .cta-section) {
+    grid-column: 1 / -1;
+  }
+
+  main#content.has-toc .section-footnote { text-align: left; }
+
   .toc-panel {
     position: sticky;
     top: calc(var(--header-h, var(--nav-h)) + 1.5rem);
@@ -2411,8 +2417,9 @@ body.dark-mode .scan-link:hover {
 =================================== */
 .cta-section {
   text-align: center;
+  max-width: 56rem;
   padding: 2.75rem 1.5rem;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
   border-radius: var(--r-lg);
 }
 
