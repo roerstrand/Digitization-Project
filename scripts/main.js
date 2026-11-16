@@ -988,7 +988,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = `uk-clip-${++flagId}`;
       return `<svg class="lang-flag" viewBox="0 0 60 30" width="20" height="10" aria-hidden="true"><clipPath id="${id}"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><rect width="60" height="30" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#${id})" stroke="#c8102e" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#c8102e" stroke-width="6"/></svg>`;
     };
-    const option = code => `<span class="lang-opt${LANG === code ? ' is-current' : ''}">${flag(code)}${code.toUpperCase()}</span>`;
+    const option = code => `<span class="lang-opt${LANG === code ? ' is-current' : ''}">${flag(code)}<span class="lang-code">${code.toUpperCase()}</span></span>`;
     const buildLang = className => {
       const a = document.createElement('a');
       a.className = className;
