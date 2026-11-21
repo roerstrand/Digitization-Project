@@ -253,8 +253,14 @@ function buildGallery() {
       thumb.className = 'gallery-thumb';
       thumb.setAttribute('aria-label', t('Image {n} of {count}: {alt}', { n: i + 1, count, alt: img.alt }));
       const tImg = document.createElement('img');
+      if (img.srcset) {
+        tImg.srcset = img.srcset;
+        tImg.sizes = '160px';
+      }
       tImg.src = img.getAttribute('src');
       tImg.alt = '';
+      tImg.loading = 'lazy';
+      tImg.decoding = 'async';
       thumb.appendChild(tImg);
       thumb.addEventListener('click', () => showSlides(i + 1));
       thumbs.appendChild(thumb);
@@ -410,7 +416,7 @@ function fillViewer(i) {
   const v = viewer;
   const src = v.items[i];
   v.index = i;
-  v.img.src = src.currentSrc || src.src;
+  v.img.src = src.dataset.full || src.currentSrc || src.src;
   v.img.alt = src.alt;
   v.el.querySelector('.viewer-title').textContent = src.dataset.caption || src.alt;
   v.el.querySelector('.vm-type').textContent = src.dataset.doctype || '—';
