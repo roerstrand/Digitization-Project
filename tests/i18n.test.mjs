@@ -69,6 +69,12 @@ test('relocateLinks moves a root page into en/ without remapping page links', ()
   assert.equal(out, '<link href="../css/main.css"><a href="./about.html">A</a><a href="./TEI-XSL-HTML conversion files/germanCommissariat.html">T</a>');
 });
 
+test('relocateLinks moves every candidate in srcset and the data-full image', () => {
+  const html = '<img src="../img/web/a-800.webp" srcset="../img/web/a-800.webp 800w, ../img/web/a-1600.webp 1600w" data-full="../img/web/a-1600.webp">';
+  const out = relocateLinks(html, 'en/index.html', 'index.html', new Map());
+  assert.equal(out, '<img src="./img/web/a-800.webp" srcset="./img/web/a-800.webp 800w, ./img/web/a-1600.webp 1600w" data-full="./img/web/a-1600.webp">');
+});
+
 test('localizePage sets lang and adds hreflang alternates', () => {
   const html = '<html lang="en" xml:lang="en">\n<head>\n<title>T</title>\n</head>';
   const out = localizePage(html, 'sv', { en: '../baltictower.html', sv: './baltictower.html' });
