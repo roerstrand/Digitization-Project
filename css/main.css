@@ -316,8 +316,6 @@ code {
   background:
     var(--sheen),
     radial-gradient(ellipse at 50% 50%, var(--frost-core) 0%, var(--frost-core) 40%, var(--frost-rim) 100%);
-  -webkit-backdrop-filter: blur(var(--blur)) saturate(170%);
-  backdrop-filter: blur(var(--blur)) saturate(170%);
   border: 1px solid var(--frost-border);
   box-shadow:
     inset 0 1px 0 var(--frost-edge),
@@ -332,8 +330,6 @@ code {
   background:
     var(--sheen),
     radial-gradient(ellipse at 50% 50%, var(--frost-dense) 0%, var(--frost-dense) 55%, var(--frost-core) 100%);
-  -webkit-backdrop-filter: blur(var(--blur-dense)) saturate(170%);
-  backdrop-filter: blur(var(--blur-dense)) saturate(170%);
   border: 1px solid var(--frost-border);
   box-shadow:
     inset 0 1px 0 var(--frost-edge),
@@ -1932,7 +1928,7 @@ main#content {
   width: min(1400px, 100vw);
   height: 22rem;
   transform: translateX(-50%);
-  background-image: var(--plate, url("../img/baltictower/2.13(page23).jpg"));
+  background-image: var(--plate, url("../img/web/baltictower/2.13(page23)-1600.webp"));
   background-size: cover;
   background-position: center 40%;
   filter: sepia(0.35) contrast(1.05);
@@ -1942,12 +1938,12 @@ main#content {
   mask-image: linear-gradient(180deg, #000 0%, #000 68%, transparent 100%);
 }
 
-.page-home .context-section::before    { background-image: url("../img/baltictower/2.10(page13).jpg"); }
-.page-about .context-section::before   { background-image: url("../img/baltictower/2.14(page24).jpg"); }
-.page-tower .context-section::before   { background-image: url("../img/baltictower/2.14(page24).jpg"); }
-.page-danish .context-section::before  { background-image: url("../img/danishbuilding/4.13.jpg"); }
-.page-german .context-section::before  { background-image: url("../img/germanbuilding/4.9.jpg"); }
-.page-russian .context-section::before { background-image: url("../img/baltictower/2.13(page23).jpg"); }
+.page-home .context-section::before    { background-image: url("../img/web/baltictower/2.10(page13)-1600.webp"); }
+.page-about .context-section::before   { background-image: url("../img/web/baltictower/2.14(page24)-1600.webp"); }
+.page-tower .context-section::before   { background-image: url("../img/web/baltictower/2.14(page24)-1600.webp"); }
+.page-danish .context-section::before  { background-image: url("../img/web/danishbuilding/4.13-1600.webp"); }
+.page-german .context-section::before  { background-image: url("../img/web/germanbuilding/4.9-1600.webp"); }
+.page-russian .context-section::before { background-image: url("../img/web/baltictower/2.13(page23)-1600.webp"); }
 
 .context-block {
   position: relative;
@@ -2623,8 +2619,6 @@ body.dark-mode .scan-link:hover {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0) 40%),
     radial-gradient(ellipse at 50% 60%, var(--frost-core) 0%, var(--frost-rim) 100%);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
   border: 1px solid var(--frost-border);
   box-shadow: inset 0 1px 0 var(--frost-edge), var(--glass-shadow);
   transform: translateY(-4px);
@@ -3532,8 +3526,6 @@ footer {
     linear-gradient(180deg, rgba(255,240,215,0.07) 0%, rgba(255,240,215,0) 40%),
     radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.18), transparent 60%),
     rgba(20,15,10,0.88);
-  -webkit-backdrop-filter: blur(var(--blur)) saturate(160%);
-  backdrop-filter: blur(var(--blur)) saturate(160%);
   color: var(--nav-text);
   padding: 3rem 1.5rem 2.75rem;
   margin-top: 4rem;
