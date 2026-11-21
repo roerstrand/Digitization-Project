@@ -2,7 +2,8 @@ import { posix } from 'node:path';
 
 const TOKEN = /<!--[\s\S]*?-->|<(script|style)\b[^>]*>[\s\S]*?<\/\1\s*>|<[^>]+>|[^<]+/gi;
 const ATTR = /(\s)(alt|title|aria-label|data-caption|data-doctype|data-docsource|placeholder|content)="([^"]*)"/g;
-const URL_ATTR = /(\s(?:href|src|poster|action)=")([^"]*)(")/g;
+const URL_ATTR = /(\s(?:href|src|poster|action|data-full)=")([^"]*)(")/g;
+const SRCSET_ATTR = /(\ssrcset=")([^"]*)(")/g;
 const VOID = new Set(['area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr']);
 
 const normalize = text => text.replace(/\s+/g, ' ').trim();
@@ -76,17 +77,26 @@ export function translateHtml(html, dict) {
 export function relocateLinks(html, fromPage, toPage, pages) {
   const fromDir = posix.dirname(fromPage);
   const toDir = posix.dirname(toPage);
-  return html.replace(URL_ATTR, (match, start, url, end) => {
-    if (!url || /^(?:[a-z][\w+.-]*:|\/|#)/i.test(url)) return match;
+  const move = url => {
+    if (!url || /^(?:[a-z][\w+.-]*:|\/|#)/i.test(url)) return url;
     const [, path, rest] = /^([^?#]*)(.*)$/.exec(url);
-    if (!path) return match;
+    if (!path) return url;
     const encoded = /%[0-9a-f]{2}/i.test(path);
     let target = posix.normalize(posix.join(fromDir, encoded ? decodeURI(path) : path));
     if (pages.has(target)) target = pages.get(target);
     let relative = posix.relative(toDir, target);
     if (!relative.startsWith('../')) relative = `./${relative}`;
-    return `${start}${encoded ? encodeURI(relative) : relative}${rest}${end}`;
-  });
+    return `${encoded ? encodeURI(relative) : relative}${rest}`;
+  };
+  return html
+    .replace(URL_ATTR, (match, start, url, end) => `${start}${move(url)}${end}`)
+    .replace(SRCSET_ATTR, (match, start, list, end) => {
+      const candidates = list.split(',').map(candidate => {
+        const [, lead, url, descriptor] = /^(\s*)(\S*)(.*)$/.exec(candidate);
+        return `${lead}${move(url)}${descriptor}`;
+      });
+      return `${start}${candidates.join(',')}${end}`;
+    });
 }
 
 export function localizePage(html, lang, alternates) {
